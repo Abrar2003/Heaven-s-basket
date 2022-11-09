@@ -1,0 +1,36 @@
+Front-en :-
+
+  login/signup -
+
+  user-side
+    nav -
+    footer -
+    home -
+    product page -
+    single-product page -
+    cart -
+    payment -
+    my-accout/low -
+    wishlist/low -
+
+**************************************
+
+  admin-side
+    nav - add, delete, show
+    add-product/form -
+    delete/form -
+    adding admin/hardcode details -
+
+Back-end :-
+
+    user/model - role, name, cart-list, email, password, wishlist/low, zip-code
+    product/model -
+    login/api -
+    get-product/api -
+    get-user-id/api -
+    get-product-id/api -
+    post-user/api -
+    post-cart/api -
+    
+
+    
