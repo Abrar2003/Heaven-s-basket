@@ -5,8 +5,8 @@ import {
   MenuButton,
   MenuList,
   Input,
+  Text,
 } from "@chakra-ui/react";
-import { ChevronDownIcon, ChevronUpIcon } from "@chakra-ui/icons";
 
 export default function searchDropdown() {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -24,17 +24,19 @@ export default function searchDropdown() {
         onMouseLeave={onClose}
         w={"850px"}
         border={"3px solid #3e9d15"}
+        textAlign="center"
       >
-        <MenuItem>Menu Item 1</MenuItem>
-        <MenuItem>Menu Item 2</MenuItem>
-        <MenuItem>Menu Item 3</MenuItem>
-        <MenuItem>Menu Item 4</MenuItem>
-        <MenuItem>Menu Item 3</MenuItem>
-        <MenuItem>Menu Item 3</MenuItem>
-        <MenuItem>Menu Item 3</MenuItem>
-        <MenuItem>Menu Item 3</MenuItem>
-        <MenuItem>Menu Item 3</MenuItem>
-        <MenuItem>Menu Item 3</MenuItem>
+        <Text>Hello</Text>
+        <Text>Hello</Text>
+        <Text>Hello</Text>
+        <Text>Hello</Text>
+        <Text>Hello</Text>
+        <Text>Hello</Text>
+        <Text>Hello</Text>
+        <Text>Hello</Text>
+        <Text>Hello</Text>
+        <Text>Hello</Text>
+        <Text>Hello</Text>
       </MenuList>
     </Menu>
   );

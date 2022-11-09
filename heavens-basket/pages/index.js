@@ -1,12 +1,12 @@
 import { Box } from "@chakra-ui/react";
-import Dropdown from "../components/SearchDropdown";
+import Footer from "../components/Footer";
 import { Navbar } from "../components/Navbar";
 
 export default function Home() {
   return (
-    <Box w={"95%"} m={"auto"}>
+    <Box m={"auto"}>
       <Navbar />
-      {/* <Dropdown /> */}
+      <Footer />
     </Box>
   );
 }
