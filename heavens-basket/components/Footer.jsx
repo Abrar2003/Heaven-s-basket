@@ -1,5 +1,13 @@
 import React from "react";
-import { Box, VStack, Text, Image, Input, Button } from "@chakra-ui/react";
+import {
+  Box,
+  VStack,
+  Text,
+  Image,
+  Input,
+  Button,
+  Divider,
+} from "@chakra-ui/react";
 import { FaFacebookF } from "react-icons/fa";
 import { GrTwitter } from "react-icons/gr";
 import { SiYoutube } from "react-icons/si";
@@ -8,8 +16,15 @@ import { BsPinterest } from "react-icons/bs";
 
 export default function Footer() {
   return (
-    <Box bg="#fbfbfb">
-      <Box w={"95%"} m={"auto"} display="flex" gap={"20px"} mb={"20px"}>
+    <Box bg="#fbfbfb" bottom="0px">
+      <Box
+        w={"95%"}
+        m={"auto"}
+        display="flex"
+        gap={"20px"}
+        mb={"20px"}
+        pt="20px"
+      >
         <VStack w={"17%"} align="left">
           <Text fontWeight="bold">DOWNLOAD THE APP</Text>
           <Image
@@ -60,14 +75,8 @@ export default function Footer() {
           </Button>
         </VStack>
       </Box>
-      <Box
-        borderTop={"1px"}
-        borderBottom={"1px"}
-        display="flex"
-        justifyContent="space-between"
-        w={"95%"}
-        m={"auto"}
-      >
+      <Divider w="95%" m={"auto"} />
+      <Box display="flex" justifyContent="space-between" w={"95%"} m={"auto"}>
         <Box
           display="flex"
           alignItems="center"
@@ -90,6 +99,7 @@ export default function Footer() {
           <BsPinterest fontSize="25px" color="gray" />
         </Box>
       </Box>
+      <Divider w="95%" m={"auto"} />
     </Box>
   );
 }
