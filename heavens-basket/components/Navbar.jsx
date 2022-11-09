@@ -33,7 +33,6 @@ export const Navbar = () => {
             <option value="Thane">Thane</option>
             <option value="Kolkata">Kolkata</option>
           </Select>
-
           <Dropdown />
           <Button bgColor={"#3e9d15"} color="white">
             <Search2Icon />
