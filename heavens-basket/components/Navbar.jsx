@@ -10,7 +10,6 @@ import {
 import React from "react";
 import { Search2Icon, StarIcon, TriangleDownIcon } from "@chakra-ui/icons";
 import { BsCart4 } from "react-icons/bs";
-import { FaPencilAlt } from "react-icons/fa";
 
 export const Navbar = () => {
   return (
