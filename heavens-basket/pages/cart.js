@@ -19,6 +19,7 @@ import {
 } from "@chakra-ui/react";
 import { RepeatIcon, CloseIcon } from "@chakra-ui/icons";
 import { TbTruckDelivery } from "react-icons/tb";
+import SimpleSlider from "../components/CartSlider";
 const Cart = () => {
   const [count, setCount] = useState(1);
   const changeQty = (q) => {
@@ -74,9 +75,9 @@ const Cart = () => {
                 <Image src="https://gnbdevcdn.s3.amazonaws.com/ProductVariantThumbnailImages/3bc083e7-3eee-4d3d-a54b-8be0fb2e7a4c_50x50.JPG" />
                 <Text>American Kale Curled - Exotic 200.00 g</Text>
               </Td>
-              <Td isNumeric>₹ 159.50</Td>
-              <Td isNumeric>₹ 0.00</Td>
-              <Td display={"flex"} align={"center"} gap={"1px"}>
+              <Td>₹ 159.50</Td>
+              <Td>₹ 0.00</Td>
+              <Td align={"center"}>
                 <Button
                   bg={"#92be4d"}
                   color={"white"}
@@ -84,6 +85,7 @@ const Cart = () => {
                   borderTopRightRadius={"0px"}
                   borderBottomRightRadius={"0px"}
                   disabled={count === 1}
+                  mr={"1px"}
                   onClick={() => changeQty(-1)}
                 >
                   -
@@ -93,6 +95,7 @@ const Cart = () => {
                   bg={"#92be4d"}
                   color={"white"}
                   variant={"ghost"}
+                  mr={"1px"}
                 >
                   {count}
                 </Button>
@@ -107,7 +110,7 @@ const Cart = () => {
                   +
                 </Button>
               </Td>
-              <Td isNumeric>₹ 159.50</Td>
+              <Td>₹ 159.50</Td>
               <Td>
                 <Button borderRadius={"50%"}>
                   <CloseIcon w={3} h={3} />
@@ -143,6 +146,7 @@ const Cart = () => {
         <GridItem bg={"green"} w="100%" h="30"></GridItem>
         <GridItem bg={"teal"} w="100%" h="30"></GridItem>
       </Grid>
+      <SimpleSlider />
     </Box>
   );
 };
