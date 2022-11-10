@@ -69,13 +69,14 @@ export default class CartSlider extends Component {
             return (
               <Box
                 key={i}
+                p={"10px"}
                 style={{ height: "100px" }}
                 border={"1px solid gray"}
               >
                 <Image style={{ height: "50px" }} src={el.src} />
                 <Text>{el.name}</Text>
                 <Text>{el.pcs}</Text>
-                <Box display={"flex"} gap={"20px"}>
+                <Box display={"flex"} justifyContent={"space-between"}>
                   <Text>₹ {el.amount}</Text>
                   <Button bgColor={"#92be4d"} color={"white"}>
                     ADD

@@ -18,7 +18,7 @@ export default function Footer() {
   return (
     <Box bg="#fbfbfb" bottom="0px">
       <Box
-        w={"95%"}
+        w={"75%"}
         m={"auto"}
         display="flex"
         gap={"20px"}
@@ -75,22 +75,16 @@ export default function Footer() {
           </Button>
         </VStack>
       </Box>
-      <Divider w="95%" m={"auto"} />
-      <Box display="flex" justifyContent="space-between" w={"95%"} m={"auto"}>
-        <Box
-          display="flex"
-          alignItems="center"
-          w={"50%"}
-          ml={"50px"}
-          gap={"20px"}
-        >
+      <Divider w="75%" m={"auto"} />
+      <Box display="flex" justifyContent="space-between" w={"75%"} m={"auto"}>
+        <Box display="flex" alignItems="center" w={"60%"} gap={"20px"}>
           <Text>Payment Method</Text>
           <Image
-            w={"80%"}
+            w={"70%"}
             src="https://www.naturesbasket.co.in/Images/icons-card-payments-mode.png"
           />
         </Box>
-        <Box display="flex" alignItems="center" w={"25%"} gap={"20px"}>
+        <Box display="flex" alignItems="center" w={"30%"} gap={"20px"}>
           <Text>keep in Touch</Text>
           <FaFacebookF fontSize="25px" color="gray" />
           <GrTwitter fontSize="25px" color="gray" />
@@ -99,7 +93,7 @@ export default function Footer() {
           <BsPinterest fontSize="25px" color="gray" />
         </Box>
       </Box>
-      <Divider w="95%" m={"auto"} />
+      <Divider w="75%" m={"auto"} />
     </Box>
   );
 }

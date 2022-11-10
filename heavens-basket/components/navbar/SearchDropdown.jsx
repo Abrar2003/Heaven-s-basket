@@ -15,13 +15,14 @@ export default function SearchDropdown() {
       <MenuButton variant="ghost" onMouseEnter={onOpen} onMouseLeave={onClose}>
         <Input
           textAlign={"center"}
-          w={"600px"}
+          w={"400px"}
           placeholder="Start shopping..."
         />
       </MenuButton>
       <MenuList
         onMouseEnter={onOpen}
         onMouseLeave={onClose}
+        align={"left"}
         w={"850px"}
         border={"3px solid #3e9d15"}
         textAlign="center"

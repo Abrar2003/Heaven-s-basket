@@ -15,7 +15,7 @@ import SearchDropdown from "./SearchDropdown";
 
 export const Navbar = () => {
   return (
-    <Box display="flex" m={"auto"} border="1px" w={"95%"}>
+    <Box display="flex" m={"auto"} w={"75%"}>
       <Image src="Logo.png" w={"28%"} h="120px" />
       <Box w={"63%"}>
         <HStack m={"10px"} ml={"5%"}>
@@ -26,7 +26,7 @@ export const Navbar = () => {
         </HStack>
         <Box display={"flex"}>
           <Button>400001</Button>
-          <Select w={"28%"}>
+          <Select w={"22%"}>
             <option value="Mumbai">Mumbai</option>
             <option value="Pune">Pune</option>
             <option value="Bangalore">Bangalore</option>
@@ -40,9 +40,11 @@ export const Navbar = () => {
           </Button>
         </Box>
       </Box>
-      <Box w="9%">
+      <Box w="12%">
         <Text>
-          Welcome Jyoti <TriangleDownIcon boxSize={"10px"} />
+          <Link href="#">
+            Login/Register <TriangleDownIcon boxSize={"10px"} />
+          </Link>
         </Text>
         <Box mt={"20px"} ml={"10px"}>
           <Button bgColor={"white"} color={"#92be4d"}>
