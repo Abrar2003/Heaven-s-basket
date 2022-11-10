@@ -7,7 +7,6 @@ export default function Home() {
   return (
     <Box m={"auto"}>
       <Navbar />
-      <DropDown />
       <Footer />
     </Box>
   );
