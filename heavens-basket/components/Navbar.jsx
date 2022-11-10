@@ -8,9 +8,10 @@ import {
   Text,
 } from "@chakra-ui/react";
 import React from "react";
+import Link from "next/link";
 import { Search2Icon, StarIcon, TriangleDownIcon } from "@chakra-ui/icons";
 import { BsCart4 } from "react-icons/bs";
-import Dropdown from "./SearchDropdown";
+import SearchDropdown from "../components/SearchDropdown";
 
 export const Navbar = () => {
   return (
@@ -33,8 +34,8 @@ export const Navbar = () => {
             <option value="Thane">Thane</option>
             <option value="Kolkata">Kolkata</option>
           </Select>
-          <Dropdown />
-          <Button bgColor={"#3e9d15"} color="white">
+          <SearchDropdown />
+          <Button bgColor={"#92be4d"} color="white">
             <Search2Icon />
           </Button>
         </Box>
@@ -44,11 +45,13 @@ export const Navbar = () => {
           Welcome Jyoti <TriangleDownIcon boxSize={"10px"} />
         </Text>
         <Box mt={"20px"} ml={"10px"}>
-          <Button bgColor={"white"} color={"#3e9d15"}>
+          <Button bgColor={"white"} color={"#92be4d"}>
             <StarIcon fontSize={"25px"} />
           </Button>
-          <Button bgColor={"white"} color={"#3e9d15"}>
-            <BsCart4 fontSize={"25px"} />
+          <Button bgColor={"white"} color={"#92be4d"}>
+            <Link href="/cart">
+              <BsCart4 fontSize={"25px"} />
+            </Link>
           </Button>
         </Box>
       </Box>

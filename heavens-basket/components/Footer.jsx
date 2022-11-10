@@ -69,8 +69,8 @@ export default function Footer() {
         </VStack>
         <VStack w={"32%"} align="left">
           <Text fontWeight="bold">SIGNUP TO STAY UPDATED</Text>
-          <Input placeHolder="ENTER YOUR EMAIL ADDRESS" w={"70%"} />
-          <Button bg="#3e9d15" w={"30%"} color="white">
+          <Input placeholder="ENTER YOUR EMAIL ADDRESS" w={"70%"} />
+          <Button bg="#92be4d" w={"30%"} color="white">
             SUBSCRIBE
           </Button>
         </VStack>

@@ -8,7 +8,7 @@ import {
   Text,
 } from "@chakra-ui/react";
 
-export default function searchDropdown() {
+export default function SearchDropdown() {
   const { isOpen, onOpen, onClose } = useDisclosure();
   return (
     <Menu isOpen={isOpen}>
