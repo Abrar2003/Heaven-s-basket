@@ -19,7 +19,7 @@ import {
 } from "@chakra-ui/react";
 import { RepeatIcon, CloseIcon } from "@chakra-ui/icons";
 import { TbTruckDelivery } from "react-icons/tb";
-import SimpleSlider from "../components/CartSlider";
+import CartSlider from "../components/cart/CartSlider";
 const Cart = () => {
   const [count, setCount] = useState(1);
   const changeQty = (q) => {
@@ -121,10 +121,10 @@ const Cart = () => {
         </Table>
       </TableContainer>
       <Box align={"right"}>
-        <Box w={"20%"} border={"1px"} align={"left"}>
+        <Box w={"20%"} align={"left"} p={"10px"}>
           <Text>Sub-Total: ₹ 214.80</Text>
           <Text>Delivery Charges: ₹ 50.00</Text>
-          <Text>TOTAL: ₹265.00</Text>
+          <Text fontSize="lg">TOTAL: ₹265.00</Text>
         </Box>
       </Box>
       <Box
@@ -140,13 +140,7 @@ const Cart = () => {
         RESTOCK YOUR BASKET
       </Text>
 
-      <Grid templateColumns="repeat(4, 1fr)">
-        <GridItem bg={"blue"} w="100%" h="30"></GridItem>
-        <GridItem bg={"red"} w="100%" h="30"></GridItem>
-        <GridItem bg={"green"} w="100%" h="30"></GridItem>
-        <GridItem bg={"teal"} w="100%" h="30"></GridItem>
-      </Grid>
-      <SimpleSlider />
+      <CartSlider />
     </Box>
   );
 };

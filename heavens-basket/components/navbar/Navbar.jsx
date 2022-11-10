@@ -11,7 +11,7 @@ import React from "react";
 import Link from "next/link";
 import { Search2Icon, StarIcon, TriangleDownIcon } from "@chakra-ui/icons";
 import { BsCart4 } from "react-icons/bs";
-import SearchDropdown from "../components/SearchDropdown";
+import SearchDropdown from "./SearchDropdown";
 
 export const Navbar = () => {
   return (
