@@ -356,7 +356,7 @@ const checkout = () => {
                   </Tbody>
                 </Table>
               </TableContainer>
-              <Box border={"1px"}>
+              <Box border={"1px"} p={"10px"}>
                 <RadioGroup onChange={setValue} value={value}>
                   <Stack direction="row" w={"90%"}>
                     <Radio value="1">
@@ -379,7 +379,16 @@ const checkout = () => {
                     </Radio>
                   </Stack>
                 </RadioGroup>
-                <Box></Box>
+                <Box className={styles.planText}>
+                  <p>Note:</p>
+                  <p>
+                    Nature’s Basket membership program comes with perks like
+                    free delivery and no minimum order value of Rs 500. The
+                    current plans are available for one, three and six month
+                    durations. Select “None” to avoid membership.
+                  </p>
+                  <p>T&C : Membership once subscribed cannot be cancelled.</p>
+                </Box>
               </Box>
             </TabPanel>
             {/*<TabPanel>
