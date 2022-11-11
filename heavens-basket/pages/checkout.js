@@ -8,17 +8,27 @@ import {
   Grid,
   GridItem,
   Heading,
+  Image,
   Input,
   Radio,
+  RadioGroup,
   Select,
+  Stack,
   Tab,
+  Table,
+  TableContainer,
   TabList,
   TabPanel,
   TabPanels,
   Tabs,
+  Tbody,
+  Td,
   Text,
+  Th,
+  Thead,
+  Tr,
 } from "@chakra-ui/react";
-import React from "react";
+import React, { useState } from "react";
 import Footer from "../components/footer/Footer";
 import { Navbar } from "../components/navbar/Navbar";
 import styles from "../styles/Checkout.module.css";
@@ -52,15 +62,42 @@ const slots = [
   { disable: false, radio: true, time: "Same Day Delivery" },
   { disable: false, radio: true, time: "07.00 pm - 09.00 pm" },
 ];
+const data = [
+  {
+    name: "American Kale Curled - Exotic 200.00 g",
+    src: "https://gnbdevcdn.s3.amazonaws.com/ProductVariantThumbnailImages/3bc083e7-3eee-4d3d-a54b-8be0fb2e7a4c_50x50.JPG",
+    price: "159.00",
+    discount: "20.00",
+  },
+  {
+    name: "Kwality walls Ice cream- Magnum",
+    src: "https://d1z88p83zuviay.cloudfront.net/ProductVariantThumbnailImages/578a02e6-8e0b-4868-9689-5733471e3b87_425x425.jpg",
+    price: "269.00",
+    discount: "15.00",
+  },
+  {
+    name: "Moong dal- Exotic 200.00 g",
+    src: "https://d1z88p83zuviay.cloudfront.net/ProductVariantThumbnailImages/13dbbb37-317e-46e3-a94f-477772c22f0d_425x425.jpg",
+    price: "189.00",
+    discount: "25.00",
+  },
+  {
+    name: "Raw pressery",
+    src: "https://d1z88p83zuviay.cloudfront.net/ProductVariantThumbnailImages/eb67bb12-a336-4dab-9913-652d224e83a9_425x425.jpg",
+    price: "89.00",
+    discount: "5.00",
+  },
+];
 
 const checkout = () => {
   const add = false;
+  const [value, setValue] = useState("1");
   return (
     <>
       <Navbar />
-      <Box w={"75%"} border={"1px"} m={"auto"} mt={"30px"}>
+      <Box w={"75%"} border={"1px"} m={"auto"} mt={"30px"} mb={"30px"}>
         <Tabs variant="enclosed">
-          <TabList>
+          <TabList justifyContent={"space-between"}>
             <Tab>Login</Tab>
             <Tab>Address Details</Tab>
             <Tab>Delivery Slot</Tab>
@@ -268,10 +305,84 @@ const checkout = () => {
               </Box>
             </TabPanel>
 
-            {/*<TabPanel>
-              <p>two!</p>
-            </TabPanel>
             <TabPanel>
+              <Image src="https://gnbdevcdn.s3-ap-southeast-1.amazonaws.com/Marketing/0ce4e3df-a943-435c-8223-74dfd2c573ae.png?v=5" />
+              <Box border={"1px"} mt={"10px"} p={"10px"}>
+                <Text fontSize={"12px"} fontWeight={"bold"}>
+                  NOTE: Fresh & Fast Delivery service is applicable for select
+                  for select pincodes.
+                </Text>
+              </Box>
+              <TableContainer>
+                <Table variant="simple">
+                  <Thead>
+                    <Tr>
+                      <Th w={"40%"}>Name</Th>
+                      <Th w={"14%"}>Price</Th>
+                      <Th w={"14%"}>Discount</Th>
+                      <Th w={"14%"}>Qty</Th>
+                      <Th w={"14%"}>Sub-Total</Th>
+                    </Tr>
+                  </Thead>
+                  <Tbody>
+                    {data.map((el, i) => {
+                      return (
+                        <Tr key={i}>
+                          <Td
+                            display={"flex"}
+                            gap={"20px"}
+                            alignItems={"center"}
+                          >
+                            <Image src={el.src} w="50px" />
+                            <Text>{el.name}</Text>
+                          </Td>
+                          <Td>₹ {el.price}</Td>
+                          <Td>₹ {el.discount}</Td>
+                          <Td align={"center"}>
+                            <Button
+                              borderRadius={"0px"}
+                              bg={"#92be4d"}
+                              color={"white"}
+                              variant={"ghost"}
+                              mr={"1px"}
+                            >
+                              1
+                            </Button>
+                          </Td>
+                          <Td>₹ {el.price - el.discount}.00</Td>
+                        </Tr>
+                      );
+                    })}
+                  </Tbody>
+                </Table>
+              </TableContainer>
+              <Box border={"1px"}>
+                <RadioGroup onChange={setValue} value={value}>
+                  <Stack direction="row" w={"90%"}>
+                    <Radio value="1">
+                      <Text fontSize={"13px"}>
+                        1 Month Silver Plan MRP ₹149 89.00
+                      </Text>
+                    </Radio>
+                    <Radio value="2">
+                      <Text fontSize={"13px"}>
+                        3 Month Gold Plan + 2 Month Free MRP ₹299 199.00
+                      </Text>
+                    </Radio>
+                    <Radio value="3">
+                      <Text fontSize={"13px"}>
+                        6 Month Platinum Plan MRP ₹599 299.00
+                      </Text>
+                    </Radio>
+                    <Radio value="4">
+                      <Text fontSize={"13px"}>None</Text>
+                    </Radio>
+                  </Stack>
+                </RadioGroup>
+                <Box></Box>
+              </Box>
+            </TabPanel>
+            {/*<TabPanel>
               <p>two!</p>
             </TabPanel> */}
           </TabPanels>
