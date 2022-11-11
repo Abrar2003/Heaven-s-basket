@@ -180,9 +180,10 @@ const checkout = () => {
                 <Box
                   display={"flex"}
                   w={"100%"}
-                  justifyContent={"space-between"}
+                  // justifyContent={"space-between"}
+                  gap={"100px"}
                 >
-                  <Box w={"45%"}>
+                  <Box w={"50%"} border={"0px"}>
                     <Text fontSize={"20px"}>Select an existing address</Text>
                     <Box border={"1px"} p={"10px"}>
                       <Text fontSize={"md"}>Jyoti Prakash</Text>
@@ -193,8 +194,8 @@ const checkout = () => {
                       <Text>Ph. No.- +91 9337841077</Text>
                     </Box>
                   </Box>
-                  <Divider orientation="vertical" variant={"dashed"} />
-                  <Box w={"45%"}>
+                  <Box borderLeft={"1px"} borderColor={"gray.300"}></Box>
+                  <Box w={"50%"} border={"0px"}>
                     <FormControl isRequired>
                       <FormLabel>First name</FormLabel>
                       <Input placeholder="First name" />
@@ -390,8 +391,8 @@ const checkout = () => {
                   <p>T&C : Membership once subscribed cannot be cancelled.</p>
                 </Box>
               </Box>
-              <Box display={"flex"} justifyContent="space-between">
-                <Box border={"1px"} w={"50%"}>
+              <Box display={"flex"} justifyContent="space-between" gap={"20%"}>
+                <Box w={"60%"}>
                   <FormControl p={"10px"} gap={"20px"} display={"flex"}>
                     <FormLabel fontSize={"14px"}>Enter Voucher Code:</FormLabel>
                     <Input w={"45%"} placeholder="Enter Voucher Code:" />
@@ -418,7 +419,16 @@ const checkout = () => {
                     </Button>
                   </FormControl>
                 </Box>
-                <Box border={"1px"} w={"40%"}></Box>
+                <Box w={"40%"}>
+                  <Text>Sub-Total (Inclusive of taxes.) ₹ 374.60</Text>
+                  <Text>Delivery Charges ₹50</Text>
+                </Box>
+              </Box>
+              <Box align={"right"}>
+                <Text>TOTAL ₹ 425</Text>
+                <Button bg={"#92be4d"} color={"white"}>
+                  PROCEED TO PAY
+                </Button>
               </Box>
             </TabPanel>
             {/*<TabPanel>
