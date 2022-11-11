@@ -6,7 +6,7 @@ import React from "react";
 //React-Icons
 import { IconContext } from "react-icons";
 import { AiFillCaretRight } from "react-icons/ai";
-import MultiSlider from "../components/crousels/MultiSlider";
+
 //Chakra components
 import {
   Box,
@@ -21,38 +21,40 @@ import {
 
 import style from "../styles/Home.module.css";
 
-export default function Home() {
+//Sliders
+import SimpleSlider from "../components/crousels/SimpleSlider";
+import MultiSlider from "../components/crousels/MultiSlider";
 
-const trendingItems = [
-  {name: "Haagen-Dazs Ice Cream - Mango Ras.",
-    img: "IceCream-Mango.jpg",
-    price: 780
-  },
-  {name: "HA TAPIOCA FLOUR 400G",
-    img: "flour.jpg",
-    price: 210
-  },
-  {name: "Kwality Wall'S Ice Cream - Magnum Chocotrffle Stick 80Ml",
-    img: "M-IceCream.jpg",
-    price: 90
-  },
-  {name: "HA ORGANIC MOONG DAL YELLOW SPLIT 500G",
-    img: "MoongDal.jpg",
-    price: 149
-  },
-  {name: "RAY SPRAY OIL JAR 200ml",
-    img: "OilJar.jpg",
-    price: 499
-  }
-]
+
+export default function Home() {
+ 
+  const trendingItems = [
+    {
+      name: "Haagen-Dazs Ice Cream - Mango Ras.",
+      img: "IceCream-Mango.jpg",
+      price: 780,
+    },
+    { name: "HA TAPIOCA FLOUR 400G", img: "flour.jpg", price: 210 },
+    {
+      name: "Kwality Wall'S Ice Cream - Magnum Chocotrffle Stick 80Ml",
+      img: "M-IceCream.jpg",
+      price: 90,
+    },
+    {
+      name: "HA ORGANIC MOONG DAL YELLOW SPLIT 500G",
+      img: "MoongDal.jpg",
+      price: 149,
+    },
+    { name: "RAY SPRAY OIL JAR 200ml", img: "OilJar.jpg", price: 499 },
+  ];
 
   return (
     <Box m={"auto"}>
       <Navbar />
       <DropDown />
-      
- {/*  ↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓ HOME PAGE/code starts from here ↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓  */}
-      
+
+      {/*  ↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓ HOME PAGE/code starts from here ↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓  */}
+
       <Box w={["100%", "100%", "100%", "100%", "70%"]} m="auto">
         <Heading fontSize={"4xl"}>Home Page</Heading>
         <Stack gap={"30px"}>
@@ -300,9 +302,8 @@ const trendingItems = [
           </IconContext.Provider>
         </Stack>
 
-
-{/* //TODO :- Crousel for banners HERE */}
-
+        {/* //TODO :- Crousel for banners HERE */}
+        <SimpleSlider />
 
         <Flex gap={".5%"} alignItems={"center"} justifyContent="center">
           <Divider borderColor={"black"} />
@@ -320,8 +321,61 @@ const trendingItems = [
         </Flex>
 
         <MultiSlider />
+
+        <Flex gap={".5%"} alignItems={"center"} justifyContent="center">
+          <Divider borderColor={"black"} />
+          <Box w={["80%", "70%", "65%", "60%", "54%"]}>
+            <Text
+              w="100%"
+              p={"none"}
+              textAlign={"center"}
+              fontSize={["xs", "md", "xl", "2xl", "3xl"]}
+            >
+              OUR EVENTS
+            </Text>
+          </Box>
+          <Divider borderColor={"black"} />
+        </Flex>
+        <Flex w="100%" justifyContent={"space-evenly"}>
+            <Box
+              w="30%"
+              rounded={["5px", "10px", "10px", "15px", "20px"]}
+              className={style.box}
+            >
+              <Image
+                w="100%"
+                rounded={["5px", "10px", "10px", "15px", "20px"]}
+                src="event1.jpg"
+                alt="banner"
+              />
+            </Box>
+            <Box
+              w="30%"
+              rounded={["5px", "10px", "10px", "15px", "20px"]}
+              className={style.box}
+            >
+              <Image
+                w="100%"
+                rounded={["5px", "10px", "10px", "15px", "20px"]}
+                src="event2.jpg"
+                alt="banner"
+              />
+            </Box>
+            <Box
+              w="30%"
+              rounded={["5px", "10px", "10px", "15px", "20px"]}
+              className={style.box}
+            >
+              <Image
+                w="100%"
+                rounded={["5px", "10px", "10px", "15px", "20px"]}
+                src="event3.png"
+                alt="event"
+              />
+            </Box>
+          </Flex>
       </Box>
-  {/* ↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑ HOME PAGE/ code ends here ↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑ */}
+      {/* ↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑ HOME PAGE/ code ends here ↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑ */}
       <Footer />
     </Box>
   );

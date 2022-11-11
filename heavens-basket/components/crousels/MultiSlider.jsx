@@ -1,57 +1,61 @@
-import { Box, Button, Flex, Image, Text } from "@chakra-ui/react";
-import React, { Component } from "react";
+import { Stack, Button, Flex, Image, Text, Tooltip, Box } from "@chakra-ui/react";
+import React, { Component, useState } from "react";
+import { AiOutlineStar, AiFillStar } from "react-icons/ai";
 import Slider from "react-slick";
+import Card from "../ProductCard";
 
+
+import "slick-carousel/slick/slick.css"; 
+import "slick-carousel/slick/slick-theme.css";
 export default class MutliSider extends Component {
   render() {
+    let fillStar = false;
+    let star = "hidden";
     const settings = {
-      dots: true,
+      dots: false,
       infinite: true,
       speed: 500,
       slidesToShow: 4,
-      slidesToScroll: 4
+      slidesToScroll: 4,
+      autoplay: true,
+      autoplaySpeed: 2000,
+      arrows: true
     };
     const trendingItems = [
-      {name: "Haagen-Dazs Ice Cream - Mango Ras.",
-        img: "IceCream-Mango.jpg",
-        price: 780
+      {
+        title: "Haagen-Dazs Ice Cream - Mango Ras.",
+        image: "IceCream-Mango.jpg",
+        price: 780,
       },
-      {name: "HA TAPIOCA FLOUR 400G",
-        img: "flour.jpg",
-        price: 210
+      {
+        name: "HA TAPIOCA FLOUR 400G",
+        image: "flour.jpg",
+        price: 210,
       },
-      {name: "Kwality Wall'S Ice Cream - Magnum Chocotrffle Stick 80Ml",
-        img: "M-IceCream.jpg",
-        price: 90
+      {
+        title: "Kwality Wall'S Ice Cream - Magnum Chocotrffle Stick 80Ml",
+        image: "M-IceCream.jpg",
+        price: 90,
       },
-      {name: "HA ORGANIC MOONG DAL YELLOW SPLIT 500G",
-        img: "MoongDal.jpg",
-        price: 149
+      {
+        title: "HA ORGANIC MOONG DAL YELLOW SPLIT 500G",
+        image: "MoongDal.jpg",
+        price: 149,
       },
-      {name: "RAY SPRAY OIL JAR 200ml",
-        img: "OilJar.jpg",
-        price: 499
-      }
+      {
+        title: "RAY SPRAY OIL JAR 200ml",
+        image: "OilJar.jpg",
+        price: 499,
+      },
     ];
     return (
-      <div>
-        <h2> Multiple items </h2>
+      <Box m={"20px 0px"}>
         <Slider {...settings}>
-          {trendingItems.map(item => (
-            <Flex direction={"column"}>
-              <Image src={item.img} alt={item.name} />
-              <Text>{item.name}</Text>
-              <Text>1pc</Text>
-              <Flex>
-                <Button>{`MRP ${item.price}`}&#8377;</Button>
-                <Button bgColor={"rgb(146, 190, 77)"}>
-                    Add
-                </Button>
-              </Flex>
-            </Flex>
+          {trendingItems.map((item) => (
+            <Card cardData={item} />
           ))}
         </Slider>
-      </div>
+      </Box>
     );
   }
 }
