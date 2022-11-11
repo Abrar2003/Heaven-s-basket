@@ -92,6 +92,19 @@ const data = [
 const checkout = () => {
   const add = false;
   const [value, setValue] = useState("1");
+  const [captcha, setCaptcha] = useState("");
+
+  const randomCaptcha = () => {
+    let result = "";
+    let characters =
+      "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+    let charactersLength = characters.length;
+    for (let i = 0; i < 6; i++) {
+      result += characters.charAt(Math.floor(Math.random() * charactersLength));
+    }
+    setCaptcha(result);
+  };
+
   return (
     <>
       <Navbar />
@@ -108,7 +121,7 @@ const checkout = () => {
             <TabPanel>
               <p>
                 You are logged in as jyotipm1999@gmail.com
-                <span color="#b71761">Logout</span>
+                <Button bg={"red.300"}>Logout</Button>
               </p>
               <p>Note: By signing out, you will lose your cart data.</p>
             </TabPanel>
@@ -495,7 +508,7 @@ const checkout = () => {
                     </Text>
                     <Box
                       display={"flex"}
-                      w="70%"
+                      w="90%"
                       justifyContent={"space-between"}
                       mb="10px"
                     >
@@ -503,19 +516,20 @@ const checkout = () => {
                         Verify Order: Type the character you see in the image
                       </Text>
                       <Box bg={"gray.100"} p={"10px"}>
-                        <Text>gBcSQ</Text>
+                        <Text>{captcha}</Text>
                       </Box>
+                      <Button onClick={randomCaptcha}>Generate captcha</Button>
                     </Box>
                     <Box
                       display={"flex"}
-                      w="70%"
+                      w="90%"
                       justifyContent={"space-between"}
                       mb={"10px"}
                     >
                       <Text>Letters shown are not case-sensetive</Text>
                       <Input w={"20%"} />
                     </Box>
-                    <Box w="70%" align={"right"} mb={"20px"}>
+                    <Box w="90%" align={"right"} mb={"20px"}>
                       <Button bg={"#92be4d"} color={"white"}>
                         Place Order
                       </Button>
@@ -539,7 +553,7 @@ const checkout = () => {
                     </Text>
                     <Box
                       display={"flex"}
-                      w="70%"
+                      w="90%"
                       justifyContent={"space-between"}
                       mb="10px"
                     >
@@ -547,19 +561,20 @@ const checkout = () => {
                         Verify Order: Type the character you see in the image
                       </Text>
                       <Box bg={"gray.100"} p={"10px"}>
-                        <Text>gBcSQ</Text>
+                        <Text>{captcha}</Text>
                       </Box>
+                      <Button onClick={randomCaptcha}>Generate captcha</Button>
                     </Box>
                     <Box
                       display={"flex"}
-                      w="70%"
+                      w="90%"
                       justifyContent={"space-between"}
                       mb={"10px"}
                     >
                       <Text>Letters shown are not case-sensetive</Text>
                       <Input w={"20%"} />
                     </Box>
-                    <Box w="70%" align={"right"} mb={"20px"}>
+                    <Box w="90%" align={"right"} mb={"20px"}>
                       <Button bg={"#92be4d"} color={"white"}>
                         Place Order
                       </Button>
@@ -583,7 +598,7 @@ const checkout = () => {
                     </Text>
                     <Box
                       display={"flex"}
-                      w="70%"
+                      w="90%"
                       justifyContent={"space-between"}
                       mb={"10px"}
                     >
@@ -591,19 +606,20 @@ const checkout = () => {
                         Verify Order: Type the character you see in the image
                       </Text>
                       <Box bg={"gray.100"} p={"10px"}>
-                        <Text>gBcSQ</Text>
+                        <Text>{captcha}</Text>
                       </Box>
+                      <Button onClick={randomCaptcha}>Generate captcha</Button>
                     </Box>
                     <Box
                       display={"flex"}
-                      w="70%"
+                      w="90%"
                       justifyContent={"space-between"}
                       mb={"10px"}
                     >
                       <Text>Letters shown are not case-sensetive</Text>
                       <Input w={"20%"} />
                     </Box>
-                    <Box w="70%" align={"right"} mb={"20px"}>
+                    <Box w="90%" align={"right"} mb={"20px"}>
                       <Button bg={"#92be4d"} color={"white"}>
                         PAY NOW
                       </Button>
@@ -623,7 +639,7 @@ const checkout = () => {
                     </Text>
                     <Box
                       display={"flex"}
-                      w="70%"
+                      w="90%"
                       justifyContent={"space-between"}
                       mb={"10px"}
                     >
@@ -631,19 +647,20 @@ const checkout = () => {
                         Verify Order: Type the character you see in the image
                       </Text>
                       <Box bg={"gray.100"} p={"10px"}>
-                        <Text>gBcSQ</Text>
+                        <Text>{captcha}</Text>
                       </Box>
+                      <Button onClick={randomCaptcha}>Generate captcha</Button>
                     </Box>
                     <Box
                       display={"flex"}
-                      w="70%"
+                      w="90%"
                       justifyContent={"space-between"}
                       mb={"10px"}
                     >
                       <Text>Letters shown are not case-sensetive</Text>
                       <Input w={"20%"} />
                     </Box>
-                    <Box w="70%" align={"right"} mb={"20px"}>
+                    <Box w="90%" align={"right"} mb={"20px"}>
                       <Button bg={"#92be4d"} color={"white"}>
                         CONFIRM ORDER
                       </Button>
@@ -663,7 +680,7 @@ const checkout = () => {
                     </Text>
                     <Box
                       display={"flex"}
-                      w="70%"
+                      w="90%"
                       justifyContent={"space-between"}
                       mb={"10px"}
                     >
@@ -671,19 +688,20 @@ const checkout = () => {
                         Verify Order: Type the character you see in the image
                       </Text>
                       <Box bg={"gray.100"} p={"10px"}>
-                        <Text>gBcSQ</Text>
+                        <Text>{captcha}</Text>
                       </Box>
+                      <Button onClick={randomCaptcha}>Generate captcha</Button>
                     </Box>
                     <Box
                       display={"flex"}
-                      w="70%"
+                      w="90%"
                       justifyContent={"space-between"}
                       mb={"10px"}
                     >
                       <Text>Letters shown are not case-sensetive</Text>
                       <Input w={"20%"} />
                     </Box>
-                    <Box w="70%" align={"right"} mb={"20px"}>
+                    <Box w="90%" align={"right"} mb={"20px"}>
                       <Button bg={"#92be4d"} color={"white"}>
                         CONFIRM ORDER
                       </Button>
@@ -697,7 +715,7 @@ const checkout = () => {
                     </Text>
                     <Box
                       display={"flex"}
-                      w="70%"
+                      w="90%"
                       justifyContent={"space-between"}
                       mb={"10px"}
                     >
@@ -705,19 +723,20 @@ const checkout = () => {
                         Verify Order: Type the character you see in the image
                       </Text>
                       <Box bg={"gray.100"} p={"10px"}>
-                        <Text>gBcSQ</Text>
+                        <Text>{captcha}</Text>
                       </Box>
+                      <Button onClick={randomCaptcha}>Generate captcha</Button>
                     </Box>
                     <Box
                       display={"flex"}
-                      w="70%"
+                      w="90%"
                       justifyContent={"space-between"}
                       mb={"10px"}
                     >
                       <Text>Letters shown are not case-sensetive</Text>
                       <Input w={"20%"} />
                     </Box>
-                    <Box w="70%" align={"right"} mb={"20px"}>
+                    <Box w="90%" align={"right"} mb={"20px"}>
                       <Button bg={"#92be4d"} color={"white"}>
                         CONFIRM ORDER
                       </Button>
@@ -741,7 +760,7 @@ const checkout = () => {
                     </Text>
                     <Box
                       display={"flex"}
-                      w="70%"
+                      w="90%"
                       justifyContent={"space-between"}
                       mb={"10px"}
                     >
@@ -749,19 +768,20 @@ const checkout = () => {
                         Verify Order: Type the character you see in the image
                       </Text>
                       <Box bg={"gray.100"} p={"10px"}>
-                        <Text>gBcSQ</Text>
+                        <Text>{captcha}</Text>
                       </Box>
+                      <Button onClick={randomCaptcha}>Generate captcha</Button>
                     </Box>
                     <Box
                       display={"flex"}
-                      w="70%"
+                      w="90%"
                       justifyContent={"space-between"}
                       mb={"10px"}
                     >
                       <Text>Letters shown are not case-sensetive</Text>
                       <Input w={"20%"} />
                     </Box>
-                    <Box w="70%" align={"right"} mb={"20px"}>
+                    <Box w="90%" align={"right"} mb={"20px"}>
                       <Button bg={"#92be4d"} color={"white"}>
                         CONFIRM ORDER
                       </Button>
