@@ -89,14 +89,14 @@ export default function homePage() {
             <Divider borderColor={"black"} />
           </Flex>
           <Flex justifyContent={"space-evenly"}>
-            <Link href="fruitesvegetables" w={"24%"}>
-              <Stack>
+            <Stack w={"24%"}>
+              <Link href="fruitesvegetables">
                 <Box>
                   <Image
                     className={style.box}
                     mb="10px"
                     rounded={["5px", "10px", "10px", "15px", "20px"]}
-                    w={"93%"}
+                    w={"100%"}
                     src="veggies-card.png"
                   />
                   <Text fontSize={"large"}>Exotic Vegitables</Text>
@@ -132,8 +132,8 @@ export default function homePage() {
                   <AiFillCaretRight />
                 </Flex>
                 <Text color={"green.500"}>veiw all</Text>
-              </Stack>
-            </Link>
+              </Link>
+            </Stack>
 
             <Stack w={"24%"}>
               <Box>

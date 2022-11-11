@@ -28,10 +28,12 @@ import {
   Thead,
   Tr,
 } from "@chakra-ui/react";
+import Link from "next/link";
 import React, { useState } from "react";
 import Footer from "../components/footer/Footer";
 import { Navbar } from "../components/navbar/Navbar";
 import styles from "../styles/Checkout.module.css";
+import { useRouter } from "next/router";
 
 const slots = [
   { disable: true, radio: false, time: "Today" },
@@ -93,6 +95,9 @@ const checkout = () => {
   const add = false;
   const [value, setValue] = useState("1");
   const [captcha, setCaptcha] = useState("");
+  const [input, setInput] = useState("");
+
+  const router = useRouter();
 
   const randomCaptcha = () => {
     let result = "";
@@ -103,6 +108,14 @@ const checkout = () => {
       result += characters.charAt(Math.floor(Math.random() * charactersLength));
     }
     setCaptcha(result);
+  };
+  const handlePlace = () => {
+    if (input === captcha) {
+      router.push("/");
+    } else {
+      router.push("/cart");
+    }
+    console.log(captcha, input);
   };
 
   return (
@@ -527,10 +540,18 @@ const checkout = () => {
                       mb={"10px"}
                     >
                       <Text>Letters shown are not case-sensetive</Text>
-                      <Input w={"20%"} />
+                      <Input
+                        value={input}
+                        onChange={(e) => setInput(e.target.value)}
+                        w={"20%"}
+                      />
                     </Box>
                     <Box w="90%" align={"right"} mb={"20px"}>
-                      <Button bg={"#92be4d"} color={"white"}>
+                      <Button
+                        onClick={handlePlace}
+                        bg={"#92be4d"}
+                        color={"white"}
+                      >
                         Place Order
                       </Button>
                     </Box>
