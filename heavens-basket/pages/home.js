@@ -1,9 +1,10 @@
 import React from "react";
 
+
 //React-Icons
 import { IconContext } from "react-icons";
 import { AiFillCaretRight } from "react-icons/ai";
-
+import MultiSlider from "../components/crousels/MultiSlider";
 //Chakra components
 import {
   Box,
@@ -73,6 +74,7 @@ export default function home() {
           </Box>
         </Flex>
         <IconContext.Provider value={{ color: "black", size: "10px" }}>
+
         <Flex gap={".5%"} alignItems={"center"} justifyContent="center">
           <Divider borderColor={"black"} />
           <Box w={["80%", "70%", "65%", "60%", "54%"]}>
@@ -87,6 +89,7 @@ export default function home() {
           </Box>
           <Divider borderColor={"black"} />
         </Flex>
+
         <Flex justifyContent={"space-evenly"}>
           <Stack w={"24%"}>
             <Box>
@@ -194,6 +197,7 @@ export default function home() {
         </Flex>
         </IconContext.Provider>
       </Stack>
+      <MultiSlider />
     </Box>
   );
 }
