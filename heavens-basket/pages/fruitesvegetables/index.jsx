@@ -19,6 +19,8 @@ import {
 } from "@chakra-ui/react";
 import { FiChevronRight } from "react-icons/fi";
 import Card from "./Card";
+import Footer from "../../components/footer/Footer";
+import { Navbar } from "../../components/navbar/Navbar";
 const Index = () => {
   const [data, setdata] = useState([]);
   const [brands, setbrands] = useState([]);
@@ -100,8 +102,10 @@ const Index = () => {
     setfilterTypes(e.target.value);
   };
   return (
-    <Stack p="2%">
-      {/* <Box pb="10px">
+    <>
+      <Navbar />
+      <Stack p="2%">
+        {/* <Box pb="10px">
         <Image
           src="https://gnbdevcdn.s3.amazonaws.com/Images/Category/Web_Sup_5_F&V.png"
           alt="Vegetables & Fruites"
@@ -109,124 +113,126 @@ const Index = () => {
           borderRadius="25px"
         />
       </Box> */}
-      <Flex w="100%">
-        <Stack w="16%">
-          <Flex justify="space-between">
-            <Heading fontSize="19px" fontWeight="normal" color="#555b54">
-              FILTER
-            </Heading>
-            <Text color="#84ba40" fontWeight="normal" fontSize="12px">
-              CLEAR ALL
-            </Text>
-          </Flex>
-          <Text> Fruits & Vegetables</Text>
-          <Stack h="200px" overflowY="scroll">
-            {vegeType &&
-              vegeType.map((e) => {
-                return (
-                  <Button
-                    bg="white"
-                    border="0.5px solid rgb(182, 22, 113)"
-                    p={2}
-                    borderRadius="7px"
-                    textTransform="capitalize"
-                    fontSize="13px"
-                    color="rgb(182, 22, 113)"
-                    fontWeight="normal"
-                    _hover={{ bg: "rgb(182, 22, 113)", color: "white" }}
-                  >
-                    {e}
-                  </Button>
-                );
-              })}
-          </Stack>
-          <Text> Brands </Text>
-          <Stack h="200px" overflow="scroll" id="brands">
-            {brands &&
-              brands.map((e) => {
-                return (
-                  <Box
-                    bg="white"
-                    border="0.5px solid rgb(182, 22, 113)"
-                    p={1}
-                    borderRadius="7px"
-                    fontSize="13px"
-                  >
-                    <Checkbox
-                      onChange={handleCheck}
-                      key={brands.indexOf(e)}
-                      value={e}
-                      fontSize="13px"
-                      _hover={{ color: "#91bf45" }}
-                      colorScheme="green"
-                    >
-                      {e}
-                    </Checkbox>
-                  </Box>
-                );
-              })}
-          </Stack>
-        </Stack>
-        <Stack w="82.5%" pl="2%" spacing="2%">
-          <Breadcrumb
-            spacing="8px"
-            fontSize="13px"
-            separator={<FiChevronRight color="gray.800" fontWeight="bold" />}
-          >
-            <BreadcrumbItem>
-              <BreadcrumbLink href="#" color="#bbbbbb">
-                Home
-              </BreadcrumbLink>
-            </BreadcrumbItem>
-
-            <BreadcrumbItem>
-              <BreadcrumbLink href="#" color="#bbbbbb">
-                {" "}
-                Fruits & Vegetables
-              </BreadcrumbLink>
-            </BreadcrumbItem>
-          </Breadcrumb>
-          <Flex
-            justify="space-between"
-            borderBottom="1px solid #d3d2d2"
-            align="center"
-            pb="5px"
-          >
-            <Flex align="baseline" gap="15px">
-              <Heading fontWeight="normal" fontSize="24px">
-                FRUITS & VEGETABLES
+        <Flex w="100%">
+          <Stack w="16%">
+            <Flex justify="space-between">
+              <Heading fontSize="19px" fontWeight="normal" color="#555b54">
+                FILTER
               </Heading>
-              <Text fontSize="16px" color="#858585">
-                {data.length} Products.
+              <Text color="#84ba40" fontWeight="normal" fontSize="12px">
+                CLEAR ALL
               </Text>
             </Flex>
-            <Select
-              width="15%"
-              letterSpacing="1px"
-              fontSize="14px"
-              variant="unstyled"
-              onChange={handleFilter}
+            <Text> Fruits & Vegetables</Text>
+            <Stack h="200px" overflowY="scroll">
+              {vegeType &&
+                vegeType.map((e) => {
+                  return (
+                    <Button
+                      bg="white"
+                      border="0.5px solid rgb(182, 22, 113)"
+                      p={2}
+                      borderRadius="7px"
+                      textTransform="capitalize"
+                      fontSize="13px"
+                      color="rgb(182, 22, 113)"
+                      fontWeight="normal"
+                      _hover={{ bg: "rgb(182, 22, 113)", color: "white" }}
+                    >
+                      {e}
+                    </Button>
+                  );
+                })}
+            </Stack>
+            <Text> Brands </Text>
+            <Stack h="200px" overflow="scroll" id="brands">
+              {brands &&
+                brands.map((e) => {
+                  return (
+                    <Box
+                      bg="white"
+                      border="0.5px solid rgb(182, 22, 113)"
+                      p={1}
+                      borderRadius="7px"
+                      fontSize="13px"
+                    >
+                      <Checkbox
+                        onChange={handleCheck}
+                        key={brands.indexOf(e)}
+                        value={e}
+                        fontSize="13px"
+                        _hover={{ color: "#91bf45" }}
+                        colorScheme="green"
+                      >
+                        {e}
+                      </Checkbox>
+                    </Box>
+                  );
+                })}
+            </Stack>
+          </Stack>
+          <Stack w="82.5%" pl="2%" spacing="2%">
+            <Breadcrumb
+              spacing="8px"
+              fontSize="13px"
+              separator={<FiChevronRight color="gray.800" fontWeight="bold" />}
             >
-              <option value="all"> Relevance</option>
-              <option value="lth">Low to high price</option>
-              <option value="htl">High to low price</option>
-            </Select>
-          </Flex>
-          <Flex align="center" justify="space-between">
-            <Heading fontWeight="normal" fontSize="20px">
-              Explore
-            </Heading>
-            <Box border="1px solid #d3d2d2" h="2px" w="87%"></Box>
-          </Flex>
-          <SimpleGrid columns="4" gap={2} align="center">
-            {data &&
-              data.map((e) => {
-                return <Card cardData={e} key={e.id} />;
-              })}
-          </SimpleGrid>
-        </Stack>
-      </Flex>
-    </Stack>
+              <BreadcrumbItem>
+                <BreadcrumbLink href="#" color="#bbbbbb">
+                  Home
+                </BreadcrumbLink>
+              </BreadcrumbItem>
+
+              <BreadcrumbItem>
+                <BreadcrumbLink href="#" color="#bbbbbb">
+                  {" "}
+                  Fruits & Vegetables
+                </BreadcrumbLink>
+              </BreadcrumbItem>
+            </Breadcrumb>
+            <Flex
+              justify="space-between"
+              borderBottom="1px solid #d3d2d2"
+              align="center"
+              pb="5px"
+            >
+              <Flex align="baseline" gap="15px">
+                <Heading fontWeight="normal" fontSize="24px">
+                  FRUITS & VEGETABLES
+                </Heading>
+                <Text fontSize="16px" color="#858585">
+                  {data.length} Products.
+                </Text>
+              </Flex>
+              <Select
+                width="15%"
+                letterSpacing="1px"
+                fontSize="14px"
+                variant="unstyled"
+                onChange={handleFilter}
+              >
+                <option value="all"> Relevance</option>
+                <option value="lth">Low to high price</option>
+                <option value="htl">High to low price</option>
+              </Select>
+            </Flex>
+            <Flex align="center" justify="space-between">
+              <Heading fontWeight="normal" fontSize="20px">
+                Explore
+              </Heading>
+              <Box border="1px solid #d3d2d2" h="2px" w="87%"></Box>
+            </Flex>
+            <SimpleGrid columns="4" gap={2} align="center">
+              {data &&
+                data.map((e) => {
+                  return <Card cardData={e} key={e.id} />;
+                })}
+            </SimpleGrid>
+          </Stack>
+        </Flex>
+      </Stack>
+      <Footer />
+    </>
   );
 };
 

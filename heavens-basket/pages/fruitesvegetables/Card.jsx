@@ -60,7 +60,7 @@ const Card = ({ cardData }) => {
         w="100%"
         borderRadius="10px"
         border="0.2px solid rgb(238, 238, 238)"
-        boxShadow= "1px 2px #efe9e9"
+        boxShadow="1px 2px #efe9e9"
       />
       <Text>{cardData.title}</Text>
       <Flex>
