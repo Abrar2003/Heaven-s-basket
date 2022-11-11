@@ -22,11 +22,12 @@ export default async function handler(req, res) {
           //navigate to signup section because user does not exist
         }
         let OTP=getRandomInt(100000,999999)
-        localStorage.setItem("OTP", OTP)
-        localStorage.setItem("email", user.email)
+        // localStorage.setItem("OTP", OTP)
+        // localStorage.setItem("email",email)
         //store the OTP in the session here
-        sentOTPEmail(user.email, "heaven's Basket OTP Varification", `Hi ${user.name}, your OTP is ${OTP}`)
-        return res.status(200).send({user:user.name})
+        sentOTPEmail({user:user.name} , "heaven's Basket OTP Varification", `Hi ${user.name}, your OTP is ${OTP}`)
+        return res.status(200).send("done")
+      
         //navigate to otp entering page because user exists
       
       } catch (error) {
