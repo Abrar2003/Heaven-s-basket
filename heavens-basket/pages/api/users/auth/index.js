@@ -3,6 +3,7 @@ import userModel from "../../../../models/user.model"
 import dbConnect from "../../../../utils/connection";
 import getRandomInt from "../../../../utils/randomInt";
 import {sentOTPEmail} from "../../../../utils/transport"
+import cookie from "cookie"
 
 
 export default async function handler(req, res) {
@@ -22,6 +23,10 @@ export default async function handler(req, res) {
           //navigate to signup section because user does not exist
         }
         let OTP=getRandomInt(100000,999999)
+        res.setHeader("set-cookie", cookie.serialize("OTP", OTP),{
+          httpOnly: true,
+
+        })
         // localStorage.setItem("OTP", OTP)
         // localStorage.setItem("email",email)
         //store the OTP in the session here
