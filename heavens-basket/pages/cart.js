@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
   Box,
   Button,
@@ -18,38 +18,60 @@ import CartSlider from "../components/cart/CartSlider";
 import { Navbar } from "../components/navbar/Navbar";
 import Footer from "../components/footer/Footer";
 import Link from "next/link";
+import Counter from "../components/cart/Counter";
 
-const data = [
+const d = [
   {
+    id: 1,
     name: "American Kale Curled - Exotic 200.00 g",
     src: "https://gnbdevcdn.s3.amazonaws.com/ProductVariantThumbnailImages/3bc083e7-3eee-4d3d-a54b-8be0fb2e7a4c_50x50.JPG",
     price: "159.00",
     discount: "20.00",
+    qty: 1,
   },
   {
+    id: 2,
     name: "Kwality walls Ice cream- Magnum",
     src: "https://d1z88p83zuviay.cloudfront.net/ProductVariantThumbnailImages/578a02e6-8e0b-4868-9689-5733471e3b87_425x425.jpg",
     price: "269.00",
     discount: "15.00",
+    qty: 1,
   },
   {
+    id: 3,
     name: "Moong dal- Exotic 200.00 g",
     src: "https://d1z88p83zuviay.cloudfront.net/ProductVariantThumbnailImages/13dbbb37-317e-46e3-a94f-477772c22f0d_425x425.jpg",
     price: "189.00",
     discount: "25.00",
+    qty: 2,
   },
   {
+    id: 4,
     name: "Raw pressery",
     src: "https://d1z88p83zuviay.cloudfront.net/ProductVariantThumbnailImages/eb67bb12-a336-4dab-9913-652d224e83a9_425x425.jpg",
     price: "89.00",
     discount: "5.00",
+    qty: 2,
   },
 ];
 
 const Cart = () => {
-  const [count, setCount] = useState(1);
-  const changeQty = (q) => {
-    setCount(count + q);
+  const [total, setTotal] = useState(0);
+  const [data, setData] = useState(d);
+
+  useEffect(() => {
+    const t = data.reduce((acc, el) => {
+      return acc + el.price * el.qty;
+    }, 0);
+    setTotal(t);
+  }, [data]);
+
+  const changeQty = (id, q) => {
+    const newData = data.map((el) =>
+      id === el.id ? { ...el, qty: el.qty + q } : el
+    );
+    console.log(newData);
+    setData(newData);
   };
 
   return (
@@ -102,66 +124,19 @@ const Cart = () => {
                 <Th w={"4%"}></Th>
               </Tr>
             </Thead>
+
             <Tbody>
               {data.map((el, i) => {
-                return (
-                  <Tr key={i}>
-                    <Td display={"flex"} gap={"20px"} alignItems={"center"}>
-                      <Image src={el.src} w="50px" />
-                      <Text>{el.name}</Text>
-                    </Td>
-                    <Td>₹ {el.price}</Td>
-                    <Td>₹ {el.discount}</Td>
-                    <Td align={"center"}>
-                      <Button
-                        bg={"#92be4d"}
-                        color={"white"}
-                        borderRadius={"10px"}
-                        borderTopRightRadius={"0px"}
-                        borderBottomRightRadius={"0px"}
-                        disabled={count === 1}
-                        mr={"1px"}
-                        onClick={() => changeQty(-1)}
-                      >
-                        -
-                      </Button>
-                      <Button
-                        borderRadius={"0px"}
-                        bg={"#92be4d"}
-                        color={"white"}
-                        variant={"ghost"}
-                        mr={"1px"}
-                      >
-                        {count}
-                      </Button>
-                      <Button
-                        borderRadius={"10px"}
-                        borderTopLeftRadius={"0px"}
-                        borderBottomLeftRadius={"0px"}
-                        bg={"#92be4d"}
-                        color={"white"}
-                        onClick={() => changeQty(1)}
-                      >
-                        +
-                      </Button>
-                    </Td>
-                    <Td>₹ {el.price * count - el.discount}.00</Td>
-                    <Td>
-                      <Button borderRadius={"50%"}>
-                        <CloseIcon w={3} h={3} />
-                      </Button>
-                    </Td>
-                  </Tr>
-                );
+                return <Counter {...el} changeQty={changeQty} i={i} />;
               })}
             </Tbody>
           </Table>
         </TableContainer>
         <Box align={"right"}>
           <Box w={"20%"} align={"left"} p={"10px"}>
-            <Text>Sub-Total: ₹ 214.80</Text>
+            <Text>Sub-Total: ₹ {total}</Text>
             <Text>Delivery Charges: ₹ 50.00</Text>
-            <Text fontSize="lg">TOTAL: ₹265.00</Text>
+            <Text fontSize="lg">Tptal:₹ {total - 50}</Text>
           </Box>
         </Box>
         <Box
