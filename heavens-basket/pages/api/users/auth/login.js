@@ -3,6 +3,7 @@ import userModel from "../../../../models/user.model"
 import dbConnect from "../../../../utils/connection";
 import {sentOTPEmail} from "../../../../utils/transport"
 import jwt from "jsonwebtoken"
+import cookie from "js-cookie";
 
 
 export default async function handler(req, res) {
@@ -15,6 +16,9 @@ export default async function handler(req, res) {
     case "POST": {
       try {
         let OTP=req.body.OTP
+        let storedData=cookie.get("OTP_EMAIL")
+        console.log(storedData)
+        let [storedOTP, email]=storedData.split(":")
         //get stored OTP from Session here
         // let storedOTP=localStorage.getItem("OTP")
         if(OTP===storedOTP){
@@ -27,8 +31,9 @@ export default async function handler(req, res) {
               let refreshToken=jwt.sign({email:user.email, role:user.role} , "SecretRefreshKey1234", {
                 expiresIn: "5 minutes"
               })
-              sentOTPEmail(email, "logged in successfully", `Hi, "You are successfully loggedin in heavens Baskests website"`)
+              sentOTPEmail(user.email, "logged in successfully", `Hi ${user.name}, "You are successfully loggedin in heavens Baskests website"`)
               return res.status(200).send({mainToken, refreshToken})
+              
         }  
         return res.staus(404).send("Invalid OTP")
       }catch (error) {

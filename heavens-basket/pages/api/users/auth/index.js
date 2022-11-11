@@ -3,13 +3,14 @@ import userModel from "../../../../models/user.model"
 import dbConnect from "../../../../utils/connection";
 import getRandomInt from "../../../../utils/randomInt";
 import {sentOTPEmail} from "../../../../utils/transport"
-import cookie from "cookie"
+import cookie from "js-cookie"
 
 
 export default async function handler(req, res) {
         dbConnect().catch(err=>{res.status(405).send({error:err})})
 
   let {method}=req
+  
   switch(method){
 
     //localhost:3000/api/users/auth
@@ -23,15 +24,12 @@ export default async function handler(req, res) {
           //navigate to signup section because user does not exist
         }
         let OTP=getRandomInt(100000,999999)
-        res.setHeader("set-cookie", cookie.serialize("OTP", OTP),{
-          httpOnly: true,
-
-        })
+        cookie.set("OTP_EMAIL", OTP+":"+email,{expires:1/(6*24)})
         // localStorage.setItem("OTP", OTP)
         // localStorage.setItem("email",email)
         //store the OTP in the session here
-        sentOTPEmail({user:user.name} , "heaven's Basket OTP Varification", `Hi ${user.name}, your OTP is ${OTP}`)
-        return res.status(200).send("done")
+        sentOTPEmail(user.email, "heaven's Basket OTP Varification", `Hi ${user.name}, your OTP is ${OTP}`)
+        return res.status(200).send({userData:user.email})
       
         //navigate to otp entering page because user exists
       
