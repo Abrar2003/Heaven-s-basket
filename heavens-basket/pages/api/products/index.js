@@ -34,6 +34,7 @@ export default async function handler(req, res) {
     default:
       res.setHeader("Allow",["GET","PUT","POST","DELETE"])
       res.status(405).end(`MEthod ${method}Not Allowed`);
+
   }
   // res.status(200).json({ name: 'Products Route' });
 }
