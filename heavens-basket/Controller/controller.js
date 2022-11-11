@@ -1,10 +1,5 @@
-// Controller
 
 import ProductModel from "../models/products";
-
-
-
-
 // get : http://localhost:3000/api/product
 export async function getProduct(req, res) {
   try {
@@ -16,16 +11,11 @@ export async function getProduct(req, res) {
     console.log(error);
   }
 }
-
 // post : http://localhost:3000/api/product
-
 export async function postProduct(req,res){
     try{
         const postProd = req.body;
         if(!postProd)return res.statu(404).json({error:'error'})
-        // ProductModel.create(postProd,function(err,data){
-        //   return res.status(200).json(data)
-        // }) 
         const newProduct= ProductModel(postProd);
         await newProduct.save()
         console.log(newProduct)
