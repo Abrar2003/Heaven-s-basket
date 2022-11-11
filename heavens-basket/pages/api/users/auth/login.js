@@ -27,6 +27,7 @@ export default async function handler(req, res) {
               let refreshToken=jwt.sign({email:user.email, role:user.role} , "SecretRefreshKey1234", {
                 expiresIn: "5 minutes"
               })
+
               sentOTPEmail(email, "logged in successfully", `Hi, "You are successfully loggedin in heavens Baskests website"`)
               return res.status(200).send({mainToken, refreshToken})
         }  
