@@ -18,7 +18,9 @@ export const Navbar = () => {
   return (
     <>
       <Box display="flex" m={"auto"} w={"75%"}>
-        <Image src="Logo.png" w={"28%"} h="120px" />
+        <Link href="/">
+          <Image src="Logo.png" w={"28%"} h="120px" />
+        </Link>
         <Box w={"63%"}>
           <HStack m={"10px"} ml={"5%"}>
             <Text>Online Slots Available |</Text>

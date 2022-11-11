@@ -17,6 +17,7 @@ import { TbTruckDelivery } from "react-icons/tb";
 import CartSlider from "../components/cart/CartSlider";
 import { Navbar } from "../components/navbar/Navbar";
 import Footer from "../components/footer/Footer";
+import Link from "next/link";
 
 const data = [
   {
@@ -69,10 +70,10 @@ const Cart = () => {
           </Box>
           <Box display={"flex"} gap={"20px"}>
             <Button bg={"#92be4d"} color={"white"}>
-              CONTINUE SHOPPING
+              <Link href="/">CONTINUE SHOPPING</Link>
             </Button>
             <Button bg={"#92be4d"} color={"white"}>
-              PROCEED TO CHECKOUT
+              <Link href="/checkout">PROCEED TO CHECKOUT</Link>
             </Button>
           </Box>
         </Box>
@@ -170,10 +171,10 @@ const Cart = () => {
           p={"10px 0px 10px 0px"}
         >
           <Button bg={"#92be4d"} color={"white"}>
-            CONTINUE SHOPPING
+            <Link href="/">CONTINUE SHOPPING</Link>
           </Button>
           <Button ml={"20px"} bg={"#92be4d"} color={"white"}>
-            PROCEED TO CHECKOUT
+            <Link href="/checkout">PROCEED TO CHECKOUT</Link>
           </Button>
         </Box>
         <Text textAlign={"center"} color={"#b71761"} fontWeight={"semibold"}>
