@@ -6,7 +6,7 @@ import styles from "./DropDown.module.css";
 const DropDown = () => {
   return (
     <Box
-      w={"95%"}
+      w={"75%"}
       m="auto"
       border={"1px"}
       borderRadius={"5px"}
