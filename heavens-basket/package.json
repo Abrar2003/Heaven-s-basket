@@ -24,11 +24,16 @@
     "js-cookie": "^3.0.1",
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^6.7.2",
-    "next": "13.0.2",
+    "next": "^13.0.2",
     "nodemailer": "^6.8.0",
     "nodemon": "^2.0.20",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "react-icons": "^4.6.0"
+    "react-icons": "^4.6.0",
+    "react-redux": "^8.0.5",
+    "react-slick": "^0.29.0",
+    "redux-thunk": "^2.4.2",
+    "slick-carousel": "^1.8.1",
+    "thunk": "^0.0.1"
   }
 }
