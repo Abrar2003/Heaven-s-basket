@@ -18,8 +18,8 @@ export const Navbar = () => {
   return (
     <>
       <Box display="flex" m={"auto"} w={"75%"}>
-        <Link href="/">
-          <Image src="Logo.png" w={"28%"} h="120px" />
+        <Link href="/" w={"28%"}>
+          <Image src="Logo.png" h="120px" />
         </Link>
         <Box w={"63%"}>
           <HStack m={"10px"} ml={"5%"}>

@@ -390,6 +390,36 @@ const checkout = () => {
                   <p>T&C : Membership once subscribed cannot be cancelled.</p>
                 </Box>
               </Box>
+              <Box display={"flex"} justifyContent="space-between">
+                <Box border={"1px"} w={"50%"}>
+                  <FormControl p={"10px"} gap={"20px"} display={"flex"}>
+                    <FormLabel fontSize={"14px"}>Enter Voucher Code:</FormLabel>
+                    <Input w={"45%"} placeholder="Enter Voucher Code:" />
+                    <Button variant="outline" color="#92be4d">
+                      Submit
+                    </Button>
+                  </FormControl>
+                  <FormControl p={"10px"} gap={"20px"} display={"flex"}>
+                    <FormLabel fontSize={"14px"}>
+                      Redeem Reward Points:
+                    </FormLabel>
+                    <Input w={"45%"} placeholder="Redeem Reward Points" />
+                    <Button variant="outline" color="#92be4d">
+                      Submit
+                    </Button>
+                  </FormControl>
+                  <FormControl p={"10px"} gap={"20px"} display={"flex"}>
+                    <FormLabel fontSize={"14px"}>
+                      Redeem Gift Card/E-GV:
+                    </FormLabel>
+                    <Input w={"45%"} placeholder="Redeem Gift Card/E-GV" />
+                    <Button variant="outline" color="#92be4d">
+                      Submit
+                    </Button>
+                  </FormControl>
+                </Box>
+                <Box border={"1px"} w={"40%"}></Box>
+              </Box>
             </TabPanel>
             {/*<TabPanel>
               <p>two!</p>
