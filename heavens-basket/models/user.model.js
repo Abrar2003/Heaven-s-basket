@@ -8,6 +8,8 @@ const userSchema= new Schema({
     cartItem:{type:Array},
     whishlist:{type:Array},
     pincode: {type:String}
+},{
+    versionKey:false,
 })
 
 const userModel=model("user", userSchema)
