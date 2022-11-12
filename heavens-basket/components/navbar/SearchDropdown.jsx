@@ -15,7 +15,7 @@ export default function SearchDropdown() {
       <MenuButton variant="ghost" onMouseEnter={onOpen} onMouseLeave={onClose}>
         <Input
           textAlign={"center"}
-          w={"400px"}
+          w={"600px"}
           placeholder="Start shopping..."
         />
       </MenuButton>
