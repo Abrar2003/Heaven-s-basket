@@ -51,7 +51,6 @@ export default function Home() {
     <Box m={"auto"}>
       <Navbar />
       <HomePage />
-      <DropDown />
       <Footer />
     </Box>
   );
