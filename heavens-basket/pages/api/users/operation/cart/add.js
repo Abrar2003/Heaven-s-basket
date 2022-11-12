@@ -12,11 +12,10 @@ export default async function handler(req, res) {
 
    //localhost:3000/api/operation/cart/add
     // send only email and product id in the body
-    case "Patch": {
+    case "PATCH": {
       try {
         let {productId,email}=res.body
-        let user= new userModel.updateOne({email:email}, {$push:{"cartItem":productId}})
-        await user.save()
+        let user= await userModel.updateOne({email:email}, {$push:{"cartItem":productId}})
         res.status(200).send("successfully added")  
       } catch (error) {
         return res.status(409).send({errors:error})

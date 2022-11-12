@@ -26,15 +26,15 @@ export default async function handler(req, res) {
         }
         let user= new userModel(userform)
         await user.save()
-        let mainToken=jwt.sign({email:user.email, role:user.role} , "SecretKey1234", {
-            expiresIn: "2 minutes"
+        let mainToken=jwt.sign({email:user.email, role:user.role, name:user.email} , "SecretKey1234", {
+            expiresIn: "7 days"
           })
-          let refreshToken=jwt.sign({email:user.email, role:user.role} , "SecretRefreshKey1234", {
-            expiresIn: "5 minutes"
-          })
+        //   let refreshToken=jwt.sign({email:user.email, role:user.role} , "SecretRefreshKey1234", {
+        //     expiresIn: "5 minutes"
+        //   })
         
         sentOTPEmail(user.email , "signup successfull", `Hi ${user.name}, You are successfully signedin in heavens Baskests website"`)
-        return res.status(200).send({mainToken, refreshToken})
+        return res.status(200).send(mainToken)
       
         //navigate to otp entering page because user exists
       

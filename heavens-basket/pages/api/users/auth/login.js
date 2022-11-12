@@ -25,14 +25,14 @@ export default async function handler(req, res) {
             //get stored email from Session here
           // let email=localStorage.getItem("email")
           let user = await userModel.find({email:email})
-            let mainToken=jwt.sign({email:user.email, role:user.role} , "SecretKey1234", {
-                expiresIn: "2 minutes"
+            let mainToken=jwt.sign({email:user.email, role:user.role, name:user.email} , "SecretKey1234", {
+                expiresIn: "7 days"
               })
-              let refreshToken=jwt.sign({email:user.email, role:user.role} , "SecretRefreshKey1234", {
-                expiresIn: "5 minutes"
-              })
+              // let refreshToken=jwt.sign({email:user.email, role:user.role} , "SecretRefreshKey1234", {
+              //   expiresIn: "5 minutes"
+              // })
               sentOTPEmail(user.email, "logged in successfully", `Hi ${user.name}, "You are successfully loggedin in heavens Baskests website"`)
-              return res.status(200).send({mainToken, refreshToken})
+              return res.status(200).send(mainToken)
               
         }  
         return res.staus(404).send("Invalid OTP")
