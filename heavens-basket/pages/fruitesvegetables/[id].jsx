@@ -42,20 +42,9 @@ const Product = () => {
     try {
       let data = await axios.get(`${NEXT_URL}/api/products/${id}`);
 
-      toast({
-        description: "Product Added successfully",
-        status: "success",
-        duration: 9000,
-        isClosable: true,
-      });
- setProduct(data.data);
+      setProduct(data.data);
     } catch (e) {
-     toast({
-        description: {e},
-        status: "error",
-        duration: 9000,
-        isClosable: true,
-      });
+      console.log(e);
     }
   };
   useEffect(() => {
@@ -74,9 +63,20 @@ const Product = () => {
 
     try {
       let d = await axios.post(url, { email: "abc@gmail.com", productId: id });
+      toast({
+        description: "Product Added successfully",
+        status: "success",
+        duration: 9000,
+        isClosable: true,
+      });
       console.log(d);
     } catch (e) {
-      console.log(e);
+      toast({
+        description: { e },
+        status: "error",
+        duration: 9000,
+        isClosable: true,
+      });
     }
   };
   return (

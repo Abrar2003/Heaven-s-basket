@@ -2,7 +2,7 @@
 
 import mongoConnection from "../../../config/db";
 import cartModel from "../../../models/cart";
-
+import userModel from "../../../models/user.model";
 export default async function handler( req, res ) {
     mongoConnection().catch( () => res.status( 405 ).json( { error: "Error" } ) );
     // console.log("Hi Products");
@@ -19,11 +19,22 @@ export default async function handler( req, res ) {
         case "POST":
             try {
                 let { email, productId } = req.body;
-                const data = await cartModel.create( {
-                    email: email, productId: productId
-                } );
-                console.log( data, "data" );
-                res.status( 200 ).send( data );
+
+                let newUser = await userModel.findOne( { email: email } );
+
+                console.log( newUser );
+                if ( newUser ) {
+                    const data = await cartModel.create( {
+                        email: email, productId: productId
+                    } );
+                    console.log( data, "data" );
+                    res.status( 200 ).send( data );
+                } else {
+                    res.status( 401 ).send( "user not Authenticated" )
+                }
+
+
+
             } catch ( e ) {
                 console.log( "error" )
                 console.log( e );
