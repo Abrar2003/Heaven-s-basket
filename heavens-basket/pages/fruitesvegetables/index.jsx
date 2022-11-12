@@ -237,3 +237,14 @@ const Index = () => {
 };
 
 export default Index;
+
+// id	"1"
+// brand	"Fruit and Vegetable"
+// category:"vegetable"
+// description	"Try masala curry which is an amazing mix of brinjals with simmering spices cooked in gravy"
+// image	"https://d1z88p83zuviay.cloudfront.net/ProductVariantThumbnailImages/03dff5a4-7597-4057-b485-7305c85b0251_425x425.JPG"
+// // title	"Brinjal Small 250g"
+// title "Brinjal Small "
+// price	40
+// piece	"1Pc"
+// popUpMess	"DELIVERY IN 80 MINUTES"

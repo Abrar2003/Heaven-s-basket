@@ -1,0 +1,547 @@
+[
+    {
+      "id": "1",
+      "brand": "Fruit and Vegetable",
+      "category":"vegetable",
+      "image": "https://d1z88p83zuviay.cloudfront.net/ProductVariantThumbnailImages/03dff5a4-7597-4057-b485-7305c85b0251_425x425.JPG",
+      "title": "Brinjal Small",
+      "price": 40,
+      "piece": ["200g","300g","500g"],
+      "popUpMess": "DELIVERY IN 80 MINUTES"
+    },
+    {
+      "id": "2",
+      "brand": "Natures Best",
+      "title": "CAULIFLOWER",
+      "category":"vegetable",
+      "price": 69,
+      "image": "https://d1z88p83zuviay.cloudfront.net/ProductVariantThumbnailImages/999a14d9-d3ad-4d97-b637-813aeebfdf69_425x425.jpg",
+      "piece": ["1Pc"],
+      "popUpMess": "DELIVERY IN 80 MINUTES"
+    },
+    {
+      "id": "3",
+      "brand": "Natures Best",
+      "title": "SALAD READY TO EAT",
+      "category":"organic",
+      "price": 40,
+      "image": "https://d1z88p83zuviay.cloudfront.net/ProductVariantThumbnailImages/6d4cd380-9b73-4092-9704-945abfe09637_425x425.JPG",
+      "piece":["250g","350g","500g"] ,
+      "popUpMess": "DELIVERY IN 80 MINUTES"
+    },
+    {
+      "id": "4",
+      "brand": "Natures Best",
+      "title": "SPROUTS MIXED",
+      "price": 50,
+      "image": "https://d1z88p83zuviay.cloudfront.net/ProductVariantThumbnailImages/fffaf60c-3245-48e9-9b59-764136106ddf_425x425.jpg",
+      "piece": ["1Pc","2Pc"],
+      "popUpMess": "DELIVERY IN 80 MINUTES"
+    },
+    {
+      "id": "5",
+      "brand": "Fruit and Vegetable",
+      "title": "Potato",
+      "category":"vegetable",
+      "price": 33,
+      "image": "https://d1z88p83zuviay.cloudfront.net/ProductVariantThumbnailImages/25653f6e-62fe-4e1d-9e95-9adc63305f32_425x425.JPG",
+      "piece": ["120g","200g","450g"],
+      "popUpMess": "DELIVERY IN 80 MINUTES"
+    },
+    {
+      "id": "6",
+      "brand": "Fruit and Vegetable",
+      "title": "Onion",
+      "category":"vegetable",
+      "price": 55,
+      "ge": "https://d1z88p83zuviay.cloudfront.net/ProductVariantThumbnailImages/14c3fa54-5d8e-4238-903f-a8ef58132879_425x425.JPG",
+      "piece":  ["200 g","300 g","500g"],
+      "popUpMess": "DELIVERY IN 80 MINUTES"
+    },
+    {
+      "id": "7",
+      "brand": "Fruit and Vegetable",
+      "title": "Tomato",
+      "category":"vegetable",
+      "price": 38,
+      "image": "https://d1z88p83zuviay.cloudfront.net/ProductVariantThumbnailImages/e4ecd12c-b2db-4f76-b9ea-45e0436ba350_425x425.JPG",
+      "piece":  ["100g","350g","450g"],
+      "popUpMess": "DELIVERY IN 80 MINUTES"
+    },
+    {
+      "id": "8",
+      "brand": "Fruit and Vegetable",
+      "title": "COCONUT GRATED",
+      "price": 99,
+      "category":"fruit",
+      "image": "https://d1z88p83zuviay.cloudfront.net/ProductVariantThumbnailImages/4d5fb7a3-bd07-4e2a-9045-b1bc90889dfa_425x425.jpg",
+      "piece": "1Pc",
+      "popUpMess": "DELIVERY IN 80 MINUTES"
+    },
+    {
+      "id": "9",
+      "brand": "Fruit and Vegetable",
+      "title": "Capsicum",
+      "category":"vegetable",
+      "price": 30,
+      "image": "https://d1z88p83zuviay.cloudfront.net/ProductVariantThumbnailImages/9f5ce81b-8325-4ae3-9fad-83e2e7303198_425x425.JPG",
+      "piece":  ["250g","350g","450g"],
+      "popUpMess": "DELIVERY IN 80 MINUTES"
+    },
+    {
+      "id": "10",
+      "brand": "Natures Basket",
+      "title": "SPROUTS CHANA BROWN",
+      "category":"organic",
+      "price": 49,
+      "image": "https://d1z88p83zuviay.cloudfront.net/ProductVariantThumbnailImages/1365257_425x425.jpg",
+      "piece": ["1Pc","2Pc","3Pc"],
+      "popUpMess": "DELIVERY IN 80 MINUTES"
+    },
+    {
+      "id": "11",
+      "brand": "Organic India",
+      "title": "Organic Crushed Mint Leaves",
+      "category":"organic",
+      "price": 45,
+      "image": "https://d1z88p83zuviay.cloudfront.net/ProductVariantThumbnailImages/bb211851-6f8f-4ea3-bfbc-3dd997af296c_425x425.jpg",
+      "piece":  ["200g","300 g","500g"],
+      "popUpMess": "DELIVERY IN 80 MINUTES"
+    },
+    {
+      "id": "12",
+      "brand": "Fruit and Vegetable",
+      "title": "Baby Corn - Exotic",
+      "price": 50,
+      "category":"organic",
+      "image": "https://d1z88p83zuviay.cloudfront.net/ProductVariantThumbnailImages/89a7a07e-9431-478b-a46a-6ab5789ec1e1_425x425.jpg",
+      "piece":  ["170g","270 g","280g"],
+      "popUpMess": "DELIVERY IN 80 MINUTES"
+    },
+    {
+      "id": "13",
+      "brand": "Fruit and Vegetable",
+      "title": "Avocado - Imported",
+      "price": 1499,
+      "category":"organic",
+      "image": "https://d1z88p83zuviay.cloudfront.net/ProductVariantThumbnailImages/50055a1d-84f2-456e-a5ed-5d0831376ad0_425x425.jpg",
+      "piece":[ "200g","1kg","500g" ],
+      "popUpMess": "DELIVERY IN 80 MINUTES"
+    },
+    {
+      "id": "14",
+      "brand": "Fruit and Vegetable",
+      "title": "Avocado Indian",
+      "category":"frozen-fruit",
+      "price": 499,
+      "image": "https://d1z88p83zuviay.cloudfront.net/ProductVariantThumbnailImages/50055a1d-84f2-456e-a5ed-5d0831376ad0_425x425.jpg",
+      "piece": [ "300g","1kg","500g" ],
+      "popUpMess": "DELIVERY IN 80 MINUTES"
+    },
+    {
+      "id": "15",
+      "brand": "Fruit and Vegetable",
+      "title": "Broccoli - Exotic",
+      "category":"vegetable",
+      "price": 149,
+      "image": "https://d1z88p83zuviay.cloudfront.net/ProductVariantThumbnailImages/0bc08d1f-7c0a-41ab-a37e-6430c69f932e_425x425.jpg",
+      "piece": [ "300g","1kg","500g" ],
+      "popUpMess": "DELIVERY IN 80 MINUTES"
+    },
+    {
+      "id": "16",
+      "brand": "Fruit and Vegetable",
+      "title": "Parsley Curled",
+      "price": 200,
+      "category":"vegetable",
+      "image": "https://d1z88p83zuviay.cloudfront.net/ProductVariantThumbnailImages/975c7187-e65d-44b5-864c-f2bfa7252865_425x425.jpg",
+      "piece": [ "50g","200g","1kg","300g" ],
+      "popUpMess": "DELIVERY IN 80 MINUTES"
+    },
+    {
+      "id": "17",
+      "brand": "Fruit and Vegetable",
+      "title": "Zucchini Yellow",
+      "category":"vegetable",
+      "price": 74,
+      "image": "https://d1z88p83zuviay.cloudfront.net/ProductVariantThumbnailImages/fa658df9-d5f4-4d5f-ab25-226fa396f65f_425x425.jpg",
+      "piece": [ "250 g","1kg","350g" ],
+      "popUpMess": "DELIVERY IN 80 MINUTES"
+    },
+    {
+      "id": "18",
+      "brand": "Natures Best",
+      "title": "CABBAGE",
+      "category":"vegetable",
+      "price": 59,
+      "image": "https://d1z88p83zuviay.cloudfront.net/ProductVariantThumbnailImages/4d51a997-87be-45f4-a85e-72d07279b3c7_425x425.JPG",
+      "piece": ["1Pc","2Pc","4Pc"],
+      "popUpMess": "DELIVERY IN 80 MINUTES"
+    },
+    {
+      "title": "Tomato ketchup - Top Down",
+      "id": "19",
+      "brand": "Natures Best",
+      "category":"organic",
+      "price": 50,
+      "piece": ["2Pc","3Pc","4Pc"],
+      "popUpMess": "DELIVERY IN 80 MINUTES"
+    },
+    {
+      "title": "MUSHROOM BUTTON",
+      "id": "20",
+      "brand": "Natures Best",
+      "category":"vegetable",
+      "price": 50,
+      "image": "https://d1z88p83zuviay.cloudfront.net/ProductVariantThumbnailImages/0f50c233-17c0-40a5-95dd-c8e3a4d79bae_425x425.jpg",
+      "piece": ["2Pc","3Pc","4Pc"],
+      "popUpMess": "DELIVERY IN 80 MINUTES"
+    },
+    {
+      "title": "TROPICANA ORANGE JUICE",
+      "id": "21",
+      "brand": "Tropicana",
+      "price": 110,
+      "category":"healthy-drink",
+      "image": "https://d1z88p83zuviay.cloudfront.net/ProductVariantThumbnailImages/a1b8e8fb-54e0-400e-9ad1-3a3a26c62868_425x425.jpg",
+      "fat_free": true,
+      "gluten_free": true,
+      "piece": ["1Pc","2Pc","4Pc","1000ML"],
+      "popUpMess": "DELIVERY IN 80 MINUTES"
+    },
+    {
+      "title": "TROPICANA PR GUAVA NECTOR ",
+      "id": "22",
+      "brand": "Tropicana",
+      "price": 100,
+      "category":"healthy-drink",
+      "image": "https://d1z88p83zuviay.cloudfront.net/ProductVariantThumbnailImages/cb8483ff-bf28-4193-a509-d61afce94a1a_425x425.JPG",
+      "piece": ["1000ML","2Pc","3Pc","4Pc"],
+      "popUpMess": "DELIVERY IN 80 MINUTES"
+    },
+    {
+      "title": "TROPICANA POMEGRANATE JUICE ",
+      "id": "23",
+      "brand": "Tropicana",
+      "category":"healthy-drink",
+      "price": 100,
+      "image": "https://d1z88p83zuviay.cloudfront.net/ProductVariantThumbnailImages/064d9890-de13-44c9-82a2-ec61e4ffa23f_425x425.JPG",
+      "piece": ["1Pc","1000ML","3Pc","6Pc"],
+      "popUpMess": "DELIVERY IN 80 MINUTES"
+    },
+    {
+      "title": "KELLOGS ALL BRAN ",
+      "id": "24",
+      "brand": "Amul",
+      "category":"healthy-drink",
+      "price": 68,
+      "image": "https://d1z88p83zuviay.cloudfront.net/ProductVariantThumbnailImages/0553e25c-3346-4547-b15d-39ebc2fabecf_425x425.jpg",
+      "piece": ["500g","2Pc","3Pc","4Pc"],
+      "popUpMess": "DELIVERY IN 80 MINUTES"
+    },
+    {
+      "title": "AMUL GOLD MILK",
+      "id": "25",
+      "brand": "Amul",
+      "price": 68,
+      "category":"healthy-drink",
+      "image": "https://d1z88p83zuviay.cloudfront.net/ProductVariantThumbnailImages/d0e45941-2c76-45f6-9bbf-337032995a5e_425x425.JPG",
+      "piece": ["1Pc","2Pc","3Pc"],
+      "popUpMess": "DELIVERY IN 80 MINUTES"
+    },
+    {
+      "title": "AMUL FRESH CREAM ",
+      "id": "26",
+      "brand": "Amul",
+      "category":"organic",
+     "image": "https://d1z88p83zuviay.cloudfront.net/ProductVariantThumbnailImages/d30d3842-bab3-45f8-adf6-fdf237001408_425x425.JPG",
+      "piece": ["2Pc","3Pc","6Pc"],
+      "popUpMess": "DELIVERY IN 80 MINUTES"
+    },
+    {
+      "title": "VEEBA TRULY TOMATO KETCHUP",
+      "id": "27",
+      "brand": "Amul",
+      "category":"organic",
+      "price": 116,
+      "image": "https://d1z88p83zuviay.cloudfront.net/ProductVariantThumbnailImages/d9df639e-54ab-457e-847f-575e2420d030_425x425.JPG",
+      "piece":["2Pc","3Pc","4Pc","900G"],
+      "popUpMess": "DELIVERY IN 80 MINUTES"
+    },
+    {
+      "title": "CHEFS BSKT CRMY TMTO PENNEÂ",
+      "id": "28",
+      "brand": "Chefs Baket",
+      "price": 230,
+      "category":"organic",
+      "image": "https://d1z88p83zuviay.cloudfront.net/ProductVariantThumbnailImages/d77d7d31-4363-4ff3-a8e8-9df30d7bd643_425x425.jpg",
+      "piece": [ "200 g","1kg", "237g", "1 Pc" ],
+      "popUpMess": "DELIVERY IN 80 MINUTES"
+    },
+    {
+      "title": "GOURMET JAR ROASTED RED PEPPER PESTO",
+      "id": "29",
+      "brand": "The Gourmet Jar",
+      "price": 375,
+      "category":"organic",
+      "image": "https://d1z88p83zuviay.cloudfront.net/ProductVariantThumbnailImages/1328671_1_425x425.jpg",
+      "piece": "1Pc",
+      "popUpMess": "DELIVERY IN 80 MINUTES"
+    },
+    {
+      "title": "Creamy, spicy gravy for exquisite Tikka recipes",
+      "id": "30",
+      "brand": "The Gourmet Jar",
+      "price": 495,
+      "category":"organic",
+      "image": "https://d1z88p83zuviay.cloudfront.net/ProductVariantThumbnailImages/8c12ae98-a47e-410c-b417-fd262ee7acb7_425x425.jpg",
+      "piece": "1Pc",
+      "popUpMess": "DELIVERY IN 80 MINUTES"
+    },
+    {
+      "title": "YUMMIEZ CHCKN PLAIN SAUSAGES",
+      "id": "31",
+      "brand": "Yummiez",
+      "category":"organic",
+      "price": 140,
+      "image": "https://d1z88p83zuviay.cloudfront.net/ProductVariantThumbnailImages/20eb2b5d-2460-4559-8592-f381f1043563_425x425.jpg",
+      "piece": ["250gm", "1Pc","2Pc"],
+      "popUpMess": "DELIVERY IN 80 MINUTES"
+    },
+    {
+      "title": "YUMMIEZ CHICKEN BREAKFAST SAUSAGES",
+      "id": "32",
+      "brand": "Yummiez",
+      "price": 180,
+      "category":"non-veg",
+      "image": "https://d1z88p83zuviay.cloudfront.net/ProductVariantThumbnailImages/ae84e458-bcef-4292-9e51-a172c78dc82a_425x425.jpg",
+      "piece":  ["500g", "1Pc","2Pc"],
+      "popUpMess": "DELIVERY IN 80 MINUTES"
+    },
+    {
+      "title": "YUMMIEZ CHCKN ITALIAN SAUSAGES",
+      "id": "33",
+      "brand": "Yummiez",
+      "category":"non-veg",
+      "price": 120,
+      "image": "https://d1z88p83zuviay.cloudfront.net/ProductVariantThumbnailImages/d95f1d34-90b4-4260-9ae1-805945b39ff1_425x425.jpg",
+      "piece": ["250gm","1Pc","2Pc"],
+      "popUpMess": "DELIVERY IN 80 MINUTES"
+    },
+    {
+      "title": "Alf Farms Pork Oxford Sausages",
+      "id": "34",
+      "brand": "Alf-Farms",
+      "category":"non-veg",
+      "price": 130,
+      "image": "https://d1z88p83zuviay.cloudfront.net/ProductVariantThumbnailImages/fe90ec38-b799-427b-b5a6-aba89aa4723e_425x425.JPG",
+      "piece": ["250gm","1Pc","200gm"],
+      "popUpMess": "DELIVERY IN 80 MINUTES"
+    },
+    {
+      "title": "Alf Farms Pork Oxford Sausages",
+      "id": "35",
+      "brand": "Alf-Farms",
+      "category":"non-veg",
+      "price": 140,
+      "image": "https://d1z88p83zuviay.cloudfront.net/ProductVariantThumbnailImages/7e02bfeb-9e98-4085-bc15-94c752ab30f8_425x425.jpg",
+      "piece": ["250gm","1Pc","100gm"],
+      "popUpMess": "DELIVERY IN 80 MINUTES"
+    },
+    {
+      "title": "Alf Farms Chkn Chees Paprika Sausg",
+      "id": "36",
+      "brand": "Alf-Farms",
+      "price": 170,
+      "category":"non-veg",
+      "image": "https://d1z88p83zuviay.cloudfront.net/ProductVariantThumbnailImages/be35ffb9-4a0a-4669-ba0b-a369617115d6_425x425.jpg",
+      "piece": ["250gm" ," 1Pc"],
+      "popUpMess": "DELIVERY IN 80 MINUTES"
+    },
+    {
+      "title": "ZORABIAN CHICKEN SHAMI KEBAB",
+      "id": "37",
+      "brand": "Zorabian",
+      "category":"non-veg",
+      "price": 165,
+      "image": "https://d1z88p83zuviay.cloudfront.net/ProductVariantThumbnailImages/125ad1b7-e48b-44e8-b3be-b7e68f020690_425x425.jpg",
+      "piece": ["250gm","1Pc"],
+      "popUpMess": "DELIVERY IN 80 MINUTES"
+    },
+    {
+      "title": "ZORABIAN CHICKEN SPRING ROLL",
+      "id": "38",
+      "brand": "Zorabian",
+      "price": 185,
+      "category":"non-veg",
+      "image": "https://d1z88p83zuviay.cloudfront.net/ProductVariantThumbnailImages/6ad01ea6-98f4-478b-88f1-6e1f3323079f_425x425.JPG",
+      "piece": ["1Pc","2Pc"],
+      "popUpMess": "DELIVERY IN 80 MINUTES"
+    },
+    {
+      "title": "ZORABIAN CHICKEN N CHEESE BALLS",
+      "id": "39",
+      "brand": "Zorabian",
+      "price": 205,
+      "category":"non-veg",
+      "image": "https://d1z88p83zuviay.cloudfront.net/ProductVariantThumbnailImages/bbb6e9c4-b10f-4f74-bd16-329849ceb1f9_425x425.jpg",
+      "piece":  ["1Pc","2Pc"],
+      "popUpMess": "DELIVERY IN 80 MINUTES"
+    },
+    {
+      "title": "SAPPHIRE BUTTER COOKIES CHOCO CHIPS",
+      "id": "40",
+      "brand": "L Exclusif",
+      "category":"organic",
+      "price": 300,
+      "image": "https://d1z88p83zuviay.cloudfront.net/ProductVariantThumbnailImages/248bffaa-309d-48fb-8ae6-b25bb25fd18b_425x425.JPG",
+      "piece": ["400gm "," 1Pc"],
+      "popUpMess": "DELIVERY IN 80 MINUTES"
+    },
+    {
+      "title": "BANANA WALNUT CAKE",
+      "id": "41",
+      "brand": "L Exclusif",
+      "category":"organic",
+      "price": 155,
+      "image": "https://d1z88p83zuviay.cloudfront.net/ProductVariantThumbnailImages/e4be213c-a54f-40d5-862f-3e88b372f6aa_425x425.jpg",
+      "piece": ["150gm ","1Pc"],
+      "popUpMess": "DELIVERY IN 80 MINUTES"
+    },
+    {
+      "title": "BAGEL SESAME 100% WHOLEWHEAT",
+      "id": "42",
+      "brand": "L Exclusif",
+      "category":"organic",
+      "price": 130,
+      "image": "https://d1z88p83zuviay.cloudfront.net/ProductVariantThumbnailImages/ebf1333a-5ee3-4284-a579-91be2f6f6c02_425x425.jpg",
+      "piece": ["1Pc","2Pc","3Pc"],
+      "popUpMess": "DELIVERY IN 80 MINUTES"
+    },
+    {
+      "title": "AG MAYONNAISE LITE ",
+      "id": "43",
+      "brand": "American Garden",
+      "price": 130,
+      "category":"organic",
+      "image": "https://d1z88p83zuviay.cloudfront.net/ProductVariantThumbnailImages/bee98725-14e9-4b82-a8e8-b685becfff8b_425x425.JPG",
+      "piece": ["1Pc","160Z"],
+      "popUpMess": "DELIVERY IN 80 MINUTES"
+    },
+    {
+      "title": "AG PEANUT BUTTER CHUNKY",
+      "id": "44",
+      "brand": "American Garden",
+      "price": 299,
+      "category":"organic",
+      "image": "https://d1z88p83zuviay.cloudfront.net/ProductVariantThumbnailImages/9971ac5f-b984-41eb-b54c-11525fcbb72d_425x425.jpg",
+      "piece": ["1Pc","12OZ"],
+      "popUpMess": "DELIVERY IN 80 MINUTES"
+    },
+    {
+      "title": "RITE BITE EASY SLIM",
+      "id": "45",
+      "brand": "Rite Bite",
+      "price": 50,
+      "image": "https://d1z88p83zuviay.cloudfront.net/ProductVariantThumbnailImages/01712f43-81fd-4293-b3e3-f31edea34a51_425x425.jpg",
+      "piece": ["50gm "," 1Pc"],
+      "popUpMess": "DELIVERY IN 80 MINUTES"
+    },
+    {
+      "title": "RITE BITE WORK OUT DAILY BAR",
+      "id": "46",
+      "brand": "Rite Bite",
+      "category":"organic",
+      "price":60,
+      "image": "https://d1z88p83zuviay.cloudfront.net/ProductVariantThumbnailImages/59cd37f0-c541-45c3-9d93-4f84499859a3_425x425.jpg",
+      "piece": ["50gm "," 1Pc"],
+      "popUpMess": "DELIVERY IN 80 MINUTES"
+    },
+    {
+      "title": "RITEBITE MAX PROTACT ASRT BAR ",
+      "id": "47",
+      "brand": "Rite Bite",
+      "category":"organic",
+      "price": 624,
+      "image": "https://d1z88p83zuviay.cloudfront.net/ProductVariantThumbnailImages/b8c0679d-a83b-4a76-a11f-de97fd01e454_425x425.jpg",
+      "piece": ["414gm ","1Pc"],
+      "popUpMess": "DELIVERY IN 80 MINUTES"
+    },
+    {
+      "title": "BAGRRYS WHITE OATS PUCH",
+      "id": "48",
+      "brand": "Baggrys",
+      "price": 99,
+      "category":"organic",
+      "image": "https://d1z88p83zuviay.cloudfront.net/ProductVariantThumbnailImages/58d6ed5c-3c1f-4003-9320-edd3ff13548c_425x425.jpg",
+      "piece": ["250gm "," 1Pc","500g"],
+      "popUpMess": "DELIVERY IN 80 MINUTES"
+    },
+    {
+      "title": "BAGRRYS FRT FBR STR JR",
+      "id": "49",
+      "brand": "Baggrys",
+      "price": 99,
+      "category":"organic",
+      "image": "https://d1z88p83zuviay.cloudfront.net/ProductVariantThumbnailImages/26d06ce2-ffd7-491f-89ff-009689adeb45_425x425.jpg",
+      "piece": ["1Kg "," 1Pc"],
+      "popUpMess": "DELIVERY IN 80 MINUTES"
+    },
+    {
+      "title": "BAGRRYS FRT FBR STR JR",
+      "id": "50",
+      "brand": "Baggrys",
+      "price": 99,
+      "category":"organic",
+      "image": "https://d1z88p83zuviay.cloudfront.net/ProductVariantThumbnailImages/3f563fe9-e01c-4f9e-9558-0a9596c3447c_425x425.jpg",
+      "piece": ["1Kg ","1Pc"],
+      "popUpMess": "DELIVERY IN 80 MINUTES"
+    },
+    {
+      "title": "Bud Chilli Red - Exotic",
+      "id": "51",
+      "brand": "Baggrys",
+      "price": 139.9,
+      "category":"vegetable",
+      "image": "https://d1z88p83zuviay.cloudfront.net/ProductVariantThumbnailImages/1365290_425x425.jpg",
+      "piece": ["100g ","150g"],
+      "popUpMess": "DELIVERY IN 40 MINUTES"
+    },{
+      "title": "SEER FISH (SURMAI) STEAKS",
+      "id": "52",
+      "brand": "Baggrys",
+      "price": 139.9,
+      "category":"non-veg",
+      "image": "https://d1z88p83zuviay.cloudfront.net/ProductVariantThumbnailImages/95ecf2e8-5348-4e7a-a838-364170c789e6_425x425.jpg",
+      "piece": ["100g ","150g","250g"],
+      "popUpMess": "DELIVERY IN 40 MINUTES"
+    },{
+      "title": "MUTTON CURRY CUT",
+      "id": "53",
+      "brand": "Baggrys",
+      "price":500,
+      "category":"non-veg",
+      "image": "https://d1z88p83zuviay.cloudfront.net/ProductVariantThumbnailImages/659eee9d-4247-437b-9397-b0aedea3dd7e_425x425.jpg",
+      "piece": ["500g ","1kg","2g"],
+      "popUpMess": "DELIVERY IN 80 MINUTES"
+    },{
+      "title": "CHICKEN DRUMSTICK (WITHOUT SKIN)",
+      "id": "54",
+      "brand": "Baggrys",
+      "price":260,
+      "category":"non-veg",
+      "image": "  https://d1z88p83zuviay.cloudfront.net/ProductVariantThumbnailImages/3a324172-a804-4f21-a8f8-d5a1dbae47c7_425x425.jpg",
+      "piece": ["500g ","1kg","2g"],
+      "popUpMess": "DELIVERY IN 80 MINUTES"
+    },{
+      "title": "ROHU STEAK (ROUND CUT)",
+      "id": "55",
+      "brand": "Baggrys",
+      "price":650,
+      "category":"non-veg",
+      "image": "https://d1z88p83zuviay.cloudfront.net/ProductVariantThumbnailImages/70a6195f-96fe-46cc-92f1-032fe0869837_425x425.jpg",
+      "piece": ["1.5kg ","1kg","2kg"],
+      "popUpMess": "DELIVERY IN 80 MINUTES"
+    }
+  ]
+  
