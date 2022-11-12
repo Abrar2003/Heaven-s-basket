@@ -9,7 +9,7 @@ const Card = ({ cardData }) => {
     setstar("visible");
   };
   return (
-    <Link href={`/fruitesvegetables/${cardData.id}`}>
+    <Link href={`/fruitesvegetables/${cardData._id}`}>
       <Stack
         h="445px"
         borderRight="1px solid rgb(238, 238, 238)"
@@ -73,6 +73,7 @@ const Card = ({ cardData }) => {
             return <Text>{e}</Text>|  ;
           })} */}
         </Flex>
+        <Text>{cardData.category}</Text>
         <Flex gap={2}>
           <Button
             colorScheme="white"
