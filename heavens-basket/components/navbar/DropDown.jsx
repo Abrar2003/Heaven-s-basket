@@ -1,15 +1,16 @@
 import React from "react";
 import { Box, Link, Text } from "@chakra-ui/react";
-// import { TriangleDownIcon } from "@chakra-ui/icons";
+import { TriangleDownIcon } from "@chakra-ui/icons";
 import styles from "./DropDown.module.css";
 
 const DropDown = () => {
   return (
-    // <Box>
     <Box className={styles.menu}>
       <ul>
         <li>
-          <a href="#">SHOP BY CATEGORY</a>
+          <a href="#">
+            SHOP BY CATEGORY <TriangleDownIcon />
+          </a>
           <ul>
             <li>
               <a href="#">Gifting</a>
@@ -539,29 +540,42 @@ const DropDown = () => {
           </ul>
         </li>
         <li>
-          <a href="#">MY ORDERS</a>
+          <a href="#">
+            MY ORDERS <TriangleDownIcon />
+          </a>
         </li>
         <li>
-          <a href="#">GIFTING</a>
+          <a href="#">
+            GIFTING <TriangleDownIcon />
+          </a>
         </li>
         <li>
-          <a href="#">REWARDS</a>
+          <a href="#">
+            REWARDS <TriangleDownIcon />
+          </a>
         </li>
         <li>
-          <a href="#">BLOG</a>
+          <a href="#">
+            BLOG <TriangleDownIcon />
+          </a>
         </li>
         <li>
-          <a href="#">OFFERS</a>
+          <a href="#">
+            OFFERS <TriangleDownIcon />
+          </a>
         </li>
         <li>
-          <a href="#">CONNOISSEUR'S SELECTION</a>
+          <a href="#">
+            CONNOISSEUR'S SELECTION <TriangleDownIcon />
+          </a>
         </li>
         <li>
-          <a href="#">BOOK STORE VISIT</a>
+          <a href="#">
+            BOOK STORE VISIT <TriangleDownIcon />
+          </a>
         </li>
       </ul>
     </Box>
-    // </Box>
   );
 };
 
