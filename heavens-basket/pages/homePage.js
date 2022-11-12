@@ -18,6 +18,7 @@ import {
 
 import style from "../styles/Home.module.css";
 import Link from "next/link";
+import MutliSider from "../components/crousels/MultiSlider";
 
 export default function homePage() {
   return (
@@ -269,6 +270,73 @@ export default function homePage() {
           </Flex>
         </IconContext.Provider>
       </Stack>
+      <Flex gap={".5%"} alignItems={"center"} justifyContent="center">
+        <Divider borderColor={"black"} />
+        <Box w={["80%", "70%", "65%", "60%", "54%"]}>
+          <Text
+            w="100%"
+            p={"none"}
+            textAlign={"center"}
+            fontSize={["xs", "md", "xl", "2xl", "3xl"]}
+          >
+            WHAT'S TERNDING
+          </Text>
+        </Box>
+        <Divider borderColor={"black"} />
+      </Flex>
+      <MutliSider />
+      <Flex gap={".5%"} alignItems={"center"} justifyContent="center">
+        <Divider borderColor={"black"} />
+        <Box w={["80%", "70%", "65%", "60%", "54%"]}>
+          <Text
+            w="100%"
+            p={"none"}
+            textAlign={"center"}
+            fontSize={["xs", "md", "xl", "2xl", "3xl"]}
+          >
+            OUR EVENTS
+          </Text>
+        </Box>
+        <Divider borderColor={"black"} />
+      </Flex>
+      <Flex w="100%" justifyContent={"space-evenly"}>
+        <Box
+          w="30%"
+          rounded={["5px", "10px", "10px", "15px", "20px"]}
+          className={style.box}
+        >
+          <Image
+            w="100%"
+            rounded={["5px", "10px", "10px", "15px", "20px"]}
+            src="event1.jpg"
+            alt="banner"
+          />
+        </Box>
+        <Box
+          w="30%"
+          rounded={["5px", "10px", "10px", "15px", "20px"]}
+          className={style.box}
+        >
+          <Image
+            w="100%"
+            rounded={["5px", "10px", "10px", "15px", "20px"]}
+            src="event2.jpg"
+            alt="banner"
+          />
+        </Box>
+        <Box
+          w="30%"
+          rounded={["5px", "10px", "10px", "15px", "20px"]}
+          className={style.box}
+        >
+          <Image
+            w="100%"
+            rounded={["5px", "10px", "10px", "15px", "20px"]}
+            src="event3.png"
+            alt="event"
+          />
+        </Box>
+      </Flex>
     </Box>
   );
 }
