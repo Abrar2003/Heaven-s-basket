@@ -14,6 +14,7 @@ import { Search2Icon, StarIcon, TriangleDownIcon } from "@chakra-ui/icons";
 import { BsCart4 } from "react-icons/bs";
 import SearchDropdown from "./SearchDropdown";
 import DropDown from "./DropDown";
+import SignupModal from "../SignupModal";
 
 export const Navbar = () => {
   return (
@@ -46,11 +47,12 @@ export const Navbar = () => {
           </Box>
         </Box>
         <Box w="12%">
-          <Text>
+          {/* <Text>
             <Link href="#">
               Login/Register <TriangleDownIcon boxSize={"10px"} />
             </Link>
-          </Text>
+          </Text> */}
+          <SignupModal />
           <Box mt={"20px"} ml={"10px"}>
             <Button bgColor={"white"} color={"#92be4d"}>
               <StarIcon fontSize={"25px"} />

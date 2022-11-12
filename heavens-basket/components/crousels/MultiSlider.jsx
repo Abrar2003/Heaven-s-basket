@@ -52,7 +52,7 @@ export default class MutliSider extends Component {
       <Box m={"20px 0px"}>
         <Slider {...settings}>
           {trendingItems.map((item) => (
-            <Card cardData={item} />
+            <Card key={item} cardData={item} />
           ))}
         </Slider>
       </Box>
