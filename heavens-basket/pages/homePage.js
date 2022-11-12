@@ -5,16 +5,7 @@ import { IconContext } from "react-icons";
 import { AiFillCaretRight } from "react-icons/ai";
 
 //Chakra components
-import {
-  Box,
-  Stack,
-  HStack,
-  Flex,
-  Text,
-  Heading,
-  Image,
-  Divider,
-} from "@chakra-ui/react";
+import { Box, Stack, Flex, Text, Image, Divider } from "@chakra-ui/react";
 
 import style from "../styles/Home.module.css";
 import Link from "next/link";
@@ -22,7 +13,7 @@ import MutliSider from "../components/crousels/MultiSlider";
 
 export default function homePage() {
   return (
-    <Box w={["100%", "100%", "100%", "100%", "70%"]} m="auto">
+    <Box w={["100%", "100%", "100%", "100%", "100%"]} p="0% 2%">
       {/* <Heading fontSize={"4xl"}>Home Page</Heading> */}
       <Stack gap={"30px"}>
         <Image

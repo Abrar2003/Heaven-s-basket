@@ -16,12 +16,13 @@ import { BsPinterest } from "react-icons/bs";
 
 export default function Footer() {
   return (
-    <Box bg="#fbfbfb" bottom="0px">
+    <Box bg="#fbfbfb" bottom="0px" p="0% 2%">
       <Box
-        w={"75%"}
-        m={"auto"}
+        w={"100%"}
+        p={"0% 0% 0% 5%"}
         display="flex"
         gap={"20px"}
+        mt={"20px"}
         mb={"20px"}
         pt="20px"
       >
@@ -76,7 +77,7 @@ export default function Footer() {
         </VStack>
       </Box>
       <Divider w="75%" m={"auto"} />
-      <Box display="flex" justifyContent="space-between" w={"75%"} m={"auto"}>
+      <Box display="flex" justifyContent="space-between" w={"100%"} m={"auto"}>
         <Box display="flex" alignItems="center" w={"60%"} gap={"20px"}>
           <Text>Payment Method</Text>
           <Image
