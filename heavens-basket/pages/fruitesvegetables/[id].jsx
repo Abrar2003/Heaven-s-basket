@@ -62,7 +62,7 @@ const Product = () => {
 
     try {
       let d = await axios.patch(url, { email: "abc@gmail.com", productId: id });
-      console.log( d ); 
+      console.log(d);
     } catch (e) {
       console.log(e);
     }
