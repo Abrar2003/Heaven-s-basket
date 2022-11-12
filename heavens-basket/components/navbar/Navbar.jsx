@@ -5,6 +5,7 @@ import {
   Image,
   Input,
   Select,
+  Stack,
   Text,
 } from "@chakra-ui/react";
 import React from "react";
@@ -16,8 +17,8 @@ import DropDown from "./DropDown";
 
 export const Navbar = () => {
   return (
-    <>
-      <Box display="flex" m={"auto"} w={"75%"}>
+    <Stack p={"0% 2%"} mb={"20px"}>
+      <Box display="flex" m={"auto"} w={"100%"}>
         <Link href="/" w={"28%"}>
           <Image src="Logo.png" h="120px" />
         </Link>
@@ -63,6 +64,6 @@ export const Navbar = () => {
         </Box>
       </Box>
       <DropDown />
-    </>
+    </Stack>
   );
 };

@@ -28,10 +28,13 @@ import {
   Thead,
   Tr,
 } from "@chakra-ui/react";
+import Link from "next/link";
 import React, { useState } from "react";
 import Footer from "../components/footer/Footer";
 import { Navbar } from "../components/navbar/Navbar";
 import styles from "../styles/Checkout.module.css";
+import { useRouter } from "next/router";
+import { useToast } from "@chakra-ui/react";
 
 const slots = [
   { disable: true, radio: false, time: "Today" },
@@ -92,10 +95,49 @@ const data = [
 const checkout = () => {
   const add = false;
   const [value, setValue] = useState("1");
+  const [captcha, setCaptcha] = useState("Captcha");
+  const [input, setInput] = useState("");
+  const toast = useToast();
+
+  const router = useRouter();
+
+  const randomCaptcha = () => {
+    let result = "";
+    let characters =
+      "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+    let charactersLength = characters.length;
+    for (let i = 0; i < 6; i++) {
+      result += characters.charAt(Math.floor(Math.random() * charactersLength));
+    }
+    setCaptcha(result);
+  };
+  const handlePlace = () => {
+    if (input === captcha) {
+      toast({
+        title: "Correct Captcha",
+        position: "bottom-down",
+        status: "success",
+        description: "Moving to the order details page",
+        duration: 3000,
+        isClosable: true,
+      });
+      router.push("/order");
+    } else {
+      toast({
+        title: "Wrong Captcha",
+        position: "bottom-down",
+        status: "error",
+        description: "Please enter correct captcha.",
+        duration: 5000,
+        isClosable: true,
+      });
+    }
+  };
+
   return (
     <>
       <Navbar />
-      <Box w={"75%"} border={"1px"} m={"auto"} mt={"30px"} mb={"30px"}>
+      <Box w={"75%"} m={"auto"} mt={"30px"} mb={"30px"}>
         <Tabs variant="enclosed">
           <TabList justifyContent={"space-between"}>
             <Tab>Login</Tab>
@@ -108,7 +150,7 @@ const checkout = () => {
             <TabPanel>
               <p>
                 You are logged in as jyotipm1999@gmail.com
-                <span color="#b71761">Logout</span>
+                <Button bg={"red.300"}>Logout</Button>
               </p>
               <p>Note: By signing out, you will lose your cart data.</p>
             </TabPanel>
@@ -245,9 +287,13 @@ const checkout = () => {
                     <Checkbox>I would like to gift this order</Checkbox>
                   </Box>
                 </Box>
+                <Box align={"right"} mt={"20px"}>
+                  <Button align={"right"} bg={"#92be4d"} color={"white"}>
+                    REVIEW AND PLACE ORDER
+                  </Button>
+                </Box>
               </TabPanel>
             )}
-
             <TabPanel>
               <Text>SELECT DELIVERY SLOT</Text>
               <Box
@@ -305,7 +351,6 @@ const checkout = () => {
                 </Button>
               </Box>
             </TabPanel>
-
             <TabPanel>
               <Image src="https://gnbdevcdn.s3-ap-southeast-1.amazonaws.com/Marketing/0ce4e3df-a943-435c-8223-74dfd2c573ae.png?v=5" />
               <Box border={"1px"} mt={"10px"} p={"10px"}>
@@ -431,9 +476,367 @@ const checkout = () => {
                 </Button>
               </Box>
             </TabPanel>
-            {/*<TabPanel>
-              <p>two!</p>
-            </TabPanel> */}
+            <TabPanel>
+              <Text fontWeight={"bold"}>PICK A PAYMENT METHOD</Text>
+              <Tabs size="md" variant="enclosed" display={"flex"}>
+                <TabList display={"block"} w={"30%"}>
+                  <Tab w={"100%"} gap={"10px"}>
+                    <Image
+                      w={"80px"}
+                      src="https://d1z88p83zuviay.cloudfront.net/Images/paytm-option.jpg"
+                    />
+                    <Text>Wallet</Text>
+                  </Tab>
+                  <Tab w={"100%"} gap={"10px"}>
+                    <Image
+                      w={"80px"}
+                      src="https://www.naturesbasket.co.in/Images/mobikwik-wallet.png"
+                    />
+                    <Text>Wallet</Text>
+                  </Tab>
+                  <Tab w={"100%"} gap={"10px"}>
+                    <Image
+                      w={"80px"}
+                      src="https://www.naturesbasket.co.in/Images/payUMoney-wallet.png"
+                    />
+                    <Text>Wallet</Text>
+                  </Tab>
+                  <Tab w={"100%"} gap={"10px"}>
+                    <Text>ICICI</Text>
+                    <Image
+                      w={"80px"}
+                      src="https://www.naturesbasket.co.in/Images/icon-icici-pockets.png"
+                    />
+                  </Tab>
+                  <Tab w={"100%"} gap={"10px"}>
+                    <Image
+                      w={"80px"}
+                      src="https://www.naturesbasket.co.in/Images/sodexo.jpeg"
+                    />
+                    <Text>Payment</Text>
+                  </Tab>
+                  <Tab w={"100%"} gap={"10px"}>
+                    <Text>Cash on delivery</Text>
+                  </Tab>
+                  <Tab w={"100%"} gap={"10px"}>
+                    <Text>Card on delivery</Text>
+                  </Tab>
+                </TabList>
+                <TabPanels>
+                  <TabPanel>
+                    <Text>Pay by Paytm Wallet</Text>
+                    <Box borderBottom={"1px"} bg={"gray.200"} p="5px">
+                      <Text fontSize={"14px"}>
+                        NOTE : When you click on Place Order - Your order will
+                        be placed first and then you will be redirected to
+                        payment page.
+                      </Text>
+                    </Box>
+                    <Text mt={"20px"} mb={"15px"}>
+                      TOTAL ₹ 265/-
+                    </Text>
+                    <Box
+                      display={"flex"}
+                      w="90%"
+                      justifyContent={"space-between"}
+                      mb="10px"
+                    >
+                      <Text>
+                        Verify Order: Type the character you see in the image
+                      </Text>
+                      <Box bg={"gray.100"} p={"10px"}>
+                        <Text>{captcha}</Text>
+                      </Box>
+                      <Button onClick={randomCaptcha}>Generate captcha</Button>
+                    </Box>
+                    <Box
+                      display={"flex"}
+                      w="90%"
+                      justifyContent={"space-between"}
+                      mb={"10px"}
+                    >
+                      <Text>Letters shown are not case-sensetive</Text>
+                      <Input
+                        value={input}
+                        onChange={(e) => setInput(e.target.value)}
+                        w={"20%"}
+                      />
+                    </Box>
+                    <Box w="90%" align={"right"} mb={"20px"}>
+                      <Button
+                        onClick={handlePlace}
+                        bg={"#92be4d"}
+                        color={"white"}
+                      >
+                        Place Order
+                      </Button>
+                    </Box>
+                    <Text fontSize={"12px"} color={"gray"}>
+                      By placing the order, you have read and agreed to Nature's
+                      Basket Terms of Use and Privacy Policy
+                    </Text>
+                  </TabPanel>
+                  <TabPanel>
+                    <Text>Pay by Mobikwik Wallet</Text>
+                    <Box borderBottom={"1px"} bg={"gray.200"} p="5px">
+                      <Text fontSize={"14px"}>
+                        NOTE : When you click on Place Order - Your order will
+                        be placed first and then you will be redirected to
+                        payment page.
+                      </Text>
+                    </Box>
+                    <Text mt={"20px"} mb={"15px"}>
+                      TOTAL ₹ 265/-
+                    </Text>
+                    <Box
+                      display={"flex"}
+                      w="90%"
+                      justifyContent={"space-between"}
+                      mb="10px"
+                    >
+                      <Text>
+                        Verify Order: Type the character you see in the image
+                      </Text>
+                      <Box bg={"gray.100"} p={"10px"}>
+                        <Text>{captcha}</Text>
+                      </Box>
+                      <Button onClick={randomCaptcha}>Generate captcha</Button>
+                    </Box>
+                    <Box
+                      display={"flex"}
+                      w="90%"
+                      justifyContent={"space-between"}
+                      mb={"10px"}
+                    >
+                      <Text>Letters shown are not case-sensetive</Text>
+                      <Input w={"20%"} />
+                    </Box>
+                    <Box w="90%" align={"right"} mb={"20px"}>
+                      <Button bg={"#92be4d"} color={"white"}>
+                        Place Order
+                      </Button>
+                    </Box>
+                    <Text fontSize={"12px"} color={"gray"}>
+                      By placing the order, you have read and agreed to Nature's
+                      Basket Terms of Use and Privacy Policy
+                    </Text>
+                  </TabPanel>
+                  <TabPanel>
+                    <Text>Pay by PayU Wallet</Text>
+                    <Box borderBottom={"1px"} bg={"gray.200"} p="5px">
+                      <Text fontSize={"14px"}>
+                        NOTE : When you click on Place Order - Your order will
+                        be placed first and then you will be redirected to
+                        payment page.
+                      </Text>
+                    </Box>
+                    <Text mt={"20px"} mb={"15px"}>
+                      TOTAL ₹ 265/-
+                    </Text>
+                    <Box
+                      display={"flex"}
+                      w="90%"
+                      justifyContent={"space-between"}
+                      mb={"10px"}
+                    >
+                      <Text>
+                        Verify Order: Type the character you see in the image
+                      </Text>
+                      <Box bg={"gray.100"} p={"10px"}>
+                        <Text>{captcha}</Text>
+                      </Box>
+                      <Button onClick={randomCaptcha}>Generate captcha</Button>
+                    </Box>
+                    <Box
+                      display={"flex"}
+                      w="90%"
+                      justifyContent={"space-between"}
+                      mb={"10px"}
+                    >
+                      <Text>Letters shown are not case-sensetive</Text>
+                      <Input w={"20%"} />
+                    </Box>
+                    <Box w="90%" align={"right"} mb={"20px"}>
+                      <Button bg={"#92be4d"} color={"white"}>
+                        PAY NOW
+                      </Button>
+                    </Box>
+                  </TabPanel>
+                  <TabPanel>
+                    <Text>Pay by ICICI Wallet</Text>
+                    <Box borderBottom={"1px"} bg={"gray.200"} p="5px">
+                      <Text fontSize={"14px"}>
+                        NOTE : When you click on Place Order - Your order will
+                        be placed first and then you will be redirected to
+                        payment page.
+                      </Text>
+                    </Box>
+                    <Text mt={"20px"} mb={"15px"}>
+                      TOTAL ₹ 265/-
+                    </Text>
+                    <Box
+                      display={"flex"}
+                      w="90%"
+                      justifyContent={"space-between"}
+                      mb={"10px"}
+                    >
+                      <Text>
+                        Verify Order: Type the character you see in the image
+                      </Text>
+                      <Box bg={"gray.100"} p={"10px"}>
+                        <Text>{captcha}</Text>
+                      </Box>
+                      <Button onClick={randomCaptcha}>Generate captcha</Button>
+                    </Box>
+                    <Box
+                      display={"flex"}
+                      w="90%"
+                      justifyContent={"space-between"}
+                      mb={"10px"}
+                    >
+                      <Text>Letters shown are not case-sensetive</Text>
+                      <Input w={"20%"} />
+                    </Box>
+                    <Box w="90%" align={"right"} mb={"20px"}>
+                      <Button bg={"#92be4d"} color={"white"}>
+                        CONFIRM ORDER
+                      </Button>
+                    </Box>
+                  </TabPanel>
+                  <TabPanel>
+                    <Text>Pay by Sodexo Wallet</Text>
+                    <Box borderBottom={"1px"} bg={"gray.200"} p="5px">
+                      <Text fontSize={"14px"}>
+                        NOTE : When you click on Place Order - Your order will
+                        be placed first and then you will be redirected to
+                        payment page.
+                      </Text>
+                    </Box>
+                    <Text mt={"20px"} mb={"15px"}>
+                      TOTAL ₹ 265/-
+                    </Text>
+                    <Box
+                      display={"flex"}
+                      w="90%"
+                      justifyContent={"space-between"}
+                      mb={"10px"}
+                    >
+                      <Text>
+                        Verify Order: Type the character you see in the image
+                      </Text>
+                      <Box bg={"gray.100"} p={"10px"}>
+                        <Text>{captcha}</Text>
+                      </Box>
+                      <Button onClick={randomCaptcha}>Generate captcha</Button>
+                    </Box>
+                    <Box
+                      display={"flex"}
+                      w="90%"
+                      justifyContent={"space-between"}
+                      mb={"10px"}
+                    >
+                      <Text>Letters shown are not case-sensetive</Text>
+                      <Input w={"20%"} />
+                    </Box>
+                    <Box w="90%" align={"right"} mb={"20px"}>
+                      <Button bg={"#92be4d"} color={"white"}>
+                        CONFIRM ORDER
+                      </Button>
+                    </Box>
+                  </TabPanel>
+                  <TabPanel>
+                    <Text>Pay by Cash on Delivery</Text>
+                    <Box borderBottom={"1px"} p="5px"></Box>
+                    <Text mt={"20px"} mb={"15px"}>
+                      TOTAL ₹ 265/-
+                    </Text>
+                    <Box
+                      display={"flex"}
+                      w="90%"
+                      justifyContent={"space-between"}
+                      mb={"10px"}
+                    >
+                      <Text>
+                        Verify Order: Type the character you see in the image
+                      </Text>
+                      <Box bg={"gray.100"} p={"10px"}>
+                        <Text>{captcha}</Text>
+                      </Box>
+                      <Button onClick={randomCaptcha}>Generate captcha</Button>
+                    </Box>
+                    <Box
+                      display={"flex"}
+                      w="90%"
+                      justifyContent={"space-between"}
+                      mb={"10px"}
+                    >
+                      <Text>Letters shown are not case-sensetive</Text>
+                      <Input w={"20%"} />
+                    </Box>
+                    <Box w="90%" align={"right"} mb={"20px"}>
+                      <Button bg={"#92be4d"} color={"white"}>
+                        CONFIRM ORDER
+                      </Button>
+                    </Box>
+                    <Box borderBottom={"1px"} p="5px"></Box>
+                    <Text fontSize={"12px"}>
+                      Pay the cash to our staff when you receive the delivery at
+                      your doorstep.
+                    </Text>
+                    <Text fontSize={"12px"}>
+                      Note: Please make only cash payment at the time of
+                      delivery. Cheque / Demand Draft or any other payment mode
+                      will not be entertained.
+                    </Text>
+                  </TabPanel>
+                  <TabPanel>
+                    <Text>Pay by Card on Delivery</Text>
+                    <Box borderBottom={"1px"} p="5px"></Box>
+                    <Text mt={"20px"} mb={"15px"}>
+                      TOTAL ₹ 265/-
+                    </Text>
+                    <Box
+                      display={"flex"}
+                      w="90%"
+                      justifyContent={"space-between"}
+                      mb={"10px"}
+                    >
+                      <Text>
+                        Verify Order: Type the character you see in the image
+                      </Text>
+                      <Box bg={"gray.100"} p={"10px"}>
+                        <Text>{captcha}</Text>
+                      </Box>
+                      <Button onClick={randomCaptcha}>Generate captcha</Button>
+                    </Box>
+                    <Box
+                      display={"flex"}
+                      w="90%"
+                      justifyContent={"space-between"}
+                      mb={"10px"}
+                    >
+                      <Text>Letters shown are not case-sensetive</Text>
+                      <Input w={"20%"} />
+                    </Box>
+                    <Box w="90%" align={"right"} mb={"20px"}>
+                      <Button bg={"#92be4d"} color={"white"}>
+                        CONFIRM ORDER
+                      </Button>
+                    </Box>
+                    <Box borderBottom={"1px"} p="5px"></Box>
+                    <Text fontSize={"12px"}>
+                      Pay the cash to our staff when you receive the delivery at
+                      your doorstep.
+                    </Text>
+                    <Text fontSize={"12px"}>
+                      Note: Please make only cash payment at the time of
+                      delivery. Cheque / Demand Draft or any other payment mode
+                      will not be entertained.
+                    </Text>
+                  </TabPanel>
+                </TabPanels>
+              </Tabs>
+            </TabPanel>
           </TabPanels>
         </Tabs>
       </Box>
