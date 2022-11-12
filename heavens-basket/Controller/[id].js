@@ -4,14 +4,14 @@ export async function putProduct(req, res) {
   // console.log(req.query)
   try {
     const productId = req.query._id;
-    console.log(productId);
+    // console.log(productId);
     const productData = req.body;
     if (productId && productData) {
       const updateProduct = await ProductModel.findByIdAndUpdate(
         productId,
         productData
       );
-      console.log(updateProduct);
+      // console.log(updateProduct);
       res.status(200).json(updateProduct);
     }
     res.status(200).json({ productId });

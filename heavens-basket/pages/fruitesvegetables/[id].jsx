@@ -23,6 +23,7 @@ import {
 import { FiChevronRight } from "react-icons/fi";
 import { FaFacebookF, FaTwitter } from "react-icons/fa";
 import { AiOutlineStar, AiFillStar } from "react-icons/ai";
+import { NEXT_URL } from "../../lib/helper";
 const Product = () => {
   const [Product, setProduct] = useState({});
   const [imageHover, setImageHover] = useState(false);
@@ -36,8 +37,7 @@ const Product = () => {
 
   const getdata = async () => {
     try {
-      let data = await axios.get(
-        `https://harshal-json-mock-server.herokuapp.com/natureBasket/${id}`
+      let data = await axios.get( `${NEXT_URL}/api/products/${id}`
       );
       setProduct(data.data);
     } catch (e) {

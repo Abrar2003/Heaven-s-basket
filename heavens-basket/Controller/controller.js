@@ -17,7 +17,7 @@ export async function postProduct(req, res) {
     if (!postProd) return res.statu(404).json({ error: "error" });
     const newProduct = ProductModel(postProd);
     await newProduct.save();
-    console.log(newProduct);
+    // console.log(newProduct);
     res.status(200).json({ newProduct });
   } catch (error) {
     return res.status(404).json({ error });

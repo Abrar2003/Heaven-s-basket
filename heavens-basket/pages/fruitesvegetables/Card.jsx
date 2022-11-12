@@ -5,7 +5,6 @@ import Link from "next/link";
 const Card = ({ cardData }) => {
   const [star, setstar] = useState("hidden");
   const [fillStar, setfillStar] = useState(true);
-  const peices = cardData.piece.split("|");
   const handleStar = () => {
     setstar("visible");
   };
@@ -32,46 +31,6 @@ const Card = ({ cardData }) => {
           bg="green"
           arrowSize={15}
         >
-<<<<<<< HEAD
-          {fillStar ? (
-            <AiOutlineStar
-              color="#92be4d"
-              onMouseEnter={() => {
-                setfillStar(false);
-              }}
-            />
-          ) : (
-            <AiFillStar
-              color="#92be4d"
-              onMouseLeave={() => {
-                setfillStar(true);
-              }}
-            />
-          )}
-        </Button>
-      </Tooltip>
-      <Image
-        p={2}
-        src={cardData.image}
-        w="100%"
-        borderRadius="10px"
-        border="0.2px solid rgb(238, 238, 238)"
-        boxShadow="1px 2px #efe9e9"
-      />
-      <Text>{cardData.title}</Text>
-      <Flex>
-        {cardData.quantity &&
-          cardData.quantity.map((e) => {
-            return <Text>{e}</Text>;
-          })}
-      </Flex>
-      <Flex gap={2}>
-        <Button
-          colorScheme="white"
-          fontSize="13px"
-          bg="none"
-          fontWeight="normal"
-=======
           <Button
             variant="ghost"
             _hover={{ bg: "none" }}
@@ -102,7 +61,6 @@ const Card = ({ cardData }) => {
           src={cardData.image}
           w="100%"
           h="60%"
->>>>>>> 41ced999d97576ed64cbcc0da17dae0a7a6ef488
           borderRadius="10px"
           border="0.2px solid rgb(238, 238, 238)"
           boxShadow="1px 2px #efe9e9"
