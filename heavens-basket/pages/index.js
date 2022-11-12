@@ -1,3 +1,4 @@
+import HomePage from "./homePage";
 import DropDown from "../components/navbar/DropDown";
 import Footer from "../components/footer/Footer";
 import { Navbar } from "../components/navbar/Navbar";
@@ -25,9 +26,7 @@ import style from "../styles/Home.module.css";
 import SimpleSlider from "../components/crousels/SimpleSlider";
 import MultiSlider from "../components/crousels/MultiSlider";
 
-
 export default function Home() {
- 
   const trendingItems = [
     {
       name: "Haagen-Dazs Ice Cream - Mango Ras.",
@@ -51,11 +50,19 @@ export default function Home() {
   return (
     <Box m={"auto"}>
       <Navbar />
+      <HomePage />
       <DropDown />
+      <Footer />
+    </Box>
+  );
+}
 
-      {/*  ↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓ HOME PAGE/code starts from here ↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓  */}
+{
+  /*  ↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓ HOME PAGE/code starts from here ↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓  */
+}
 
-      <Box w={["100%", "100%", "100%", "100%", "70%"]} m="auto">
+{
+  /* <Box w={["100%", "100%", "100%", "100%", "70%"]} m="auto">
         <Heading fontSize={"4xl"}>Home Page</Heading>
         <Stack gap={"30px"}>
           <Image
@@ -302,10 +309,11 @@ export default function Home() {
           </IconContext.Provider>
         </Stack>
 
-        {/* //TODO :- Crousel for banners HERE */}
-        <SimpleSlider />
+        {/* //TODO :- Crousel for banners HERE */
+}
 
-        <Flex gap={".5%"} alignItems={"center"} justifyContent="center">
+{
+  /* <Flex gap={".5%"} alignItems={"center"} justifyContent="center">
           <Divider borderColor={"black"} />
           <Box w={["80%", "70%", "65%", "60%", "54%"]}>
             <Text
@@ -374,9 +382,8 @@ export default function Home() {
               />
             </Box>
           </Flex>
-      </Box>
-      {/* ↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑ HOME PAGE/ code ends here ↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑ */}
-      <Footer />
-    </Box>
-  );
+      </Box> */
+}
+{
+  /* ↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑ HOME PAGE/ code ends here ↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑ */
 }
