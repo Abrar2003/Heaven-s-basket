@@ -5,7 +5,6 @@ import Link from "next/link";
 const Card = ({ cardData }) => {
   const [star, setstar] = useState("hidden");
   const [fillStar, setfillStar] = useState(true);
-  const peices = cardData.piece.split("|");
   const handleStar = () => {
     setstar("visible");
   };

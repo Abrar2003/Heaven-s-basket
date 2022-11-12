@@ -1,6 +1,6 @@
-import mongoose from 'mongoose';
+import {Schema ,models,model} from 'mongoose';
 
-const ProductSchema = mongoose.Schema({
+const ProductSchema =new Schema({
     id:{type:String,required:true},
     brand:{type: String , required:true},
     category:{type:String,required:true},
@@ -13,6 +13,6 @@ const ProductSchema = mongoose.Schema({
 },{
     versionKey:false,
 })
-const ProductModel = mongoose.model("product", ProductSchema)
+const ProductModel =models.product || model("product", ProductSchema)
 
 export default ProductModel;

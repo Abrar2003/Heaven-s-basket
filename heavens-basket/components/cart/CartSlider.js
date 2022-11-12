@@ -63,7 +63,7 @@ export default class CartSlider extends Component {
       slidesToScroll: 4,
     };
     return (
-      <Box>
+      <Box mb={"20px"}>
         <Slider {...settings}>
           {data.map((el, i) => {
             return (
