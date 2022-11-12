@@ -15,7 +15,7 @@ export default async function handler(req, res) {
   switch(method){
 
     //localhost:3000/api/users/auth/signup
-    // send only email in the body
+    // send signup form {name, email, pincode} in the body
     case "POST": {
       try {
         let userform=req.body
