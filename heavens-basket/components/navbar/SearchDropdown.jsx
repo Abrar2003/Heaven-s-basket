@@ -7,6 +7,7 @@ import {
   Input,
   Text,
 } from "@chakra-ui/react";
+import Link from "next/link";
 
 export default function SearchDropdown() {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -26,18 +27,46 @@ export default function SearchDropdown() {
         w={"850px"}
         border={"3px solid #3e9d15"}
         textAlign="center"
+        display={"flex"}
+        flexDirection={"column"}
+        gap={"10px"}
       >
-        <Text>Hello</Text>
-        <Text>Hello</Text>
-        <Text>Hello</Text>
-        <Text>Hello</Text>
-        <Text>Hello</Text>
-        <Text>Hello</Text>
-        <Text>Hello</Text>
-        <Text>Hello</Text>
-        <Text>Hello</Text>
-        <Text>Hello</Text>
-        <Text>Hello</Text>
+        <Text color={"#b71761"} fontWeight={"bold"} fontSize={"20px"}>
+          Trending Searches
+        </Text>
+        <Link fontSize={"12px"} href={"/cart"}>
+          Organic
+        </Link>
+        <Link fontSize={"12px"} href={"/cart"}>
+          Fresh Artisinal Breads
+        </Link>
+        <Link fontSize={"12px"} href={"/cart"}>
+          Cold cuts & Seafood
+        </Link>
+        <Link fontSize={"12px"} href={"/cart"}>
+          Diabetic Friendly Foods
+        </Link>
+        <Link fontSize={"12px"} href={"/cart"}>
+          L'Exlusif
+        </Link>
+        <Link fontSize={"12px"} href={"/cart"}>
+          Healthy Alternatives
+        </Link>
+        <Link fontSize={"12px"} href={"/cart"}>
+          Bithday Anniversary Gift Hampers
+        </Link>
+        <Link fontSize={"12px"} href={"/cart"}>
+          Platters & Dips
+        </Link>
+        <Link fontSize={"12px"} href={"/cart"}>
+          Smoked Cheese
+        </Link>
+        <Link fontSize={"12px"} href={"/cart"}>
+          Ice creames & Desserts
+        </Link>
+        <Link fontSize={"12px"} href={"/cart"}>
+          Keto-Paleo
+        </Link>
       </MenuList>
     </Menu>
   );

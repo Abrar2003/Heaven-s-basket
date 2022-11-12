@@ -3,6 +3,7 @@ import {
   Box,
   Button,
   Image,
+  Stack,
   Table,
   TableContainer,
   Tbody,
@@ -75,9 +76,9 @@ const Cart = () => {
   };
 
   return (
-    <>
+    <Stack>
       <Navbar />
-      <Box w={"75%"} m={"auto"}>
+      <Box w={"100%"} p="0% 2%">
         <Image
           w={"100%"}
           mb={"20px"}
@@ -158,7 +159,7 @@ const Cart = () => {
         <CartSlider />
       </Box>
       <Footer />
-    </>
+    </Stack>
   );
 };
 

@@ -558,6 +558,20 @@ const DropDown = () => {
           <a href="#">
             BLOG <TriangleDownIcon />
           </a>
+          <ul>
+            <li>
+              <a href="#">EVERYTHING FOOD</a>
+            </li>
+            <li>
+              <a href="#">RECIPE</a>
+            </li>
+            <li>
+              <a href="#">NEWS LETTER</a>
+            </li>
+            <li>
+              <a href="#">NBTV</a>
+            </li>
+          </ul>
         </li>
         <li>
           <a href="#">
@@ -568,6 +582,14 @@ const DropDown = () => {
           <a href="#">
             CONNOISSEUR'S SELECTION <TriangleDownIcon />
           </a>
+          <ul>
+            <li>
+              <a href="#">L'EXLUSIF</a>
+            </li>
+            <li>
+              <a href="#">HEALTHY ALTERNATIVES</a>
+            </li>
+          </ul>
         </li>
         <li>
           <a href="#">

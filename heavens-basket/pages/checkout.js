@@ -135,9 +135,9 @@ const checkout = () => {
   };
 
   return (
-    <>
+    <Stack>
       <Navbar />
-      <Box w={"75%"} m={"auto"} mt={"30px"} mb={"30px"}>
+      <Box w={"100%"} p="0% 2%" mt={"30px"} mb={"30px"}>
         <Tabs variant="enclosed">
           <TabList justifyContent={"space-between"}>
             <Tab>Login</Tab>
@@ -352,7 +352,10 @@ const checkout = () => {
               </Box>
             </TabPanel>
             <TabPanel>
-              <Image src="https://gnbdevcdn.s3-ap-southeast-1.amazonaws.com/Marketing/0ce4e3df-a943-435c-8223-74dfd2c573ae.png?v=5" />
+              <Image
+                w={"100%"}
+                src="https://gnbdevcdn.s3-ap-southeast-1.amazonaws.com/Marketing/0ce4e3df-a943-435c-8223-74dfd2c573ae.png?v=5"
+              />
               <Box border={"1px"} mt={"10px"} p={"10px"}>
                 <Text fontSize={"12px"} fontWeight={"bold"}>
                   NOTE: Fresh & Fast Delivery service is applicable for select
@@ -609,7 +612,11 @@ const checkout = () => {
                       mb={"10px"}
                     >
                       <Text>Letters shown are not case-sensetive</Text>
-                      <Input w={"20%"} />
+                      <Input
+                        w={"20%"}
+                        value={input}
+                        onChange={(e) => setInput(e.target.value)}
+                      />
                     </Box>
                     <Box w="90%" align={"right"} mb={"20px"}>
                       <Button bg={"#92be4d"} color={"white"}>
@@ -654,7 +661,11 @@ const checkout = () => {
                       mb={"10px"}
                     >
                       <Text>Letters shown are not case-sensetive</Text>
-                      <Input w={"20%"} />
+                      <Input
+                        w={"20%"}
+                        value={input}
+                        onChange={(e) => setInput(e.target.value)}
+                      />
                     </Box>
                     <Box w="90%" align={"right"} mb={"20px"}>
                       <Button bg={"#92be4d"} color={"white"}>
@@ -695,7 +706,11 @@ const checkout = () => {
                       mb={"10px"}
                     >
                       <Text>Letters shown are not case-sensetive</Text>
-                      <Input w={"20%"} />
+                      <Input
+                        w={"20%"}
+                        value={input}
+                        onChange={(e) => setInput(e.target.value)}
+                      />
                     </Box>
                     <Box w="90%" align={"right"} mb={"20px"}>
                       <Button bg={"#92be4d"} color={"white"}>
@@ -736,7 +751,11 @@ const checkout = () => {
                       mb={"10px"}
                     >
                       <Text>Letters shown are not case-sensetive</Text>
-                      <Input w={"20%"} />
+                      <Input
+                        w={"20%"}
+                        value={input}
+                        onChange={(e) => setInput(e.target.value)}
+                      />
                     </Box>
                     <Box w="90%" align={"right"} mb={"20px"}>
                       <Button bg={"#92be4d"} color={"white"}>
@@ -816,7 +835,11 @@ const checkout = () => {
                       mb={"10px"}
                     >
                       <Text>Letters shown are not case-sensetive</Text>
-                      <Input w={"20%"} />
+                      <Input
+                        w={"20%"}
+                        value={input}
+                        onChange={(e) => setInput(e.target.value)}
+                      />
                     </Box>
                     <Box w="90%" align={"right"} mb={"20px"}>
                       <Button bg={"#92be4d"} color={"white"}>
@@ -841,7 +864,7 @@ const checkout = () => {
         </Tabs>
       </Box>
       <Footer />
-    </>
+    </Stack>
   );
 };
 
