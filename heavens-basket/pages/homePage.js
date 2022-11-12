@@ -22,7 +22,7 @@ import Link from "next/link";
 export default function homePage() {
   return (
     <Box w={["100%", "100%", "100%", "100%", "70%"]} m="auto">
-      <Heading fontSize={"4xl"}>Home Page</Heading>
+      {/* <Heading fontSize={"4xl"}>Home Page</Heading> */}
       <Stack gap={"30px"}>
         <Image
           rounded={["5px", "10px", "10px", "15px", "20px"]}
