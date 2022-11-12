@@ -55,11 +55,11 @@ export const Navbar = () => {
             <Button bgColor={"white"} color={"#92be4d"}>
               <StarIcon fontSize={"25px"} />
             </Button>
-            <Button bgColor={"white"} color={"#92be4d"}>
-              <Link href="/cart">
+            <Link href="/cart">
+              <Button bgColor={"white"} color={"#92be4d"}>
                 <BsCart4 fontSize={"25px"} />
-              </Link>
-            </Button>
+              </Button>
+            </Link>
           </Box>
         </Box>
       </Box>
