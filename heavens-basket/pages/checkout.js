@@ -34,6 +34,7 @@ import Footer from "../components/footer/Footer";
 import { Navbar } from "../components/navbar/Navbar";
 import styles from "../styles/Checkout.module.css";
 import { useRouter } from "next/router";
+import { useToast } from "@chakra-ui/react";
 
 const slots = [
   { disable: true, radio: false, time: "Today" },
@@ -94,8 +95,9 @@ const data = [
 const checkout = () => {
   const add = false;
   const [value, setValue] = useState("1");
-  const [captcha, setCaptcha] = useState("");
+  const [captcha, setCaptcha] = useState("Captcha");
   const [input, setInput] = useState("");
+  const toast = useToast();
 
   const router = useRouter();
 
@@ -111,11 +113,25 @@ const checkout = () => {
   };
   const handlePlace = () => {
     if (input === captcha) {
-      router.push("/");
+      toast({
+        title: "Correct Captcha",
+        position: "bottom-down",
+        status: "success",
+        description: "Moving to the order details page",
+        duration: 3000,
+        isClosable: true,
+      });
+      router.push("/order");
     } else {
-      router.push("/cart");
+      toast({
+        title: "Wrong Captcha",
+        position: "bottom-down",
+        status: "error",
+        description: "Please enter correct captcha.",
+        duration: 5000,
+        isClosable: true,
+      });
     }
-    console.log(captcha, input);
   };
 
   return (

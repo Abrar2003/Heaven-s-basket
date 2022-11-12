@@ -17,7 +17,7 @@ import DropDown from "./DropDown";
 
 export const Navbar = () => {
   return (
-    <Stack p={"2%"}>
+    <Stack p={"0% 2%"} mb={"20px"}>
       <Box display="flex" m={"auto"} w={"100%"}>
         <Link href="/" w={"28%"}>
           <Image src="Logo.png" h="120px" />
