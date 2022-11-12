@@ -21,6 +21,7 @@ import {
   Checkbox,
   Tooltip,
   CheckboxGroup,
+  useToast,
 } from "@chakra-ui/react";
 import { FiChevronRight } from "react-icons/fi";
 import { FaFacebookF, FaTwitter } from "react-icons/fa";
@@ -32,7 +33,7 @@ const Product = () => {
   const [position, setposition] = useState("0% 0%");
   const [opacity, setopacity] = useState(1);
   const router = useRouter();
-
+  const toast = useToast();
   const [fillStar, setfillStar] = useState(true);
 
   const { id } = router.query;
@@ -40,10 +41,21 @@ const Product = () => {
   const getdata = async () => {
     try {
       let data = await axios.get(`${NEXT_URL}/api/products/${id}`);
-      console.log(data);
-      setProduct(data.data);
+
+      toast({
+        description: "Product Added successfully",
+        status: "success",
+        duration: 9000,
+        isClosable: true,
+      });
+ setProduct(data.data);
     } catch (e) {
-      console.log(e);
+     toast({
+        description: {e},
+        status: "error",
+        duration: 9000,
+        isClosable: true,
+      });
     }
   };
   useEffect(() => {
@@ -58,11 +70,11 @@ const Product = () => {
   };
 
   const addProduct = async () => {
-    let url = "http://localhost:3000/api/operation/cart/add";
+    let url = `${NEXT_URL}/api/cart`;
 
     try {
-      let d = await axios.patch(url, { email: "abc@gmail.com", productId: id });
-      console.log( d ); 
+      let d = await axios.post(url, { email: "abc@gmail.com", productId: id });
+      console.log(d);
     } catch (e) {
       console.log(e);
     }
@@ -173,7 +185,7 @@ const Product = () => {
                 <Heading
                   fontWeight="normal"
                   textTransform="upperCase"
-                  fonrSize="24px"
+                  fontSize="24px"
                 >
                   {Product.title}
                 </Heading>
