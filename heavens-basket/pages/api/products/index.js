@@ -10,7 +10,7 @@ import {
 import { deleteProduct, putProduct } from "../../../Controller/[id]";
 export default async function handler(req, res) {
   mongoConnection().catch(() => res.status(405).json({ error: "Error" }));
-  console.log("Hi Products");
+  // console.log("Hi Products");
 
   // type of request
   const { method } = req;

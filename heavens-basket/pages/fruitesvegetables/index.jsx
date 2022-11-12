@@ -21,7 +21,10 @@ import { FiChevronRight } from "react-icons/fi";
 import Card from "./Card";
 import Footer from "../../components/footer/Footer";
 import { Navbar } from "../../components/navbar/Navbar";
+
+import {getProducts} from "../../lib/helper"
 const Index = () => {
+  
   const [data, setdata] = useState([]);
   const [brands, setbrands] = useState([]);
   const [products, setproducts] = useState([]);
@@ -39,10 +42,9 @@ const Index = () => {
   ];
   useEffect(() => {
     let obj = {};
-    fetch("https://harshal-json-mock-server.herokuapp.com/natureBasket")
-      .then((res) => res.json())
-      .then((res) => {
-        setdata(res);
+      getProducts().then(res=>{
+        console.log(res)
+         setdata(res);
         setproducts(res);
         settempdata(res);
         let brand = res.map((e) => (obj[e.brand] = 1));
@@ -52,6 +54,8 @@ const Index = () => {
         }
         setbrands(x);
       })
+       
+      // })
       .catch((e) => {
         console.log(e);
       });
