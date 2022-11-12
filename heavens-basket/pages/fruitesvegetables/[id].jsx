@@ -50,7 +50,7 @@ const Product = () => {
   useEffect(() => {
     getdata();
   }, []);
-  console.log(Product);
+  // console.log(Product);
   const handleMouseMove = (e) => {
     const { left, top, width, height } = e.target.getBoundingClientRect();
     const x = ((e.pageX - left) / width) * 100;
@@ -60,9 +60,11 @@ const Product = () => {
 
   const addProduct = async () => {
     let url = `${NEXT_URL}/api/cart`;
-
     try {
-      let d = await axios.post(url, { email: "abc@gmail.com", productId: id });
+      let d = await axios.post(url, {
+        email: "abrar.aalam003@gmail.com",
+        productId: id,
+      });
       toast({
         description: "Product Added successfully",
         status: "success",
@@ -71,12 +73,12 @@ const Product = () => {
       });
       console.log(d);
     } catch (e) {
-      toast({
-        description: { e },
-        status: "error",
-        duration: 9000,
-        isClosable: true,
-      });
+      // toast({
+      //   description: { e },
+      //   status: "error",
+      //   duration: 9000,
+      //   isClosable: true,
+      // });
     }
   };
   return (

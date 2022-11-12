@@ -20,6 +20,7 @@ import { Navbar } from "../components/navbar/Navbar";
 import Footer from "../components/footer/Footer";
 import Link from "next/link";
 import Counter from "../components/cart/Counter";
+import axios from "axios";
 
 const d = [
   {
@@ -59,6 +60,17 @@ const d = [
 const Cart = () => {
   const [total, setTotal] = useState(0);
   const [data, setData] = useState(d);
+
+  useEffect(() => {
+    fetchData();
+  }, []);
+
+  const fetchData = async () => {
+    let daa = await axios.get("http://localhost:3000/api/cart", {
+      email: "abrar.aalam003@gmail.com",
+    });
+    console.log(daa);
+  };
 
   useEffect(() => {
     const t = data.reduce((acc, el) => {
