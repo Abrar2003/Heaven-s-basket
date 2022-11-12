@@ -5,5 +5,5 @@ export const getProducts = async() =>{
     const json = await respone.json()
     return json
 }
-
+// import {NEXT_URL} from "file location"
 // import {NEXT_URL} from "file location"
