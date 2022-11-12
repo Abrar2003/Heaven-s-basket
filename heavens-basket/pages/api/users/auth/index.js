@@ -18,7 +18,7 @@ export default async function handler(req, res) {
     case "POST": {
       try {
         let email=req.body.email
-        // console.log(email);
+        console.log("email",email);
         let user= await userModel.find({email:email})
         if(!user){
           return res.status(409).send("user not found")

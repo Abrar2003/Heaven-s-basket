@@ -1,4 +1,4 @@
-import {Schema, model} from "mongoose"
+import {Schema, model, models} from "mongoose"
 import ProductModel from "../models/products"
 
 const userSchema= new Schema({
@@ -12,6 +12,6 @@ const userSchema= new Schema({
     versionKey:false,
 })
 
-const userModel=model("user", userSchema)
+const userModel= model("user", userSchema)
 
 module.exports = userModel

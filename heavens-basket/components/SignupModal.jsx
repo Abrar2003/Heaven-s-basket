@@ -30,15 +30,20 @@ export default function SignupModal() {
 
   const handleChange = (e) => {
     setEmail(e.target.value);
+    
   };
+// console.log(email);
   const handleClick = async (e) => {
+
     // const res = await fetch("http://localhost:3000/api/users/auth/", { 
     //     method: 'POST',
     //     headers: { 'Content-Type': 'application/json' },
     //     body: JSON.stringify({email})
     // }).then( res => res.json());
-    const res = await("http://localhost:3000/api/users/auth",{email});
+
+    const res = await axios.post("http://localhost:3000/api/users/auth",{email});
     // const data = res.json();
+    console.log(res);
     
   };
 
