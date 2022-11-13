@@ -5,10 +5,10 @@ import styles from "./DropDown.module.css";
 
 const DropDown = () => {
   return (
-    <Box className={styles.menu}>
+    <Box className={styles.menu} >
       <ul>
         <li>
-          <a href="#">
+          <a href="#" id="cg">
             SHOP BY CATEGORY <TriangleDownIcon />
           </a>
           <ul>
@@ -540,24 +540,16 @@ const DropDown = () => {
           </ul>
         </li>
         <li>
-          <a href="#">
-            MY ORDERS <TriangleDownIcon />
-          </a>
+          <a href="#">MY ORDERS</a>
         </li>
         <li>
-          <a href="#">
-            GIFTING <TriangleDownIcon />
-          </a>
+          <a href="#">GIFTING </a>
         </li>
         <li>
-          <a href="#">
-            REWARDS <TriangleDownIcon />
-          </a>
+          <a href="#">REWARDS</a>
         </li>
         <li>
-          <a href="#">
-            BLOG <TriangleDownIcon />
-          </a>
+          <a href="#">BLOG</a>
           <ul>
             <li>
               <a href="#">EVERYTHING FOOD</a>
@@ -574,14 +566,10 @@ const DropDown = () => {
           </ul>
         </li>
         <li>
-          <a href="#">
-            OFFERS <TriangleDownIcon />
-          </a>
+          <a href="#">OFFERS</a>
         </li>
         <li>
-          <a href="#">
-            CONNOISSEUR'S SELECTION <TriangleDownIcon />
-          </a>
+          <a href="#">CONNOISSEUR'S SELECTION</a>
           <ul>
             <li>
               <a href="#">L'EXLUSIF</a>
@@ -592,9 +580,7 @@ const DropDown = () => {
           </ul>
         </li>
         <li>
-          <a href="#">
-            BOOK STORE VISIT <TriangleDownIcon />
-          </a>
+          <a href="#">BOOK STORE VISIT</a>
         </li>
       </ul>
     </Box>
