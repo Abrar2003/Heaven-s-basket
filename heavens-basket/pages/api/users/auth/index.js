@@ -3,13 +3,13 @@ import userModel from "../../../../models/user.model"
 import dbConnect from "../../../../utils/connection";
 import getRandomInt from "../../../../utils/randomInt";
 import {sentOTPEmail} from "../../../../utils/transport"
-import cookie from "js-cookie"
+import Cookies from "js-cookie";
 
 
 export default async function handler(req, res) {
         dbConnect().catch(err=>{res.status(405).send({error:err})})
 
-  let {method}=req
+  let {method} = req
   
   switch(method){
 
@@ -19,18 +19,22 @@ export default async function handler(req, res) {
       try {
         let email=req.body.email
         console.log("email",email);
-        let user= await userModel.find({email:email})
+        let user= await userModel.findOne({email:email})
+        // console.log("user", user);
         if(!user){
-          return res.status(409).send("user not found")
+          return res.send("user not found")
           //navigate to signup section because user does not exist
         }
         let OTP=getRandomInt(100000,999999)
-        cookie.set("OTP_EMAIL", OTP+":"+email,{expires:1/(6*24)})
+        console.log(1);
+        // res.cookie( "refreshtoken", "refreshToken" );
+        // res.cookie( "token", "maintoken" );
+        // Cookies.set("OTP_EMAIL", OTP+":"+email,{expires:1/24})
         // localStorage.setItem("OTP", OTP)
         // localStorage.setItem("email",email)
         //store the OTP in the session here
         sentOTPEmail(user.email, "heaven's Basket OTP Varification", `Hi ${user.name}, your OTP is ${OTP}`)
-        return res.status(200).send({userData:user.email})
+        return res.status(200).send({userData:user.email, otp:  OTP})
       
         //navigate to otp entering page because user exists
       

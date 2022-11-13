@@ -8,7 +8,7 @@ import {
   Stack,
   Text,
 } from "@chakra-ui/react";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import { Search2Icon, StarIcon, TriangleDownIcon } from "@chakra-ui/icons";
 import { BsCart4 } from "react-icons/bs";
@@ -17,6 +17,40 @@ import DropDown from "./DropDown";
 import SignupModal from "../SignupModal";
 
 export const Navbar = () => {
+  const [userData, setData] = useState(null);
+  const [state, setState] = useState(1);
+
+  useEffect(() => {
+    const data = JSON.parse(localStorage.getItem("userData"));
+    setData(data);
+    // setState(1);
+  }, [state]);
+  const logout = () => {
+    // setState(0);
+    setData(null);
+    localStorage.removeItem("userData");
+    localStorage.removeItem("email_otp");
+  };
+  useEffect(() => {
+    userData
+      ? setState(
+          <>
+            <Text>{`Welcome ${userData.name}`}</Text>
+            <Button
+              onClick={logout}
+              bg={"none"}
+              size="sm"
+              border={"none"}
+              color="#6fa624"
+            >
+              Log out
+            </Button>
+          </>
+        )
+      : setState(<SignupModal />);
+  }, [userData]);
+  // const loginState =
+
   return (
     <Stack p={"0% 2%"} mb={"20px"}>
       <Box display="flex" m={"auto"} w={"100%"}>
@@ -52,7 +86,7 @@ export const Navbar = () => {
               Login/Register <TriangleDownIcon boxSize={"10px"} />
             </Link>
           </Text> */}
-          <SignupModal />
+          {state}
           <Box mt={"20px"} ml={"10px"}>
             <Button bgColor={"white"} color={"#92be4d"}>
               <StarIcon fontSize={"25px"} />

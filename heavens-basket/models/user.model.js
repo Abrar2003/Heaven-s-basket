@@ -12,6 +12,6 @@ const userSchema= new Schema({
     versionKey:false,
 })
 
-const userModel= model("user", userSchema)
+const userModel= models.user || model("user", userSchema)
 
 module.exports = userModel
