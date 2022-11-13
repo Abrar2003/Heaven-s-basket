@@ -569,10 +569,10 @@ const DropDown = () => {
           <a href="#">OFFERS</a>
         </li>
         <li>
-          <a href="#">CONNOISSEUR'S SELECTION</a>
+          <a href="#">{`CONNOISSEUR'S SELECTION`}</a>
           <ul>
             <li>
-              <a href="#">L'EXLUSIF</a>
+              <a href="#">{`L'EXLUSIF`}</a>
             </li>
             <li>
               <a href="#">HEALTHY ALTERNATIVES</a>

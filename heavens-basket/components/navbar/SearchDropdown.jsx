@@ -55,7 +55,7 @@ export default function SearchDropdown() {
           Diabetic Friendly Foods
         </Link>
         <Link fontSize={"12px"} href={"/fruitesvegetables"}>
-          L'Exlusif
+          {`L'Exlusif`}
         </Link>
         <Link fontSize={"12px"} href={"/fruitesvegetables"}>
           Healthy Alternatives

@@ -270,7 +270,7 @@ export default function homePage() {
             textAlign={ "center" }
             fontSize={ [ "xs", "md", "xl", "2xl", "3xl" ] }
           >
-            WHAT'S TERNDING
+            {`WHAT'S TERNDING`}
           </Text>
         </Box>
         <Divider borderColor={ "black" } />

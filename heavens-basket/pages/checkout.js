@@ -92,7 +92,7 @@ const data = [
   },
 ];
 
-const checkout = () => {
+const Checkout = () => {
   const add = false;
   const [value, setValue] = useState("1");
   const [captcha, setCaptcha] = useState("Captcha");
@@ -575,8 +575,7 @@ const checkout = () => {
                       </Button>
                     </Box>
                     <Text fontSize={"12px"} color={"gray"}>
-                      By placing the order, you have read and agreed to Nature's
-                      Basket Terms of Use and Privacy Policy
+                      {`By placing the order, you have read and agreed to Nature's Basket Terms of Use and Privacy Policy`}
                     </Text>
                   </TabPanel>
                   <TabPanel>
@@ -624,8 +623,8 @@ const checkout = () => {
                       </Button>
                     </Box>
                     <Text fontSize={"12px"} color={"gray"}>
-                      By placing the order, you have read and agreed to Nature's
-                      Basket Terms of Use and Privacy Policy
+                     {` By placing the order, you have read and agreed to Nature's
+                      Basket Terms of Use and Privacy Policy`}
                     </Text>
                   </TabPanel>
                   <TabPanel>

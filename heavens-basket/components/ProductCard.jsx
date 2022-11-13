@@ -66,8 +66,8 @@ const Card = ({ cardData }) => {
       <Text>{cardData.title}</Text>
       <Flex>
         {cardData.quantity &&
-          cardData.quantity.map((e) => {
-            return <Text>{e}</Text>;
+          cardData.quantity.map((e,i) => {
+            return <Text key={i}>{e}</Text>;
           })}
       </Flex>
       <Flex gap={2}>
