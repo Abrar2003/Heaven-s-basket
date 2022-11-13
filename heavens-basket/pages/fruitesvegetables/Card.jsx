@@ -5,11 +5,12 @@ import Link from "next/link";
 const Card = ({ cardData }) => {
   const [star, setstar] = useState("hidden");
   const [fillStar, setfillStar] = useState(true);
+ 
   const handleStar = () => {
     setstar("visible");
   };
   return (
-    <Link href={`/fruitesvegetables/${cardData.id}`}>
+    <Link href={`/fruitesvegetables/${cardData._id}`} key={cardData._id}>
       <Stack
         h="445px"
         borderRight="1px solid rgb(238, 238, 238)"
@@ -58,21 +59,27 @@ const Card = ({ cardData }) => {
         </Tooltip>
         <Image
           p={2}
-          src={cardData.image}
+          src={
+            !cardData.image
+              ? "https://d1z88p83zuviay.cloudfront.net/Images/no-images425x425.jpg"
+              : cardData.image
+          }
           w="100%"
           h="60%"
           borderRadius="10px"
           border="0.2px solid rgb(238, 238, 238)"
           boxShadow="1px 2px #efe9e9"
+         
         />
         <Text>{cardData.title}</Text>
-        <Flex>
-          {cardData.piece}
-          {/* {peices &&
-          peices.map((e) => {
-            return <Text>{e}</Text>|  ;
-          })} */}
+        <Flex gap={3}>
+          {/* {cardData.piece} */}
+          {cardData.piece &&
+            cardData.piece.map((e) => {
+              return <Text key = {e}>{e}</Text>;
+            })}
         </Flex>
+        <Text>{cardData.category}</Text>
         <Flex gap={2}>
           <Button
             colorScheme="white"

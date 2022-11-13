@@ -11,16 +11,20 @@ export default class SimpleSlider extends Component {
       slidesToShow: 1,
       slidesToScroll: 1,
       autoplay: true,
-      autoplaySpeed: 2000
+      autoplaySpeed: 2000,
     };
-    const imgs = ["banner4.jpg","banner5.jpg","banner6.jpg"]
+    const imgs = ["banner4.jpg", "banner5.jpg", "banner6.jpg"];
     return (
       <Box m={"20px 0px"}>
         <Slider width="" {...settings}>
-         {imgs.map(img => (
-         <Box>
-            <Image rounded={["5px", "10px", "10px", "15px", "20px"]} w={"100%"} src={img} />
-          </Box>
+          {imgs.map((img, i) => (
+            <Box key={i}>
+              <Image
+                rounded={["5px", "10px", "10px", "15px", "20px"]}
+                w={"100%"}
+                src={img}
+              />
+            </Box>
           ))}
         </Slider>
       </Box>

@@ -22,15 +22,18 @@ import Card from "./Card";
 import Footer from "../../components/footer/Footer";
 import { Navbar } from "../../components/navbar/Navbar";
 
-import {getProducts} from "../../lib/helper"
+import { getProducts } from "../../lib/helper";
 const Index = () => {
-  
   const [data, setdata] = useState([]);
   const [brands, setbrands] = useState([]);
   const [products, setproducts] = useState([]);
   const [filterbrands, setfilterbrands] = useState([]);
   const [filterTypes, setfilterTypes] = useState("all");
   const [tempdata, settempdata] = useState([]);
+  const [category, setcategory] = useState([]);
+  const [allCategory, setAllcategory] = useState([]);
+  const [categoryType, setCategoryType] = useState("");
+
   const vegeType = [
     "fruits",
     "Exotic Fruits",
@@ -41,20 +44,53 @@ const Index = () => {
     "Frozen Fruits & ...",
   ];
   useEffect(() => {
-    let obj = {};
-      getProducts().then(res=>{
-        console.log(res)
-         setdata(res);
+    let Bobj = {};
+    let Cobj = {};
+    let Aobj = {};
+    getProducts()
+      .then((res) => {
+        let tdata = res.filter((e) => {
+          return (
+            e.category === "vegetable" ||
+            e.category === "fruit" ||
+            e.category === "frozen-fruit"
+          );
+        });
+        setdata(tdata);
         setproducts(res);
-        settempdata(res);
-        let brand = res.map((e) => (obj[e.brand] = 1));
+        settempdata(tdata);
+
+        let brand = tdata.map((e) => (Bobj[e.brand] = 1));
+        let cat = res.map((e) => {
+          if (e.category) {
+            if (
+              e.category === "vegetable" ||
+              e.category === "fruit" ||
+              e.category === "frozen-fruit"
+            ) {
+              Cobj[e.category] = 1;
+            } else {
+              Aobj[e.category] = 1;
+            }
+          }
+        });
         let x = [];
-        for (let key in obj) {
+        let y = [];
+        let k = [];
+        for (let key in Bobj) {
           x.push(key);
         }
+        for (let key in Cobj) {
+          y.push(key);
+        }
+        for (let key in Aobj) {
+          k.push(key);
+        }
+        setAllcategory(k);
+        setcategory(y);
         setbrands(x);
       })
-       
+
       // })
       .catch((e) => {
         console.log(e);
@@ -63,48 +99,82 @@ const Index = () => {
 
   const handleCheck = (e) => {
     const { value, checked } = e.target;
+    let ans = [];
     if (checked) {
+      ans = [...filterbrands, value];
       setfilterbrands([...filterbrands, value]);
     } else if (!checked) {
       let d = filterbrands.filter((e) => e !== value);
+      ans = d;
       setfilterbrands(d);
     }
+    handleBrands(ans);
   };
 
-  useEffect(() => {
-    if (filterbrands.length > 0) {
-      let Fdata = products.filter((e) => {
-        if (filterbrands.indexOf(e.brand) > -1) {
-          return e;
-        }
-      });
+  const handleBrands = (fb) => {
+    const brandsProduct = products.filter((e) => {
+      if (fb.indexOf(e.brand) > -1 && e.category === categoryType) {
+        return e;
+      }
+    });
 
-      if (filterTypes === "lth") {
-        let F = Fdata.sort((a, b) => a.price - b.price);
-        setdata(F);
-      } else if (filterTypes === "htl") {
-        let F = Fdata.sort((a, b) => b.price - a.price);
-        setdata(F);
-      } else {
-        setdata(Fdata);
-      }
-    } else {
-      if (filterTypes === "lth") {
-        let F = data.sort((a, b) => a.price - b.price);
-        setdata(F);
-      } else if (filterTypes === "htl") {
-        let F = data.sort((a, b) => b.price - a.price);
-        setdata(F);
-      } else {
-        setdata(products);
-      }
-      // console.log(filterTypes);
-    }
-  }, [filterbrands, filterTypes]);
+    setdata(brandsProduct);
+  };
+  // useEffect(() => {
+  //   if (filterbrands.length > 0) {
+  //     let Fdata = products.filter((e) => {
+  //       if (filterbrands.indexOf(e.brand) > -1) {
+  //         return e;
+  //       }
+  //     });
+
+  //     if (filterTypes === "lth") {
+  //       let F = Fdata.sort((a, b) => a.price - b.price);
+  //       setdata(F);
+  //     } else if (filterTypes === "htl") {
+  //       let F = Fdata.sort((a, b) => b.price - a.price);
+  //       setdata(F);
+  //     } else {
+  //       setdata(Fdata);
+  //     }
+  //   } else {
+  //     if (filterTypes === "lth") {
+  //       let F = data.sort((a, b) => a.price - b.price);
+  //       setdata(F);
+  //     } else if (filterTypes === "htl") {
+  //       let F = data.sort((a, b) => b.price - a.price);
+  //       setdata(F);
+  //     } else {
+  //       setdata(products);
+  //     }
+  //     // console.log(filterTypes);
+  //   }
+  // }, [filterTypes]);
 
   const handleFilter = (e) => {
+    if (e.target.value === "htl") {
+      let F = data.sort((a, b) => b.price - a.price);
+      setdata(F);
+    } else if (e.target.value === "lth") {
+      let F = data.sort((a, b) => a.price - b.price);
+      setdata(F);
+    }
+
     setfilterTypes(e.target.value);
   };
+  const handleFilterCategory = (c) => {
+    setCategoryType(c);
+    const FilterData = products.filter((e) => e.category === c);
+    setdata(FilterData);
+    let Bobj = {};
+    let x = [];
+    let brand = FilterData.map((e) => (Bobj[e.brand] = 1));
+    for (let key in Bobj) {
+      x.push(key);
+    }
+    setbrands(x);
+  };
+
   return (
     <>
       <Navbar />
@@ -129,8 +199,8 @@ const Index = () => {
             </Flex>
             <Text> Fruits & Vegetables</Text>
             <Stack h="200px" overflowY="scroll">
-              {vegeType &&
-                vegeType.map((e) => {
+              {category &&
+                category.map((e) => {
                   return (
                     <Button
                       bg="white"
@@ -142,6 +212,33 @@ const Index = () => {
                       color="rgb(182, 22, 113)"
                       fontWeight="normal"
                       _hover={{ bg: "rgb(182, 22, 113)", color: "white" }}
+                      onClick={() => {
+                        handleFilterCategory(e);
+                      }}
+                    >
+                      {e}
+                    </Button>
+                  );
+                })}
+            </Stack>
+            <Text> Other Category</Text>
+            <Stack h="200px" overflowY="scroll">
+              {allCategory &&
+                allCategory.map((e) => {
+                  return (
+                    <Button
+                      bg="white"
+                      border="0.5px solid rgb(182, 22, 113)"
+                      p={2}
+                      borderRadius="7px"
+                      textTransform="capitalize"
+                      fontSize="13px"
+                      color="rgb(182, 22, 113)"
+                      fontWeight="normal"
+                      _hover={{ bg: "rgb(182, 22, 113)", color: "white" }}
+                      onClick={() => {
+                        handleFilterCategory(e);
+                      }}
                     >
                       {e}
                     </Button>
@@ -201,8 +298,12 @@ const Index = () => {
               pb="5px"
             >
               <Flex align="baseline" gap="15px">
-                <Heading fontWeight="normal" fontSize="24px">
-                  FRUITS & VEGETABLES
+                <Heading
+                  fontWeight="normal"
+                  fontSize="24px"
+                  textTransform="upperCase"
+                >
+                  {categoryType ? categoryType : "Fruites & Vegetables"}
                 </Heading>
                 <Text fontSize="16px" color="#858585">
                   {data.length} Products.

@@ -1,11 +1,18 @@
-import { Stack, Button, Flex, Image, Text, Tooltip, Box } from "@chakra-ui/react";
+import {
+  Stack,
+  Button,
+  Flex,
+  Image,
+  Text,
+  Tooltip,
+  Box,
+} from "@chakra-ui/react";
 import React, { Component, useState } from "react";
 import { AiOutlineStar, AiFillStar } from "react-icons/ai";
 import Slider from "react-slick";
 import Card from "../ProductCard";
 
-
-import "slick-carousel/slick/slick.css"; 
+import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 export default class MutliSider extends Component {
   render() {
@@ -19,7 +26,7 @@ export default class MutliSider extends Component {
       slidesToScroll: 4,
       autoplay: true,
       autoplaySpeed: 2000,
-      arrows: true
+      arrows: true,
     };
     const trendingItems = [
       {
@@ -51,8 +58,8 @@ export default class MutliSider extends Component {
     return (
       <Box m={"20px 0px"}>
         <Slider {...settings}>
-          {trendingItems.map((item) => (
-            <Card key={item} cardData={item} />
+          {trendingItems.map((item, i) => (
+            <Card key={i} cardData={item} />
           ))}
         </Slider>
       </Box>
