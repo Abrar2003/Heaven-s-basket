@@ -13,6 +13,6 @@ const ProductSchema =new Schema({
 },{
     versionKey:false,
 })
-const ProductModel =models.product || model("product", ProductSchema)
+const ProductModel = models.product || model("product", ProductSchema)
 
 export default ProductModel;

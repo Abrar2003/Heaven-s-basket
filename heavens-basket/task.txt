@@ -36,3 +36,18 @@ Back-end :-
 
 
     
+
+
+let email = false;
+let signup = false;
+
+email = true
+if(email === true){
+  if(singup){
+    otp
+  }else{
+    signup form
+  }
+}else{
+  email form
+}

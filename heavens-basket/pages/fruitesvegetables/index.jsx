@@ -200,9 +200,10 @@ const Index = () => {
             <Text> Fruits & Vegetables</Text>
             <Stack h="200px" overflowY="scroll">
               {category &&
-                category.map((e) => {
+                category.map((e,i) => {
                   return (
                     <Button
+                    key={i}
                       bg="white"
                       border="0.5px solid rgb(182, 22, 113)"
                       p={2}
@@ -224,9 +225,10 @@ const Index = () => {
             <Text> Other Category</Text>
             <Stack h="200px" overflowY="scroll">
               {allCategory &&
-                allCategory.map((e) => {
+                allCategory.map((e,i) => {
                   return (
                     <Button
+                    key={i}
                       bg="white"
                       border="0.5px solid rgb(182, 22, 113)"
                       p={2}
@@ -248,9 +250,10 @@ const Index = () => {
             <Text> Brands </Text>
             <Stack h="200px" overflow="scroll" id="brands">
               {brands &&
-                brands.map((e) => {
+                brands.map((e,i) => {
                   return (
                     <Box
+                    key={i}
                       bg="white"
                       border="0.5px solid rgb(182, 22, 113)"
                       p={1}
@@ -329,7 +332,7 @@ const Index = () => {
             </Flex>
             <SimpleGrid columns="4" gap={2} align="center">
               {data &&
-                data.map((e) => {
+                data.map((e,i) => {
                   return <Card cardData={e} key={e.id} />;
                 })}
             </SimpleGrid>

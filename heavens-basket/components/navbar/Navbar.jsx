@@ -9,14 +9,49 @@ import {
   Text,
   Flex,
 } from "@chakra-ui/react";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import { Search2Icon, StarIcon, TriangleDownIcon } from "@chakra-ui/icons";
 import { BsCart4 } from "react-icons/bs";
 import SearchDropdown from "./SearchDropdown";
 import DropDown from "./DropDown";
-const logo = require("../../public/Logo.png");
+import SignupModal from "../SignupModal";
+
 export const Navbar = () => {
+  const [userData, setData] = useState(null);
+  const [state, setState] = useState(null);
+  useEffect(() => {
+    const data = JSON.parse(localStorage.getItem("userData"));
+    //
+    setData(data);
+    // setState(1);
+  }, []);
+  const logout = () => {
+    // setState(0);
+    setData(null);
+    localStorage.removeItem("userData");
+    localStorage.removeItem("email_otp");
+  };
+  useEffect(() => {
+    userData
+      ? setState(
+          <>
+            <Text>{`Welcome ${userData.name}`}</Text>
+            <Button
+              onClick={logout}
+              bg={"none"}
+              size="sm"
+              border={"none"}
+              color="#6fa624"
+            >
+              Log out
+            </Button>
+          </>
+        )
+      : setState(<SignupModal />);
+  }, [userData]);
+  // const loginState =
+
   return (
     <Stack
       w={["100%", "100%", "100%", "100%", "100%"]}
@@ -41,11 +76,12 @@ export const Navbar = () => {
               <Text>Store Locator |</Text>
               <Text>Contact Us |</Text>
             </HStack>
-            <Text fontSize="12px" color="#880033">
+            {/* <Text fontSize="12px" color="#880033">
               <Link href="#">
                 Login/Register <TriangleDownIcon boxSize={"10px"} />{" "}
               </Link>
-            </Text>
+            </Text> */}
+            {state}
           </Flex>
           <Flex justify="space-between">
             <Stack w="100%">

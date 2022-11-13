@@ -4,7 +4,7 @@ import React, { useEffect, useState } from "react";
 import Footer from "../components/footer/Footer";
 import { Navbar } from "../components/navbar/Navbar";
 
-const order = () => {
+const Order = () => {
   const [order, setOrder] = useState("");
   const randomOrder = () => {
     let result = "";
@@ -64,4 +64,4 @@ const order = () => {
   );
 };
 
-export default order;
+export default Order;
