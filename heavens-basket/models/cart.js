@@ -11,6 +11,7 @@ const cartSchema = new Schema(
     image: { type: String, required: true },
     title: { type: String, reuired: true },
     price: { type: Number, required: true },
+    qty: { type: Number, default: 1 },
     piece: [{ type: String, required: true }],
     popUpMess: { type: String, required: true },
 
