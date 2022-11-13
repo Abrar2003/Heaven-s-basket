@@ -51,7 +51,7 @@ import { NEXT_URL } from "../lib/helper";
 //   {
 //     id: 4,
 //     name: "Raw pressery",
-//     src: "https://d1z88p83zuviay.cloudfront.net/ProductVariantThumbnailImages/eb67bb12-a336-4dab-9913-652d224e83a9_425x425.jpg",
+//     src: "https:// .cloudfront.net/ProductVariantThumbnailImages/eb67bb12-a336-4dab-9913-652d224e83a9_425x425.jpg",
 //     price: "89.00",
 //     discount: "5.00",
 //     qty: 2,
@@ -79,10 +79,22 @@ const Cart = () => {
 
   useEffect(() => {
     const t = data.reduce((acc, el) => {
-      return acc + el.price;
+      return acc + el.price * el.qty;
     }, 0);
     setTotal(t);
   }, [data]);
+
+  const handleQuantity = async ({ id, qty }) => {
+    console.log(id, qty);
+    await axios
+      .patch(url, { id: id, qty: qty })
+      .then((res) => {
+        fetchData();
+      })
+      .catch((e) => {
+        console.log(e);
+      });
+  };
 
   ////delete
   const handleDelete = async (_id) => {
@@ -92,7 +104,9 @@ const Cart = () => {
           productid: _id,
         },
       })
-      .then(() => fetchData())
+      .then(() => {
+        fetchData();
+      })
       .catch((e) => {
         console.log(e);
       });
@@ -107,6 +121,7 @@ const Cart = () => {
   };
 
   // console.log("datttttta", data);
+
   return (
     <Stack>
       <Navbar />
@@ -167,6 +182,7 @@ const Cart = () => {
                     changeQty={changeQty}
                     i={i}
                     handleDelete={handleDelete}
+                    handleQuantity={handleQuantity}
                   />
                 );
               })}

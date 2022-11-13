@@ -8,9 +8,9 @@ const Counter = ({
   title,
   image,
   price,
-  discount,
   qty,
   _id,
+  handleQuantity,
   // changeQty,
   handleDelete,
 }) => {
@@ -21,7 +21,7 @@ const Counter = ({
 
   let url = `${NEXT_URL}/api/cart/`;
 
-  console.log("qty", qty);
+
   return (
     <Tr>
       <Td display={"flex"} gap={"20px"} alignItems={"center"}>
@@ -37,9 +37,12 @@ const Counter = ({
           borderRadius={"10px"}
           borderTopRightRadius={"0px"}
           borderBottomRightRadius={"0px"}
-          disabled={count === 1}
+          disabled={qty === 1}
           mr={"1px"}
-          onClick={(prev) => setCount(count - 1)}
+
+          onClick={(prev) => {
+            handleQuantity({ id: _id, qty: qty - 1 });
+          }}
         >
           -
         </Button>
@@ -50,7 +53,7 @@ const Counter = ({
           variant={"ghost"}
           mr={"1px"}
         >
-          {count}
+          {qty}
         </Button>
         <Button
           borderRadius={"10px"}
@@ -58,12 +61,16 @@ const Counter = ({
           borderBottomLeftRadius={"0px"}
           bg={"#92be4d"}
           color={"white"}
-          onClick={(prev) => setCount(count + 1)}
+
+          onClick={(prev) => {
+            handleQuantity({ id: _id, qty: qty + 1 });
+          }}
+
         >
           +
         </Button>
       </Td>
-      <Td>₹ {price * count}.00</Td>
+      <Td>₹ {price * qty}.00</Td>
       <Td>
         <Button borderRadius={"50%"} onClick={() => handleDelete(_id)}>
           <CloseIcon w={3} h={3} />

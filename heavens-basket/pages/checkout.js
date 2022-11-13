@@ -29,12 +29,14 @@ import {
   Tr,
 } from "@chakra-ui/react";
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Footer from "../components/footer/Footer";
 import { Navbar } from "../components/navbar/Navbar";
 import styles from "../styles/Checkout.module.css";
 import { useRouter } from "next/router";
 import { useToast } from "@chakra-ui/react";
+import { NEXT_URL } from "../lib/helper";
+import axios from "axios";
 
 const slots = [
   { disable: true, radio: false, time: "Today" },
@@ -65,32 +67,32 @@ const slots = [
   { disable: false, radio: true, time: "Same Day Delivery" },
   { disable: false, radio: true, time: "07.00 pm - 09.00 pm" },
 ];
-const data = [
-  {
-    name: "American Kale Curled - Exotic 200.00 g",
-    src: "https://gnbdevcdn.s3.amazonaws.com/ProductVariantThumbnailImages/3bc083e7-3eee-4d3d-a54b-8be0fb2e7a4c_50x50.JPG",
-    price: "159.00",
-    discount: "20.00",
-  },
-  {
-    name: "Kwality walls Ice cream- Magnum",
-    src: "https://d1z88p83zuviay.cloudfront.net/ProductVariantThumbnailImages/578a02e6-8e0b-4868-9689-5733471e3b87_425x425.jpg",
-    price: "269.00",
-    discount: "15.00",
-  },
-  {
-    name: "Moong dal- Exotic 200.00 g",
-    src: "https://d1z88p83zuviay.cloudfront.net/ProductVariantThumbnailImages/13dbbb37-317e-46e3-a94f-477772c22f0d_425x425.jpg",
-    price: "189.00",
-    discount: "25.00",
-  },
-  {
-    name: "Raw pressery",
-    src: "https://d1z88p83zuviay.cloudfront.net/ProductVariantThumbnailImages/eb67bb12-a336-4dab-9913-652d224e83a9_425x425.jpg",
-    price: "89.00",
-    discount: "5.00",
-  },
-];
+// const data = [
+//   {
+//     name: "American Kale Curled - Exotic 200.00 g",
+//     src: "https://gnbdevcdn.s3.amazonaws.com/ProductVariantThumbnailImages/3bc083e7-3eee-4d3d-a54b-8be0fb2e7a4c_50x50.JPG",
+//     price: "159.00",
+//     discount: "20.00",
+//   },
+//   {
+//     name: "Kwality walls Ice cream- Magnum",
+//     src: "https://d1z88p83zuviay.cloudfront.net/ProductVariantThumbnailImages/578a02e6-8e0b-4868-9689-5733471e3b87_425x425.jpg",
+//     price: "269.00",
+//     discount: "15.00",
+//   },
+//   {
+//     name: "Moong dal- Exotic 200.00 g",
+//     src: "https://d1z88p83zuviay.cloudfront.net/ProductVariantThumbnailImages/13dbbb37-317e-46e3-a94f-477772c22f0d_425x425.jpg",
+//     price: "189.00",
+//     discount: "25.00",
+//   },
+//   {
+//     name: "Raw pressery",
+//     src: "https://d1z88p83zuviay.cloudfront.net/ProductVariantThumbnailImages/eb67bb12-a336-4dab-9913-652d224e83a9_425x425.jpg",
+//     price: "89.00",
+//     discount: "5.00",
+//   },
+// ];
 
 const Checkout = () => {
   const add = false;
@@ -98,6 +100,8 @@ const Checkout = () => {
   const [captcha, setCaptcha] = useState("Captcha");
   const [input, setInput] = useState("");
   const toast = useToast();
+  const [data, setData] = useState([]);
+  const [finalTotal, setFinalTotal] = useState();
 
   const router = useRouter();
 
@@ -132,6 +136,26 @@ const Checkout = () => {
         isClosable: true,
       });
     }
+  };
+
+  let url = `${NEXT_URL}/api/cart/`;
+  let emails = "abrar.aalam003@gmail.com";
+  useEffect(() => {
+    fetchData();
+  }, []);
+
+  const fetchData = async () => {
+    let dt = await axios.get(url, {
+      headers: {
+        email: emails,
+      },
+    });
+    setData(dt.data);
+
+    const t = dt.data.reduce((acc, el) => {
+      return acc + el.price * el.qty;
+    }, 0);
+    setFinalTotal(t);
   };
 
   return (
@@ -382,11 +406,11 @@ const Checkout = () => {
                             gap={"20px"}
                             alignItems={"center"}
                           >
-                            <Image src={el.src} w="50px" />
-                            <Text>{el.name}</Text>
+                            <Image src={el.image} w="50px" />
+                            <Text>{el.title}</Text>
                           </Td>
-                          <Td>₹ {el.price}</Td>
-                          <Td>₹ {el.discount}</Td>
+                          <Td>₹ {el.price}.00</Td>
+                          <Td>₹ 0.00</Td>
                           <Td align={"center"}>
                             <Button
                               borderRadius={"0px"}
@@ -395,10 +419,10 @@ const Checkout = () => {
                               variant={"ghost"}
                               mr={"1px"}
                             >
-                              1
+                              {el.qty}
                             </Button>
                           </Td>
-                          <Td>₹ {el.price - el.discount}.00</Td>
+                          <Td>₹ {el.price * el.qty}.00</Td>
                         </Tr>
                       );
                     })}
@@ -468,12 +492,12 @@ const Checkout = () => {
                   </FormControl>
                 </Box>
                 <Box w={"40%"}>
-                  <Text>Sub-Total (Inclusive of taxes.) ₹ 374.60</Text>
-                  <Text>Delivery Charges ₹50</Text>
+                  <Text>Sub-Total (Inclusive of taxes.) ₹ {finalTotal}.00</Text>
+                  <Text>Delivery Charges ₹50.00</Text>
                 </Box>
               </Box>
               <Box align={"right"}>
-                <Text>TOTAL ₹ 425</Text>
+                <Text fontWeight={"bold"}>TOTAL ₹ {+finalTotal + 50}.00</Text>
                 <Button bg={"#92be4d"} color={"white"}>
                   PROCEED TO PAY
                 </Button>
