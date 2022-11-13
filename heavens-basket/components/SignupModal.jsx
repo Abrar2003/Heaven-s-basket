@@ -1,5 +1,6 @@
 import React from "react";
 import jwt from "jsonwebtoken";
+import { NEXT_URL } from "../lib/helper";
 
 //Chakra-ui components
 import {
@@ -43,7 +44,7 @@ export default function SignupModal() {
   // console.log(email);
   const handleClick = async (e) => {
     setIsemail(true);
-    const res = await axios.post("http://localhost:3000/api/users/auth", {
+    const res = await axios.post(`${NEXT_URL}/api/users/auth`, {
       email,
     });
 
@@ -56,7 +57,7 @@ export default function SignupModal() {
 
   const handleFormSubmit = async(e)=>{
     e.preventDefault();
-    const res = await axios.post("http://localhost:3000/api/users/auth/signup", formData);
+    const res = await axios.post(`${NEXT_URL}/api/users/auth/signup`, formData);
     // console.log(res);
     const user = jwt.decode(res);
     setFormData(initialUser)
@@ -77,7 +78,7 @@ const handleOtp = (e)=>{
 }
 const SubmitOtp = async()=>{
   const storedOTP = JSON.parse(localStorage.getItem("email_otp"))
-    const res = await axios.post("http://localhost:3000/api/users/auth/login", {otp: otp}, {
+    const res = await axios.post(`${NEXT_URL}/api/users/auth/login`, {otp: otp}, {
       headers: {
         Authorization: storedOTP.otp,
         email: storedOTP.userData
