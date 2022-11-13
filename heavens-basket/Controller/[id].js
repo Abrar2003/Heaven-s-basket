@@ -47,7 +47,7 @@ export async function deleteProduct( req, res ) {
   console.log( req.query._id );
   try {
     await ProductModel.findByIdAndDelete( { _id: req.query._id } );
-    res.send( "User Deleted Success" );
+    res.send( "Product Deleted Success" );
   } catch ( error ) {
     res.status( 404 ).json( { error: "Error While Updating the Data" } );
   }
