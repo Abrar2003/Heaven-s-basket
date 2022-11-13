@@ -18,7 +18,7 @@ import {
   CheckboxGroup,
 } from "@chakra-ui/react";
 import { FiChevronRight } from "react-icons/fi";
-import Card from "./Card";
+import Card from "../../components/Card";
 import Footer from "../../components/footer/Footer";
 import { Navbar } from "../../components/navbar/Navbar";
 
