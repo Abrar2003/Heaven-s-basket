@@ -205,7 +205,6 @@ const Index = () => {
                     <Button
                       bg="white"
                       border="0.5px solid rgb(182, 22, 113)"
-                      
                       p={2}
                       borderRadius="7px"
                       textTransform="capitalize"
@@ -216,7 +215,6 @@ const Index = () => {
                       onClick={() => {
                         handleFilterCategory(e);
                       }}
-                    
                     >
                       {e}
                     </Button>
