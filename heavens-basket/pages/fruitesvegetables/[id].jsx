@@ -58,10 +58,10 @@ const Product = () => {
   };
 
   const addProduct = async () => {
-    let url = "http://localhost:3000/api/operation/cart/add";
-
+    let url =`${NEXT_URL}/api/users/operation/cart/add`
+    //  "http://localhost:3000/api/operation/cart/add";
     try {
-      let d = await axios.patch(url, { email: "abc@gmail.com", productId: id });
+      let d = await axios.patch(url, { email: "abrar.aalam003@gmail.com", productId: id });
       console.log( d ); 
     } catch (e) {
       console.log(e);
@@ -173,7 +173,7 @@ const Product = () => {
                 <Heading
                   fontWeight="normal"
                   textTransform="upperCase"
-                  fonrSize="24px"
+                  fontSize="24px"
                 >
                   {Product.title}
                 </Heading>
