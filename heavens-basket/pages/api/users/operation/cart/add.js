@@ -15,8 +15,9 @@ export default async function handler( req, res ) {
     case "PATCH": {
       try {
         let { productId, email } = req.body
-        let user = new userModel.find( { email: email } )
+        let user = new userModel.findOne( { email: email } )
         // await user.save()
+        console.log(user)
         res.status( 200 ).send( "successfully added" )
       } catch ( error ) {
         return res.status( 409 ).send( { errors: error } )
