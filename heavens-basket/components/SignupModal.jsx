@@ -85,6 +85,7 @@ const SubmitOtp = async()=>{
     });
     localStorage.setItem("userData",JSON.stringify(jwt.decode(res.data)));
     setIsemail(false);
+    window.location.reload();
     onClose();
 }
   return (

@@ -4,6 +4,7 @@ import {
   HStack,
   Image,
   Input,
+  Flex,
   Select,
   Stack,
   Text,
@@ -18,13 +19,13 @@ import SignupModal from "../SignupModal";
 
 export const Navbar = () => {
   const [userData, setData] = useState(null);
-  const [state, setState] = useState(1);
-
+  const [state, setState] = useState(null);
   useEffect(() => {
     const data = JSON.parse(localStorage.getItem("userData"));
+    //
     setData(data);
     // setState(1);
-  }, [state]);
+  }, []);
   const logout = () => {
     // setState(0);
     setData(null);
@@ -52,18 +53,33 @@ export const Navbar = () => {
   // const loginState =
 
   return (
-    <Stack p={"0% 2%"} mb={"20px"}>
-      <Box display="flex" m={"auto"} w={"100%"}>
-        <Link href="/" w={"28%"}>
-          <Image src="Logo.png" h="120px" />
-        </Link>
-        <Box w={"63%"}>
-          <HStack m={"10px"} ml={"5%"}>
-            <Text>Online Slots Available |</Text>
+    <Stack
+      border={"1px solid"}
+      m={"auto"}
+      w={["100%", "100%", "100%", "100%", "100%"]}
+      p="0% 2%"
+      mb={"20px"}
+    >
+      <Flex
+        justifyContent={"space-between"}
+        alignItems="center"
+        border={"1px solid red"}
+        m={"auto"}
+      >
+        <Box w={["10%", "10%", "15%", "15%", "20%"]}>
+          <Link href="/">
+            <Image src="Logo.png" w={"100%"} />
+          </Link>
+        </Box>
+        <Box w={["25%", "25%", "35%", "50%", "60%"]} w={"63%"}>
+          <Flex m={"auto"}>
+            <Text fontSize={["sm", "md", "md", "l"]}>
+              Online Slots Available |
+            </Text>
             <Text>Fresh & Fast |</Text>
             <Text>Store Locator |</Text>
             <Text>Contact Us |</Text>
-          </HStack>
+          </Flex>
           <Box display={"flex"}>
             <Button>400001</Button>
             <Select w={"22%"}>
@@ -74,7 +90,10 @@ export const Navbar = () => {
               <option value="Thane">Thane</option>
               <option value="Kolkata">Kolkata</option>
             </Select>
-            <SearchDropdown />
+            <Box m={"auto"}>
+              <SearchDropdown />
+            </Box>
+
             <Button bgColor={"#92be4d"} color="white">
               <Search2Icon />
             </Button>
@@ -98,7 +117,7 @@ export const Navbar = () => {
             </Link>
           </Box>
         </Box>
-      </Box>
+      </Flex>
       <DropDown />
     </Stack>
   );

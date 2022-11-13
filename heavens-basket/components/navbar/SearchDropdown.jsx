@@ -12,11 +12,11 @@ import Link from "next/link";
 export default function SearchDropdown() {
   const { isOpen, onOpen, onClose } = useDisclosure();
   return (
-    <Menu isOpen={isOpen}>
+    <Menu m={"auto"} isOpen={isOpen}>
       <MenuButton variant="ghost" onMouseEnter={onOpen} onMouseLeave={onClose}>
         <Input
           textAlign={"center"}
-          w={"600px"}
+          w={"50%"}
           placeholder="Start shopping..."
         />
       </MenuButton>
