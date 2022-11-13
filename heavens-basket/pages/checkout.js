@@ -101,6 +101,7 @@ const checkout = () => {
   const [input, setInput] = useState("");
   const toast = useToast();
   const [data, setData] = useState([]);
+  const [finalTotal, setFinalTotal] = useState();
 
   const router = useRouter();
 
@@ -150,6 +151,11 @@ const checkout = () => {
       },
     });
     setData(dt.data);
+
+    const t = dt.data.reduce((acc, el) => {
+      return acc + el.price * el.qty;
+    }, 0);
+    setFinalTotal(t);
   };
 
   return (
@@ -486,12 +492,12 @@ const checkout = () => {
                   </FormControl>
                 </Box>
                 <Box w={"40%"}>
-                  <Text>Sub-Total (Inclusive of taxes.) ₹ 374.60</Text>
-                  <Text>Delivery Charges ₹50</Text>
+                  <Text>Sub-Total (Inclusive of taxes.) ₹ {finalTotal}.00</Text>
+                  <Text>Delivery Charges ₹50.00</Text>
                 </Box>
               </Box>
               <Box align={"right"}>
-                <Text>TOTAL ₹ 425</Text>
+                <Text fontWeight={"bold"}>TOTAL ₹ {+finalTotal + 50}.00</Text>
                 <Button bg={"#92be4d"} color={"white"}>
                   PROCEED TO PAY
                 </Button>
