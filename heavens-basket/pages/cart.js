@@ -171,12 +171,14 @@ const Cart = () => {
               { data.map( ( el, i ) => {
                 return (
                   <Counter
+
                     key={ i }
                     { ...el }
                     changeQty={ changeQty }
                     i={ i }
                     handleDelete={ handleDelete }
                     handleQuantity={ handleQuantity }
+
                   />
                 );
               } ) }

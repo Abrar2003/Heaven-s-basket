@@ -8,7 +8,6 @@ const Counter = ({
   title,
   image,
   price,
-  discount,
   qty,
   _id,
   handleQuantity,
@@ -22,7 +21,7 @@ const Counter = ({
 
   let url = `${NEXT_URL}/api/cart/`;
 
- 
+
   return (
     <Tr>
       <Td display={"flex"} gap={"20px"} alignItems={"center"}>
@@ -40,6 +39,7 @@ const Counter = ({
           borderBottomRightRadius={"0px"}
           disabled={qty === 1}
           mr={"1px"}
+
           onClick={(prev) => {
             handleQuantity({ id: _id, qty: qty - 1 });
           }}
@@ -61,9 +61,11 @@ const Counter = ({
           borderBottomLeftRadius={"0px"}
           bg={"#92be4d"}
           color={"white"}
+
           onClick={(prev) => {
             handleQuantity({ id: _id, qty: qty + 1 });
           }}
+
         >
           +
         </Button>
