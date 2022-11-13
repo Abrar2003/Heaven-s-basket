@@ -11,8 +11,9 @@ export default async function handler(req, res) {
   const { method } = req;
   switch (method) {
     case "GET":
-      let newdata = await cartModel.find({ email: req.body.email });
-      res.status(200).send(newdata);
+      // console.log(req.headers.email);
+      let newdata = await cartModel.find({ email: req.headers.email });
+      res.status(200).json(newdata);
 
       // res.status(200).json({method, name:'GET Request' });
       break;
