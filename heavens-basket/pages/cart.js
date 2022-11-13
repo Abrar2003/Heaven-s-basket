@@ -21,55 +21,60 @@ import Footer from "../components/footer/Footer";
 import Link from "next/link";
 import Counter from "../components/cart/Counter";
 import axios from "axios";
+import { NEXT_URL } from "../lib/helper";
 
-const d = [
-  {
-    id: 1,
-    name: "American Kale Curled - Exotic 200.00 g",
-    src: "https://gnbdevcdn.s3.amazonaws.com/ProductVariantThumbnailImages/3bc083e7-3eee-4d3d-a54b-8be0fb2e7a4c_50x50.JPG",
-    price: "159.00",
-    discount: "20.00",
-    qty: 1,
-  },
-  {
-    id: 2,
-    name: "Kwality walls Ice cream- Magnum",
-    src: "https://d1z88p83zuviay.cloudfront.net/ProductVariantThumbnailImages/578a02e6-8e0b-4868-9689-5733471e3b87_425x425.jpg",
-    price: "269.00",
-    discount: "15.00",
-    qty: 1,
-  },
-  {
-    id: 3,
-    name: "Moong dal- Exotic 200.00 g",
-    src: "https://d1z88p83zuviay.cloudfront.net/ProductVariantThumbnailImages/13dbbb37-317e-46e3-a94f-477772c22f0d_425x425.jpg",
-    price: "189.00",
-    discount: "25.00",
-    qty: 2,
-  },
-  {
-    id: 4,
-    name: "Raw pressery",
-    src: "https://d1z88p83zuviay.cloudfront.net/ProductVariantThumbnailImages/eb67bb12-a336-4dab-9913-652d224e83a9_425x425.jpg",
-    price: "89.00",
-    discount: "5.00",
-    qty: 2,
-  },
-];
+// const d = [
+//   {
+//     id: 1,
+//     name: "American Kale Curled - Exotic 200.00 g",
+//     src: "https://gnbdevcdn.s3.amazonaws.com/ProductVariantThumbnailImages/3bc083e7-3eee-4d3d-a54b-8be0fb2e7a4c_50x50.JPG",
+//     price: "159.00",
+//     discount: "20.00",
+//     qty: 1,
+//   },
+//   {
+//     id: 2,
+//     name: "Kwality walls Ice cream- Magnum",
+//     src: "https://d1z88p83zuviay.cloudfront.net/ProductVariantThumbnailImages/578a02e6-8e0b-4868-9689-5733471e3b87_425x425.jpg",
+//     price: "269.00",
+//     discount: "15.00",
+//     qty: 1,
+//   },
+//   {
+//     id: 3,
+//     name: "Moong dal- Exotic 200.00 g",
+//     src: "https://d1z88p83zuviay.cloudfront.net/ProductVariantThumbnailImages/13dbbb37-317e-46e3-a94f-477772c22f0d_425x425.jpg",
+//     price: "189.00",
+//     discount: "25.00",
+//     qty: 2,
+//   },
+//   {
+//     id: 4,
+//     name: "Raw pressery",
+//     src: "https://d1z88p83zuviay.cloudfront.net/ProductVariantThumbnailImages/eb67bb12-a336-4dab-9913-652d224e83a9_425x425.jpg",
+//     price: "89.00",
+//     discount: "5.00",
+//     qty: 2,
+//   },
+// ];
 
 const Cart = () => {
   const [total, setTotal] = useState(0);
-  const [data, setData] = useState(d);
+  const [data, setData] = useState([]);
 
+  let url = `${NEXT_URL}/api/cart/`;
+  let emails = "abrar.aalam003@gmail.com";
   useEffect(() => {
     fetchData();
   }, []);
 
   const fetchData = async () => {
-    let daa = await axios.get("http://localhost:3000/api/cart", {
-      email: "abrar.aalam003@gmail.com",
+    let daa = await axios.get(url, {
+      headers: {
+        email: emails,
+      },
     });
-    console.log(daa);
+    setData(daa.data);
   };
 
   useEffect(() => {
@@ -87,6 +92,7 @@ const Cart = () => {
     setData(newData);
   };
 
+  console.log("datttttta", data);
   return (
     <Stack>
       <Navbar />
