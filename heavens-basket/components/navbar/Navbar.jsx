@@ -27,7 +27,7 @@ export const Navbar = () => {
       <Flex justify="space-betweeen" bg="white" w="100%">
         <Link href="/" w={"28%"}>
           <Image
-            src="https://raw.githubusercontent.com/Abrar2003/annoyed-spark-4097/main/heavens-basket/public/Logo.png?token=GHSAT0AAAAAABWG7XG6CBOWDTGKRV6I2GY2Y3QS2IA"
+            src="https://raw.githubusercontent.com/Abrar2003/annoyed-spark-4097/main/heavens-basket/public/Logo.png?token=GHSAT0AAAAAAB3BOGX7RM2KPBM53GUOFTS2Y3QTWNQ"
             h="120px"
             w="100%"
             alt=""

@@ -16,7 +16,7 @@ import { BsPinterest } from "react-icons/bs";
 
 export default function Footer() {
   return (
-    <Box bg="#fbfbfb" bottom="0px" p="0% 2%" >
+    <Box bg="#fbfbfb" bottom="0px" p="0% 2%">
       <Box
         w={"100%"}
         p={"0% 0% 0% 5%"}

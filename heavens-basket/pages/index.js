@@ -6,7 +6,7 @@ import React from "react";
 export default function Home() {
   return (
     <>
-      <Navbar />
+      {/* <Navbar /> */}
       <HomePage />
       <Footer />
     </>
