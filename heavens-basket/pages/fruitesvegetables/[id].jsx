@@ -59,7 +59,6 @@ const Product = () => {
   };
 
   const addProduct = async () => {
-
     let url = `${NEXT_URL}/api/cart`;
     try {
       let d = await axios.post(url, {
@@ -73,7 +72,6 @@ const Product = () => {
         isClosable: true,
       });
       console.log(d);
-
     } catch (e) {
       // toast({
       //   description: { e },

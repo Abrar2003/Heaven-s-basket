@@ -20,7 +20,10 @@ export const Navbar = () => {
     <Stack p={"0% 2%"} mb={"20px"}>
       <Box display="flex" m={"auto"} w={"100%"}>
         <Link href="/" w={"28%"}>
-          <Image src="Logo.png" h="120px" />
+          <Image
+            src="https://raw.githubusercontent.com/Abrar2003/annoyed-spark-4097/main/heavens-basket/public/Logo.png?token=GHSAT0AAAAAAB3BOGX65QKMXHSUABNPKLQSY3QSYTA"
+            h="120px"
+          />
         </Link>
         <Box w={"63%"}>
           <HStack m={"10px"} ml={"5%"}>
