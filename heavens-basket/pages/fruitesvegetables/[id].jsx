@@ -68,6 +68,7 @@ const Product = () => {
         image: Product.image,
         title: Product.title,
         price: Product.price,
+        qty: 1,
         piece: Product.piece,
         popUpMess: Product.popUpMess,
       });
