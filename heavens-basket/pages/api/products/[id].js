@@ -14,18 +14,6 @@ export default async function handler( req, res ) {
             get_Product( req, res );
             // res.status(200).json({method, name:'GET Request' });
             break;
-        // case "POST":
-        //     // postProduct( req, res );
-        //     // res.status(200).json({method,name:"POST Reqeust"});
-        //     break;
-        // case "PUT":
-        //     putProduct( req, res );
-        //     // res.status(200).json({method,name:"PUT Request"});
-        //     break;
-        // case "DELETE":
-        //     deleteProduct( req, res );
-        //     // res.status(200).json({method,name: "DELETE Requst"});
-        //     break;
         default:
             res.setHeader( "Allow", [ "GET", "PUT", "POST", "DELETE" ] );
             res.status( 405 ).end( `MEthod ${ method }Not Allowed` );

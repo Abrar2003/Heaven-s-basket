@@ -14,12 +14,20 @@ export default async function handler( req, res ) {
     // send only email and product id in the body
     case "PATCH": {
       try {
-        let { productId, email } = req.body
-        let user = new userModel.find( { email: email } )
-        // await user.save()
-        res.status( 200 ).send( "successfully added" )
-      } catch ( error ) {
-        return res.status( 409 ).send( { errors: error } )
+        let {productId,email} = req.body;
+
+        let old=await userModel.findOne({email:email});
+
+        old.cartItem.push(productId)
+        let user= await userModel.updateOne({ email:email},{ $set: old })
+        // let user=await userModel.update({email:email}, {$push:{cartItem:productId}})
+        console.log(old)
+        res.status(200).send("successfully added")  
+        
+      } catch (error) {
+        console.log(error)
+        return res.status(409).send({errors:error})
+
       }
     }
   }
