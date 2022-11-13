@@ -165,7 +165,6 @@ const Cart = () => {
                     key={i}
                     {...el}
                     changeQty={changeQty}
-                    i={i}
                     handleDelete={handleDelete}
                   />
                 );

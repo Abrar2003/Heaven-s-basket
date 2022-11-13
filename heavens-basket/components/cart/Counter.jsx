@@ -8,7 +8,6 @@ const Counter = ({
   title,
   image,
   price,
-  discount,
   qty,
   _id,
   // changeQty,
@@ -20,6 +19,9 @@ const Counter = ({
   // };
 
   let url = `${NEXT_URL}/api/cart/`;
+
+  const subT = count * price;
+  console.log("subT", subT);
 
   console.log("qty", qty);
   return (
@@ -39,7 +41,7 @@ const Counter = ({
           borderBottomRightRadius={"0px"}
           disabled={count === 1}
           mr={"1px"}
-          onClick={(prev) => setCount(count - 1)}
+          onClick={() => setCount(count - 1)}
         >
           -
         </Button>
@@ -58,7 +60,7 @@ const Counter = ({
           borderBottomLeftRadius={"0px"}
           bg={"#92be4d"}
           color={"white"}
-          onClick={(prev) => setCount(count + 1)}
+          onClick={() => setCount(count + 1)}
         >
           +
         </Button>
