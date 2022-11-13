@@ -1,5 +1,6 @@
 import React from "react";
-import { Box, Link, Text } from "@chakra-ui/react";
+import Link from "next/link";
+import { Box, Text } from "@chakra-ui/react";
 import { TriangleDownIcon } from "@chakra-ui/icons";
 import styles from "./DropDown.module.css";
 
@@ -8,580 +9,611 @@ const DropDown = () => {
     <Box className={styles.menu}>
       <ul>
         <li>
-          <a href="/fruitesvegetables" id="cg">
+          <Link href="/fruitesvegetables" id="cg">
             SHOP BY CATEGORY <TriangleDownIcon />
-          </a>
+          </Link>
           <ul>
             <li>
-              <a href="/fruitesvegetables">Gifting</a>
+              <Link href="/fruitesvegetables">Gifting</Link>
               <ul>
                 <li>
-                  <a href="/fruitesvegetables">Beans & Brinjals</a>
+                  <Link href="/fruitesvegetables">Beans & Brinjals</Link>
                 </li>
                 <li>
-                  <a href="/fruitesvegetables">Broccoli & Cauliflower</a>
+                  <Link href="/fruitesvegetables">Broccoli & Cauliflower</Link>
                 </li>
                 <li>
-                  <a href="/fruitesvegetables">Chillies, Garlic & Lemon</a>
+                  <Link href="/fruitesvegetables">
+                    Chillies, Garlic & Lemon
+                  </Link>
                 </li>
                 <li>
-                  <a href="/fruitesvegetables">Vegetables Salad</a>
+                  <Link href="/fruitesvegetables">Vegetables Salad</Link>
                 </li>
                 <li>
-                  <a href="/fruitesvegetables">Hearbs & Sprouts</a>
+                  <Link href="/fruitesvegetables">Hearbs & Sprouts</Link>
                 </li>
                 <li>
-                  <a href="/fruitesvegetables">Peas & Corn</a>
+                  <Link href="/fruitesvegetables">Peas & Corn</Link>
                 </li>
                 <li>
-                  <a href="/fruitesvegetables">Root Vegetables</a>
+                  <Link href="/fruitesvegetables">Root Vegetables</Link>
                 </li>
                 <li>
-                  <a href="/fruitesvegetables">Mushrooms</a>
+                  <Link href="/fruitesvegetables">Mushrooms</Link>
                 </li>
                 <li>
-                  <a href="/fruitesvegetables">Edible Flower</a>
+                  <Link href="/fruitesvegetables">Edible Flower</Link>
                 </li>
                 <li>
-                  <a href="/fruitesvegetables">Heirloom Tomatoes</a>
+                  <Link href="/fruitesvegetables">Heirloom Tomatoes</Link>
                 </li>
               </ul>
             </li>
             <li>
-              <a href="/fruitesvegetables">Fruits & Vegetables</a>
+              <Link href="/fruitesvegetables">Fruits & Vegetables</Link>
               <ul>
                 <li>
-                  <a href="/fruitesvegetables">Beans & Brinjals</a>
+                  <Link href="/fruitesvegetables">Beans & Brinjals</Link>
                 </li>
                 <li>
-                  <a href="/fruitesvegetables">Broccoli & Cauliflower</a>
+                  <Link href="/fruitesvegetables">Broccoli & Cauliflower</Link>
                 </li>
                 <li>
-                  <a href="/fruitesvegetables">Chillies, Garlic & Lemon</a>
+                  <Link href="/fruitesvegetables">
+                    Chillies, Garlic & Lemon
+                  </Link>
                 </li>
                 <li>
-                  <a href="/fruitesvegetables">Vegetables Salad</a>
+                  <Link href="/fruitesvegetables">Vegetables Salad</Link>
                 </li>
                 <li>
-                  <a href="/fruitesvegetables">Hearbs & Sprouts</a>
+                  <Link href="/fruitesvegetables">Hearbs & Sprouts</Link>
                 </li>
                 <li>
-                  <a href="/fruitesvegetables">Peas & Corn</a>
+                  <Link href="/fruitesvegetables">Peas & Corn</Link>
                 </li>
                 <li>
-                  <a href="/fruitesvegetables">Root Vegetables</a>
+                  <Link href="/fruitesvegetables">Root Vegetables</Link>
                 </li>
                 <li>
-                  <a href="/fruitesvegetables">Mushrooms</a>
+                  <Link href="/fruitesvegetables">Mushrooms</Link>
                 </li>
                 <li>
-                  <a href="/fruitesvegetables">Edible Flower</a>
+                  <Link href="/fruitesvegetables">Edible Flower</Link>
                 </li>
                 <li>
-                  <a href="/fruitesvegetables">Heirloom Tomatoes</a>
+                  <Link href="/fruitesvegetables">Heirloom Tomatoes</Link>
                 </li>
               </ul>
             </li>
             <li>
-              <a href="/fruitesvegetables">Chess, Meat, & Fruit Platters</a>
+              <Link href="/fruitesvegetables">
+                Chess, Meat, & Fruit Platters
+              </Link>
               <ul>
                 <li>
-                  <a href="/fruitesvegetables">Beans & Brinjals</a>
+                  <Link href="/fruitesvegetables">Beans & Brinjals</Link>
                 </li>
                 <li>
-                  <a href="/fruitesvegetables">Broccoli & Cauliflower</a>
+                  <Link href="/fruitesvegetables">Broccoli & Cauliflower</Link>
                 </li>
                 <li>
-                  <a href="/fruitesvegetables">Chillies, Garlic & Lemon</a>
+                  <Link href="/fruitesvegetables">
+                    Chillies, Garlic & Lemon
+                  </Link>
                 </li>
                 <li>
-                  <a href="/fruitesvegetables">Vegetables Salad</a>
+                  <Link href="/fruitesvegetables">Vegetables Salad</Link>
                 </li>
                 <li>
-                  <a href="/fruitesvegetables">Hearbs & Sprouts</a>
+                  <Link href="/fruitesvegetables">Hearbs & Sprouts</Link>
                 </li>
                 <li>
-                  <a href="/fruitesvegetables">Peas & Corn</a>
+                  <Link href="/fruitesvegetables">Peas & Corn</Link>
                 </li>
                 <li>
-                  <a href="/fruitesvegetables">Root Vegetables</a>
+                  <Link href="/fruitesvegetables">Root Vegetables</Link>
                 </li>
                 <li>
-                  <a href="/fruitesvegetables">Mushrooms</a>
+                  <Link href="/fruitesvegetables">Mushrooms</Link>
                 </li>
                 <li>
-                  <a href="/fruitesvegetables">Edible Flower</a>
+                  <Link href="/fruitesvegetables">Edible Flower</Link>
                 </li>
                 <li>
-                  <a href="/fruitesvegetables">Heirloom Tomatoes</a>
+                  <Link href="/fruitesvegetables">Heirloom Tomatoes</Link>
                 </li>
               </ul>
             </li>
             <li>
-              <a href="/fruitesvegetables">Delicatessen & Cheese</a>
+              <Link href="/fruitesvegetables">Delicatessen & Cheese</Link>
               <ul>
                 <li>
-                  <a href="/fruitesvegetables">Beans & Brinjals</a>
+                  <Link href="/fruitesvegetables">Beans & Brinjals</Link>
                 </li>
                 <li>
-                  <a href="/fruitesvegetables">Broccoli & Cauliflower</a>
+                  <Link href="/fruitesvegetables">Broccoli & Cauliflower</Link>
                 </li>
                 <li>
-                  <a href="/fruitesvegetables">Chillies, Garlic & Lemon</a>
+                  <Link href="/fruitesvegetables">
+                    Chillies, Garlic & Lemon
+                  </Link>
                 </li>
                 <li>
-                  <a href="/fruitesvegetables">Vegetables Salad</a>
+                  <Link href="/fruitesvegetables">Vegetables Salad</Link>
                 </li>
                 <li>
-                  <a href="/fruitesvegetables">Hearbs & Sprouts</a>
+                  <Link href="/fruitesvegetables">Hearbs & Sprouts</Link>
                 </li>
                 <li>
-                  <a href="/fruitesvegetables">Peas & Corn</a>
+                  <Link href="/fruitesvegetables">Peas & Corn</Link>
                 </li>
                 <li>
-                  <a href="/fruitesvegetables">Root Vegetables</a>
+                  <Link href="/fruitesvegetables">Root Vegetables</Link>
                 </li>
                 <li>
-                  <a href="/fruitesvegetables">Mushrooms</a>
+                  <Link href="/fruitesvegetables">Mushrooms</Link>
                 </li>
                 <li>
-                  <a href="/fruitesvegetables">Edible Flower</a>
+                  <Link href="/fruitesvegetables">Edible Flower</Link>
                 </li>
                 <li>
-                  <a href="/fruitesvegetables">Heirloom Tomatoes</a>
+                  <Link href="/fruitesvegetables">Heirloom Tomatoes</Link>
                 </li>
               </ul>
             </li>
             <li>
-              <a href="/fruitesvegetables">International Cuisine</a>
+              <Link href="/fruitesvegetables">International Cuisine</Link>
               <ul>
                 <li>
-                  <a href="/fruitesvegetables">Beans & Brinjals</a>
+                  <Link href="/fruitesvegetables">Beans & Brinjals</Link>
                 </li>
                 <li>
-                  <a href="/fruitesvegetables">Broccoli & Cauliflower</a>
+                  <Link href="/fruitesvegetables">Broccoli & Cauliflower</Link>
                 </li>
                 <li>
-                  <a href="/fruitesvegetables">Chillies, Garlic & Lemon</a>
+                  <Link href="/fruitesvegetables">
+                    Chillies, Garlic & Lemon
+                  </Link>
                 </li>
                 <li>
-                  <a href="/fruitesvegetables">Vegetables Salad</a>
+                  <Link href="/fruitesvegetables">Vegetables Salad</Link>
                 </li>
                 <li>
-                  <a href="/fruitesvegetables">Hearbs & Sprouts</a>
+                  <Link href="/fruitesvegetables">Hearbs & Sprouts</Link>
                 </li>
                 <li>
-                  <a href="/fruitesvegetables">Peas & Corn</a>
+                  <Link href="/fruitesvegetables">Peas & Corn</Link>
                 </li>
                 <li>
-                  <a href="/fruitesvegetables">Root Vegetables</a>
+                  <Link href="/fruitesvegetables">Root Vegetables</Link>
                 </li>
                 <li>
-                  <a href="/fruitesvegetables">Mushrooms</a>
+                  <Link href="/fruitesvegetables">Mushrooms</Link>
                 </li>
                 <li>
-                  <a href="/fruitesvegetables">Edible Flower</a>
+                  <Link href="/fruitesvegetables">Edible Flower</Link>
                 </li>
                 <li>
-                  <a href="/fruitesvegetables">Heirloom Tomatoes</a>
+                  <Link href="/fruitesvegetables">Heirloom Tomatoes</Link>
                 </li>
               </ul>
             </li>
             <li>
-              <a href="/fruitesvegetables">Health</a>
+              <Link href="/fruitesvegetables">Health</Link>
               <ul>
                 <li>
-                  <a href="/fruitesvegetables">Beans & Brinjals</a>
+                  <Link href="/fruitesvegetables">Beans & Brinjals</Link>
                 </li>
                 <li>
-                  <a href="/fruitesvegetables">Broccoli & Cauliflower</a>
+                  <Link href="/fruitesvegetables">Broccoli & Cauliflower</Link>
                 </li>
                 <li>
-                  <a href="/fruitesvegetables">Chillies, Garlic & Lemon</a>
+                  <Link href="/fruitesvegetables">
+                    Chillies, Garlic & Lemon
+                  </Link>
                 </li>
                 <li>
-                  <a href="/fruitesvegetables">Vegetables Salad</a>
+                  <Link href="/fruitesvegetables">Vegetables Salad</Link>
                 </li>
                 <li>
-                  <a href="/fruitesvegetables">Hearbs & Sprouts</a>
+                  <Link href="/fruitesvegetables">Hearbs & Sprouts</Link>
                 </li>
                 <li>
-                  <a href="/fruitesvegetables">Peas & Corn</a>
+                  <Link href="/fruitesvegetables">Peas & Corn</Link>
                 </li>
                 <li>
-                  <a href="/fruitesvegetables">Root Vegetables</a>
+                  <Link href="/fruitesvegetables">Root Vegetables</Link>
                 </li>
                 <li>
-                  <a href="/fruitesvegetables">Mushrooms</a>
+                  <Link href="/fruitesvegetables">Mushrooms</Link>
                 </li>
                 <li>
-                  <a href="/fruitesvegetables">Edible Flower</a>
+                  <Link href="/fruitesvegetables">Edible Flower</Link>
                 </li>
                 <li>
-                  <a href="/fruitesvegetables">Heirloom Tomatoes</a>
+                  <Link href="/fruitesvegetables">Heirloom Tomatoes</Link>
                 </li>
               </ul>
             </li>
             <li>
-              <a href="/fruitesvegetables">India Grocery</a>
+              <Link href="/fruitesvegetables">India Grocery</Link>
               <ul>
                 <li>
-                  <a href="/fruitesvegetables">Beans & Brinjals</a>
+                  <Link href="/fruitesvegetables">Beans & Brinjals</Link>
                 </li>
                 <li>
-                  <a href="/fruitesvegetables">Broccoli & Cauliflower</a>
+                  <Link href="/fruitesvegetables">Broccoli & Cauliflower</Link>
                 </li>
                 <li>
-                  <a href="/fruitesvegetables">Chillies, Garlic & Lemon</a>
+                  <Link href="/fruitesvegetables">
+                    Chillies, Garlic & Lemon
+                  </Link>
                 </li>
                 <li>
-                  <a href="/fruitesvegetables">Vegetables Salad</a>
+                  <Link href="/fruitesvegetables">Vegetables Salad</Link>
                 </li>
                 <li>
-                  <a href="/fruitesvegetables">Hearbs & Sprouts</a>
+                  <Link href="/fruitesvegetables">Hearbs & Sprouts</Link>
                 </li>
                 <li>
-                  <a href="/fruitesvegetables">Peas & Corn</a>
+                  <Link href="/fruitesvegetables">Peas & Corn</Link>
                 </li>
                 <li>
-                  <a href="/fruitesvegetables">Root Vegetables</a>
+                  <Link href="/fruitesvegetables">Root Vegetables</Link>
                 </li>
                 <li>
-                  <a href="/fruitesvegetables">Mushrooms</a>
+                  <Link href="/fruitesvegetables">Mushrooms</Link>
                 </li>
                 <li>
-                  <a href="/fruitesvegetables">Edible Flower</a>
+                  <Link href="/fruitesvegetables">Edible Flower</Link>
                 </li>
                 <li>
-                  <a href="/fruitesvegetables">Heirloom Tomatoes</a>
+                  <Link href="/fruitesvegetables">Heirloom Tomatoes</Link>
                 </li>
               </ul>
             </li>
             <li>
-              <a href="/fruitesvegetables">Confectionary & Patisserie</a>
+              <Link href="/fruitesvegetables">Confectionary & Patisserie</Link>
               <ul>
                 <li>
-                  <a href="/fruitesvegetables">Beans & Brinjals</a>
+                  <Link href="/fruitesvegetables">Beans & Brinjals</Link>
                 </li>
                 <li>
-                  <a href="/fruitesvegetables">Broccoli & Cauliflower</a>
+                  <Link href="/fruitesvegetables">Broccoli & Cauliflower</Link>
                 </li>
                 <li>
-                  <a href="/fruitesvegetables">Chillies, Garlic & Lemon</a>
+                  <Link href="/fruitesvegetables">
+                    Chillies, Garlic & Lemon
+                  </Link>
                 </li>
                 <li>
-                  <a href="/fruitesvegetables">Vegetables Salad</a>
+                  <Link href="/fruitesvegetables">Vegetables Salad</Link>
                 </li>
                 <li>
-                  <a href="/fruitesvegetables">Hearbs & Sprouts</a>
+                  <Link href="/fruitesvegetables">Hearbs & Sprouts</Link>
                 </li>
                 <li>
-                  <a href="/fruitesvegetables">Peas & Corn</a>
+                  <Link href="/fruitesvegetables">Peas & Corn</Link>
                 </li>
                 <li>
-                  <a href="/fruitesvegetables">Root Vegetables</a>
+                  <Link href="/fruitesvegetables">Root Vegetables</Link>
                 </li>
                 <li>
-                  <a href="/fruitesvegetables">Mushrooms</a>
+                  <Link href="/fruitesvegetables">Mushrooms</Link>
                 </li>
                 <li>
-                  <a href="/fruitesvegetables">Edible Flower</a>
+                  <Link href="/fruitesvegetables">Edible Flower</Link>
                 </li>
                 <li>
-                  <a href="/fruitesvegetables">Heirloom Tomatoes</a>
+                  <Link href="/fruitesvegetables">Heirloom Tomatoes</Link>
                 </li>
               </ul>
             </li>
             <li>
-              <a href="/fruitesvegetables">Meats, Seafood and Eggs</a>
+              <Link href="/fruitesvegetables">Meats, Seafood and Eggs</Link>
               <ul>
                 <li>
-                  <a href="/fruitesvegetables">Beans & Brinjals</a>
+                  <Link href="/fruitesvegetables">Beans & Brinjals</Link>
                 </li>
                 <li>
-                  <a href="/fruitesvegetables">Broccoli & Cauliflower</a>
+                  <Link href="/fruitesvegetables">Broccoli & Cauliflower</Link>
                 </li>
                 <li>
-                  <a href="/fruitesvegetables">Chillies, Garlic & Lemon</a>
+                  <Link href="/fruitesvegetables">
+                    Chillies, Garlic & Lemon
+                  </Link>
                 </li>
                 <li>
-                  <a href="/fruitesvegetables">Vegetables Salad</a>
+                  <Link href="/fruitesvegetables">Vegetables Salad</Link>
                 </li>
                 <li>
-                  <a href="/fruitesvegetables">Hearbs & Sprouts</a>
+                  <Link href="/fruitesvegetables">Hearbs & Sprouts</Link>
                 </li>
                 <li>
-                  <a href="/fruitesvegetables">Peas & Corn</a>
+                  <Link href="/fruitesvegetables">Peas & Corn</Link>
                 </li>
                 <li>
-                  <a href="/fruitesvegetables">Root Vegetables</a>
+                  <Link href="/fruitesvegetables">Root Vegetables</Link>
                 </li>
                 <li>
-                  <a href="/fruitesvegetables">Mushrooms</a>
+                  <Link href="/fruitesvegetables">Mushrooms</Link>
                 </li>
                 <li>
-                  <a href="/fruitesvegetables">Edible Flower</a>
+                  <Link href="/fruitesvegetables">Edible Flower</Link>
                 </li>
                 <li>
-                  <a href="/fruitesvegetables">Heirloom Tomatoes</a>
+                  <Link href="/fruitesvegetables">Heirloom Tomatoes</Link>
                 </li>
               </ul>
             </li>
             <li>
-              <a href="/fruitesvegetables">Snack Bar</a>
+              <Link href="/fruitesvegetables">Snack Bar</Link>
               <ul>
                 <li>
-                  <a href="/fruitesvegetables">Beans & Brinjals</a>
+                  <Link href="/fruitesvegetables">Beans & Brinjals</Link>
                 </li>
                 <li>
-                  <a href="/fruitesvegetables">Broccoli & Cauliflower</a>
+                  <Link href="/fruitesvegetables">Broccoli & Cauliflower</Link>
                 </li>
                 <li>
-                  <a href="/fruitesvegetables">Chillies, Garlic & Lemon</a>
+                  <Link href="/fruitesvegetables">
+                    Chillies, Garlic & Lemon
+                  </Link>
                 </li>
                 <li>
-                  <a href="/fruitesvegetables">Vegetables Salad</a>
+                  <Link href="/fruitesvegetables">Vegetables Salad</Link>
                 </li>
                 <li>
-                  <a href="/fruitesvegetables">Hearbs & Sprouts</a>
+                  <Link href="/fruitesvegetables">Hearbs & Sprouts</Link>
                 </li>
                 <li>
-                  <a href="/fruitesvegetables">Peas & Corn</a>
+                  <Link href="/fruitesvegetables">Peas & Corn</Link>
                 </li>
                 <li>
-                  <a href="/fruitesvegetables">Root Vegetables</a>
+                  <Link href="/fruitesvegetables">Root Vegetables</Link>
                 </li>
                 <li>
-                  <a href="/fruitesvegetables">Mushrooms</a>
+                  <Link href="/fruitesvegetables">Mushrooms</Link>
                 </li>
                 <li>
-                  <a href="/fruitesvegetables">Edible Flower</a>
+                  <Link href="/fruitesvegetables">Edible Flower</Link>
                 </li>
                 <li>
-                  <a href="/fruitesvegetables">Heirloom Tomatoes</a>
+                  <Link href="/fruitesvegetables">Heirloom Tomatoes</Link>
                 </li>
               </ul>
             </li>
             <li>
-              <a href="/fruitesvegetables">Snacks & Beverages</a>
+              <Link href="/fruitesvegetables">Snacks & Beverages</Link>
               <ul>
                 <li>
-                  <a href="/fruitesvegetables">Beans & Brinjals</a>
+                  <Link href="/fruitesvegetables">Beans & Brinjals</Link>
                 </li>
                 <li>
-                  <a href="/fruitesvegetables">Broccoli & Cauliflower</a>
+                  <Link href="/fruitesvegetables">Broccoli & Cauliflower</Link>
                 </li>
                 <li>
-                  <a href="/fruitesvegetables">Chillies, Garlic & Lemon</a>
+                  <Link href="/fruitesvegetables">
+                    Chillies, Garlic & Lemon
+                  </Link>
                 </li>
                 <li>
-                  <a href="/fruitesvegetables">Vegetables Salad</a>
+                  <Link href="/fruitesvegetables">Vegetables Salad</Link>
                 </li>
                 <li>
-                  <a href="/fruitesvegetables">Hearbs & Sprouts</a>
+                  <Link href="/fruitesvegetables">Hearbs & Sprouts</Link>
                 </li>
                 <li>
-                  <a href="/fruitesvegetables">Peas & Corn</a>
+                  <Link href="/fruitesvegetables">Peas & Corn</Link>
                 </li>
                 <li>
-                  <a href="/fruitesvegetables">Root Vegetables</a>
+                  <Link href="/fruitesvegetables">Root Vegetables</Link>
                 </li>
                 <li>
-                  <a href="/fruitesvegetables">Mushrooms</a>
+                  <Link href="/fruitesvegetables">Mushrooms</Link>
                 </li>
                 <li>
-                  <a href="/fruitesvegetables">Edible Flower</a>
+                  <Link href="/fruitesvegetables">Edible Flower</Link>
                 </li>
                 <li>
-                  <a href="/fruitesvegetables">Heirloom Tomatoes</a>
+                  <Link href="/fruitesvegetables">Heirloom Tomatoes</Link>
                 </li>
               </ul>
             </li>
             <li>
-              <a href="/fruitesvegetables">Breakfast, Dairy & Bakery</a>
+              <Link href="/fruitesvegetables">Breakfast, Dairy & Bakery</Link>
               <ul>
                 <li>
-                  <a href="/fruitesvegetables">Beans & Brinjals</a>
+                  <Link href="/fruitesvegetables">Beans & Brinjals</Link>
                 </li>
                 <li>
-                  <a href="/fruitesvegetables">Broccoli & Cauliflower</a>
+                  <Link href="/fruitesvegetables">Broccoli & Cauliflower</Link>
                 </li>
                 <li>
-                  <a href="/fruitesvegetables">Chillies, Garlic & Lemon</a>
+                  <Link href="/fruitesvegetables">
+                    Chillies, Garlic & Lemon
+                  </Link>
                 </li>
                 <li>
-                  <a href="/fruitesvegetables">Vegetables Salad</a>
+                  <Link href="/fruitesvegetables">Vegetables Salad</Link>
                 </li>
                 <li>
-                  <a href="/fruitesvegetables">Hearbs & Sprouts</a>
+                  <Link href="/fruitesvegetables">Hearbs & Sprouts</Link>
                 </li>
                 <li>
-                  <a href="/fruitesvegetables">Peas & Corn</a>
+                  <Link href="/fruitesvegetables">Peas & Corn</Link>
                 </li>
                 <li>
-                  <a href="/fruitesvegetables">Root Vegetables</a>
+                  <Link href="/fruitesvegetables">Root Vegetables</Link>
                 </li>
                 <li>
-                  <a href="/fruitesvegetables">Mushrooms</a>
+                  <Link href="/fruitesvegetables">Mushrooms</Link>
                 </li>
                 <li>
-                  <a href="/fruitesvegetables">Edible Flower</a>
+                  <Link href="/fruitesvegetables">Edible Flower</Link>
                 </li>
                 <li>
-                  <a href="/fruitesvegetables">Heirloom Tomatoes</a>
+                  <Link href="/fruitesvegetables">Heirloom Tomatoes</Link>
                 </li>
               </ul>
             </li>
             <li>
-              <a href="/fruitesvegetables">Instant meals & Aids</a>
+              <Link href="/fruitesvegetables">Instant meals & Aids</Link>
               <ul>
                 <li>
-                  <a href="/fruitesvegetables">Beans & Brinjals</a>
+                  <Link href="/fruitesvegetables">Beans & Brinjals</Link>
                 </li>
                 <li>
-                  <a href="/fruitesvegetables">Broccoli & Cauliflower</a>
+                  <Link href="/fruitesvegetables">Broccoli & Cauliflower</Link>
                 </li>
                 <li>
-                  <a href="/fruitesvegetables">Chillies, Garlic & Lemon</a>
+                  <Link href="/fruitesvegetables">
+                    Chillies, Garlic & Lemon
+                  </Link>
                 </li>
                 <li>
-                  <a href="/fruitesvegetables">Vegetables Salad</a>
+                  <Link href="/fruitesvegetables">Vegetables Salad</Link>
                 </li>
                 <li>
-                  <a href="/fruitesvegetables">Hearbs & Sprouts</a>
+                  <Link href="/fruitesvegetables">Hearbs & Sprouts</Link>
                 </li>
                 <li>
-                  <a href="/fruitesvegetables">Peas & Corn</a>
+                  <Link href="/fruitesvegetables">Peas & Corn</Link>
                 </li>
                 <li>
-                  <a href="/fruitesvegetables">Root Vegetables</a>
+                  <Link href="/fruitesvegetables">Root Vegetables</Link>
                 </li>
                 <li>
-                  <a href="/fruitesvegetables">Mushrooms</a>
+                  <Link href="/fruitesvegetables">Mushrooms</Link>
                 </li>
                 <li>
-                  <a href="/fruitesvegetables">Edible Flower</a>
+                  <Link href="/fruitesvegetables">Edible Flower</Link>
                 </li>
                 <li>
-                  <a href="/fruitesvegetables">Heirloom Tomatoes</a>
+                  <Link href="/fruitesvegetables">Heirloom Tomatoes</Link>
                 </li>
               </ul>
             </li>
             <li>
-              <a href="/fruitesvegetables">The Good Food Cafe</a>
+              <Link href="/fruitesvegetables">The Good Food Cafe</Link>
               <ul>
                 <li>
-                  <a href="/fruitesvegetables">Beans & Brinjals</a>
+                  <Link href="/fruitesvegetables">Beans & Brinjals</Link>
                 </li>
                 <li>
-                  <a href="/fruitesvegetables">Broccoli & Cauliflower</a>
+                  <Link href="/fruitesvegetables">Broccoli & Cauliflower</Link>
                 </li>
                 <li>
-                  <a href="/fruitesvegetables">Chillies, Garlic & Lemon</a>
+                  <Link href="/fruitesvegetables">
+                    Chillies, Garlic & Lemon
+                  </Link>
                 </li>
                 <li>
-                  <a href="/fruitesvegetables">Vegetables Salad</a>
+                  <Link href="/fruitesvegetables">Vegetables Salad</Link>
                 </li>
                 <li>
-                  <a href="/fruitesvegetables">Hearbs & Sprouts</a>
+                  <Link href="/fruitesvegetables">Hearbs & Sprouts</Link>
                 </li>
                 <li>
-                  <a href="/fruitesvegetables">Peas & Corn</a>
+                  <Link href="/fruitesvegetables">Peas & Corn</Link>
                 </li>
                 <li>
-                  <a href="/fruitesvegetables">Root Vegetables</a>
+                  <Link href="/fruitesvegetables">Root Vegetables</Link>
                 </li>
                 <li>
-                  <a href="/fruitesvegetables">Mushrooms</a>
+                  <Link href="/fruitesvegetables">Mushrooms</Link>
                 </li>
                 <li>
-                  <a href="/fruitesvegetables">Edible Flower</a>
+                  <Link href="/fruitesvegetables">Edible Flower</Link>
                 </li>
                 <li>
-                  <a href="/fruitesvegetables">Heirloom Tomatoes</a>
+                  <Link href="/fruitesvegetables">Heirloom Tomatoes</Link>
                 </li>
               </ul>
             </li>
             <li>
-              <a href="/fruitesvegetables">Packing Material</a>
+              <Link href="/fruitesvegetables">Packing Material</Link>
               <ul>
                 <li>
-                  <a href="/fruitesvegetables">Beans & Brinjals</a>
+                  <Link href="/fruitesvegetables">Beans & Brinjals</Link>
                 </li>
                 <li>
-                  <a href="/fruitesvegetables">Broccoli & Cauliflower</a>
+                  <Link href="/fruitesvegetables">Broccoli & Cauliflower</Link>
                 </li>
                 <li>
-                  <a href="/fruitesvegetables">Chillies, Garlic & Lemon</a>
+                  <Link href="/fruitesvegetables">
+                    Chillies, Garlic & Lemon
+                  </Link>
                 </li>
                 <li>
-                  <a href="/fruitesvegetables">Vegetables Salad</a>
+                  <Link href="/fruitesvegetables">Vegetables Salad</Link>
                 </li>
                 <li>
-                  <a href="/fruitesvegetables">Hearbs & Sprouts</a>
+                  <Link href="/fruitesvegetables">Hearbs & Sprouts</Link>
                 </li>
                 <li>
-                  <a href="/fruitesvegetables">Peas & Corn</a>
+                  <Link href="/fruitesvegetables">Peas & Corn</Link>
                 </li>
                 <li>
-                  <a href="/fruitesvegetables">Root Vegetables</a>
+                  <Link href="/fruitesvegetables">Root Vegetables</Link>
                 </li>
                 <li>
-                  <a href="/fruitesvegetables">Mushrooms</a>
+                  <Link href="/fruitesvegetables">Mushrooms</Link>
                 </li>
                 <li>
-                  <a href="/fruitesvegetables">Edible Flower</a>
+                  <Link href="/fruitesvegetables">Edible Flower</Link>
                 </li>
                 <li>
-                  <a href="/fruitesvegetables">Heirloom Tomatoes</a>
+                  <Link href="/fruitesvegetables">Heirloom Tomatoes</Link>
                 </li>
               </ul>
             </li>
           </ul>
         </li>
         <li>
-          <a href="/fruitesvegetables">MY ORDERS</a>
+          <Link href="/fruitesvegetables">MY ORDERS</Link>
         </li>
         <li>
-          <a href="/fruitesvegetables">GIFTING </a>
+          <Link href="/fruitesvegetables">GIFTING </Link>
         </li>
         <li>
-          <a href="/fruitesvegetables">REWARDS</a>
+          <Link href="/fruitesvegetables">REWARDS</Link>
         </li>
         <li>
-          <a href="/fruitesvegetables">BLOG</a>
+          <Link href="/fruitesvegetables">BLOG</Link>
           <ul>
             <li>
-              <a href="/fruitesvegetables">EVERYTHING FOOD</a>
+              <Link href="/fruitesvegetables">EVERYTHING FOOD</Link>
             </li>
             <li>
-              <a href="/fruitesvegetables">RECIPE</a>
+              <Link href="/fruitesvegetables">RECIPE</Link>
             </li>
             <li>
-              <a href="/fruitesvegetables">NEWS LETTER</a>
+              <Link href="/fruitesvegetables">NEWS LETTER</Link>
             </li>
             <li>
-              <a href="/fruitesvegetables">NBTV</a>
+              <Link href="/fruitesvegetables">NBTV</Link>
             </li>
           </ul>
         </li>
         <li>
-          <a href="/fruitesvegetables">OFFERS</a>
+          <Link href="/fruitesvegetables">OFFERS</Link>
         </li>
         <li>
-          <a href="#">{`CONNOISSEUR'S SELECTION`}</a>
+          <Link href="#">{`CONNOISSEUR'S SELECTION`}</Link>
           <ul>
             <li>
-              <a href="#">{`L'EXLUSIF`}</a>
-
+              <Link href="#">{`L'EXLUSIF`}</Link>
             </li>
             <li>
-              <a href="/fruitesvegetables">HEALTHY ALTERNATIVES</a>
+              <Link href="/fruitesvegetables">HEALTHY ALTERNATIVES</Link>
             </li>
           </ul>
         </li>
         <li>
-          <a href="/fruitesvegetables">BOOK STORE VISIT</a>
+          <Link href="/fruitesvegetables">BOOK STORE VISIT</Link>
         </li>
       </ul>
     </Box>
