@@ -59,11 +59,17 @@ const Product = () => {
   };
 
   const addProduct = async () => {
-    let url = `${NEXT_URL}/api/operation/cart/add`;
+    let url = `${NEXT_URL}/api/cart`;
     try {
-      let d = await axios.patch(url, {
+      let d = await axios.post(url, {
         email: "abrar.aalam003@gmail.com",
-        productId: id,
+        brand: Product.brand,
+        category: Product.category,
+        image: Product.image,
+        title: Product.title,
+        price: Product.price,
+        piece: Product.piece,
+        popUpMess: Product.popUpMess,
       });
       toast({
         description: "Product Added successfully",
