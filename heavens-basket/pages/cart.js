@@ -83,16 +83,29 @@ const Cart = () => {
     }, 0);
     setTotal(t);
   }, [data]);
+  ////delete
+  const handleDelete = async (_id) => {
+    await axios
+      .delete(url, {
+        headers: {
+          productid: _id,
+        },
+      })
+      .then(() => fetchData())
+      .catch((e) => {
+        console.log(e);
+      });
+  };
 
   const changeQty = (id, q) => {
     const newData = data.map((el) =>
       id === el.id ? { ...el, qty: el.qty + q } : el
     );
-    console.log(newData);
+    // console.log(newData);
     setData(newData);
   };
 
-  console.log("datttttta", data);
+  // console.log("datttttta", data);
   return (
     <Stack>
       <Navbar />
@@ -146,13 +159,21 @@ const Cart = () => {
 
             <Tbody>
               {data.map((el, i) => {
-                return <Counter {...el} changeQty={changeQty} i={i} />;
+                return (
+                  <Counter
+                    key={i}
+                    {...el}
+                    changeQty={changeQty}
+                    i={i}
+                    handleDelete={handleDelete}
+                  />
+                );
               })}
             </Tbody>
           </Table>
         </TableContainer>
         <Box align={"right"}>
-          <Box w={"20%"} align={"left"} p={"10px"}>
+          <Box w={"20%"} align="left" p={"10px"}>
             <Text>Sub-Total: ₹ {total}</Text>
             <Text>Delivery Charges: ₹ 50.00</Text>
             <Text fontSize="lg">Tptal:₹ {total - 50}</Text>
