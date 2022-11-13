@@ -21,6 +21,7 @@ import {
   Checkbox,
   Tooltip,
   CheckboxGroup,
+  useToast,
 } from "@chakra-ui/react";
 import { FiChevronRight } from "react-icons/fi";
 import { FaFacebookF, FaTwitter } from "react-icons/fa";
@@ -32,7 +33,7 @@ const Product = () => {
   const [position, setposition] = useState("0% 0%");
   const [opacity, setopacity] = useState(1);
   const router = useRouter();
-
+  const toast = useToast();
   const [fillStar, setfillStar] = useState(true);
 
   const { id } = router.query;
@@ -40,7 +41,7 @@ const Product = () => {
   const getdata = async () => {
     try {
       let data = await axios.get(`${NEXT_URL}/api/products/${id}`);
-      console.log(data);
+
       setProduct(data.data);
     } catch (e) {
       console.log(e);
@@ -49,7 +50,7 @@ const Product = () => {
   useEffect(() => {
     getdata();
   }, []);
-  console.log(Product);
+  // console.log(Product);
   const handleMouseMove = (e) => {
     const { left, top, width, height } = e.target.getBoundingClientRect();
     const x = ((e.pageX - left) / width) * 100;
@@ -58,13 +59,32 @@ const Product = () => {
   };
 
   const addProduct = async () => {
-    let url =`${NEXT_URL}/api/users/operation/cart/add`
-    //  "http://localhost:3000/api/operation/cart/add";
+    let url = `${NEXT_URL}/api/cart`;
     try {
-      let d = await axios.patch(url, { email: "abrar.aalam003@gmail.com", productId: id });
-      console.log( d ); 
+      let d = await axios.post(url, {
+        email: "abrar.aalam003@gmail.com",
+        brand: Product.brand,
+        category: Product.category,
+        image: Product.image,
+        title: Product.title,
+        price: Product.price,
+        piece: Product.piece,
+        popUpMess: Product.popUpMess,
+      });
+      toast({
+        description: "Product Added successfully",
+        status: "success",
+        duration: 9000,
+        isClosable: true,
+      });
+      console.log(d);
     } catch (e) {
-      console.log(e);
+      // toast({
+      //   description: { e },
+      //   status: "error",
+      //   duration: 9000,
+      //   isClosable: true,
+      // });
     }
   };
   return (
@@ -110,7 +130,11 @@ const Product = () => {
             }}
           >
             <Image
-              src={Product.image}
+              src={
+                !Product.image
+                  ? "https://d1z88p83zuviay.cloudfront.net/Images/no-images425x425.jpg"
+                  : Product.image
+              }
               w="100%"
               pointerEvents="none"
               border="1px solid #e4e4e4"
@@ -131,7 +155,11 @@ const Product = () => {
                 backgroundRepeat="no-repeat"
               >
                 <Image
-                  src={Product.image}
+                  src={
+                    !Product.image
+                      ? "https://d1z88p83zuviay.cloudfront.net/Images/no-images425x425.jpg"
+                      : Product.image
+                  }
                   opacity={opacity}
                   w="70%"
                   pointerEvents="none"
@@ -237,7 +265,15 @@ const Product = () => {
           borderRadius="5px"
           mt="5px"
         >
-          <Image w="100%" h="100%" src={Product.image} />
+          <Image
+            w="100%"
+            h="100%"
+            src={
+              !Product.image
+                ? "https://d1z88p83zuviay.cloudfront.net/Images/no-images425x425.jpg"
+                : Product.image
+            }
+          />
         </Box>
       </Stack>
       <Footer />

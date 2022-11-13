@@ -2,7 +2,7 @@ import { CloseIcon } from "@chakra-ui/icons";
 import { Button, Image, Td, Text, Tr } from "@chakra-ui/react";
 import React, { useState } from "react";
 
-const Counter = ({ name, src, price, discount, qty, id, changeQty, i }) => {
+const Counter = ({ title, image, price, discount, qty, id, changeQty, i }) => {
   //   const [count, setCount] = useState(1);
   //   const changeQty = (q) => {
   //     qty + q;
@@ -10,8 +10,8 @@ const Counter = ({ name, src, price, discount, qty, id, changeQty, i }) => {
   return (
     <Tr key={i}>
       <Td display={"flex"} gap={"20px"} alignItems={"center"}>
-        <Image src={src} w="50px" />
-        <Text>{name}</Text>
+        <Image src={image} w="50px" />
+        <Text>{title}</Text>
       </Td>
       <Td>₹ {price}</Td>
       <Td>₹ {discount}</Td>
