@@ -15,13 +15,7 @@ export default async function handler(req, res) {
     case "PATCH": {
       try {
         let {productId,email} = req.body;
-        // let {email} = req.body
-        // console.log(email)
         let old=await userModel.findOne({email:email});
-        // if(!old){
-        //   old.carItem.push(productId);
-        //   let user= await userModel.updateOne({ email:email},{ $set: old })
-        // }
         old.cartItem.push(productId)
         let user= await userModel.updateOne({ email:email},{ $set: old })
         // let user=await userModel.update({email:email}, {$push:{cartItem:productId}})
