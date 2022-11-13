@@ -79,10 +79,11 @@ const Cart = () => {
 
   useEffect(() => {
     const t = data.reduce((acc, el) => {
-      return acc + el.price * el.qty;
+      return acc + el.price;
     }, 0);
     setTotal(t);
   }, [data]);
+
   ////delete
   const handleDelete = async (_id) => {
     await axios
@@ -174,9 +175,9 @@ const Cart = () => {
         </TableContainer>
         <Box align={"right"}>
           <Box w={"20%"} align="left" p={"10px"}>
-            <Text>Sub-Total: ₹ {total}</Text>
-            <Text>Delivery Charges: ₹ 50.00</Text>
-            <Text fontSize="lg">Tptal:₹ {total - 50}</Text>
+            <Text>Sub-Total: ₹ {total}.00</Text>
+            <Text>Delivery Charges: ₹ 0.00</Text>
+            <Text fontSize="lg">Total: ₹ {total}.00</Text>
           </Box>
         </Box>
         <Box
