@@ -152,7 +152,7 @@ const Cart = () => {
           </Table>
         </TableContainer>
         <Box align={"right"}>
-          <Box w={"20%"} align={"left"} p={"10px"}>
+          <Box w={"20%"} align="left" p={"10px"}>
             <Text>Sub-Total: ₹ {total}</Text>
             <Text>Delivery Charges: ₹ 50.00</Text>
             <Text fontSize="lg">Tptal:₹ {total - 50}</Text>

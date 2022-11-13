@@ -12,20 +12,24 @@ import Link from "next/link";
 export default function SearchDropdown() {
   const { isOpen, onOpen, onClose } = useDisclosure();
   return (
-    <Menu isOpen={isOpen} w="100%" >
-      <MenuButton variant="ghost" onMouseEnter={onOpen} onMouseLeave={onClose}  w={"100%"}>
+    <Menu isOpen={isOpen} w="100%">
+      <MenuButton
+        variant="ghost"
+        onMouseEnter={onOpen}
+        onMouseLeave={onClose}
+        w={"100%"}
+      >
         <Input
           textAlign={"center"}
-         
           placeholder="Start shopping..."
           borderRadius="none"
-          border = "1px solid"
+          border="1px solid"
         />
       </MenuButton>
       <MenuList
         onMouseEnter={onOpen}
         onMouseLeave={onClose}
-        align={"left"}
+        align="left"
         w={"850px"}
         border={"3px solid #3e9d15"}
         textAlign="center"
