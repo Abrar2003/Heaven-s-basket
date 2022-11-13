@@ -39,6 +39,7 @@ const Product = () => {
   const { id } = router.query;
 
   const getdata = async () => {
+     const { id } = router.query;
     try {
       let data = await axios.get(`${NEXT_URL}/api/products/${id}`);
 
@@ -63,7 +64,13 @@ const Product = () => {
     try {
       let d = await axios.post(url, {
         email: "abrar.aalam003@gmail.com",
-        productId: id,
+    brand: Product.brand,
+        category: Product.category,
+        image: Product.image,
+        title: Product.title,
+        price: Product.price,
+        piece: Product.piece,
+        popUpMess: Product.popUpMess,
       });
       toast({
         description: "Product Added successfully",
@@ -72,7 +79,8 @@ const Product = () => {
         isClosable: true,
       });
       console.log(d);
-    } catch (e) {
+    } catch ( e ) {
+      console.log( e );
       // toast({
       //   description: { e },
       //   status: "error",
@@ -82,7 +90,7 @@ const Product = () => {
     }
   };
   return (
-    < >
+    <>
       <Navbar />
       <Stack p="2%">
         <Breadcrumb
@@ -124,11 +132,11 @@ const Product = () => {
             }}
           >
             <Image
-             src={
-            !Product.image
-              ? "https://d1z88p83zuviay.cloudfront.net/Images/no-images425x425.jpg"
-              : Product.image
-          }
+              src={
+                !Product.image
+                  ? "https://d1z88p83zuviay.cloudfront.net/Images/no-images425x425.jpg"
+                  : Product.image
+              }
               w="100%"
               pointerEvents="none"
               border="1px solid #e4e4e4"
@@ -150,10 +158,10 @@ const Product = () => {
               >
                 <Image
                   src={
-            !Product.image
-              ? "https://d1z88p83zuviay.cloudfront.net/Images/no-images425x425.jpg"
-              : Product.image
-          }
+                    !Product.image
+                      ? "https://d1z88p83zuviay.cloudfront.net/Images/no-images425x425.jpg"
+                      : Product.image
+                  }
                   opacity={opacity}
                   w="70%"
                   pointerEvents="none"
@@ -259,11 +267,15 @@ const Product = () => {
           borderRadius="5px"
           mt="5px"
         >
-          <Image w="100%" h="100%"  src={
-            !Product.image
-              ? "https://d1z88p83zuviay.cloudfront.net/Images/no-images425x425.jpg"
-              : Product.image
-          } />
+          <Image
+            w="100%"
+            h="100%"
+            src={
+              !Product.image
+                ? "https://d1z88p83zuviay.cloudfront.net/Images/no-images425x425.jpg"
+                : Product.image
+            }
+          />
         </Box>
       </Stack>
       <Footer />
