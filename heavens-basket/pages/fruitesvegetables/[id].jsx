@@ -82,7 +82,7 @@ const Product = () => {
     }
   };
   return (
-    <>
+    < >
       <Navbar />
       <Stack p="2%">
         <Breadcrumb
@@ -124,7 +124,11 @@ const Product = () => {
             }}
           >
             <Image
-              src={Product.image}
+             src={
+            !Product.image
+              ? "https://d1z88p83zuviay.cloudfront.net/Images/no-images425x425.jpg"
+              : Product.image
+          }
               w="100%"
               pointerEvents="none"
               border="1px solid #e4e4e4"
@@ -145,7 +149,11 @@ const Product = () => {
                 backgroundRepeat="no-repeat"
               >
                 <Image
-                  src={Product.image}
+                  src={
+            !Product.image
+              ? "https://d1z88p83zuviay.cloudfront.net/Images/no-images425x425.jpg"
+              : Product.image
+          }
                   opacity={opacity}
                   w="70%"
                   pointerEvents="none"
@@ -251,7 +259,11 @@ const Product = () => {
           borderRadius="5px"
           mt="5px"
         >
-          <Image w="100%" h="100%" src={Product.image} />
+          <Image w="100%" h="100%"  src={
+            !Product.image
+              ? "https://d1z88p83zuviay.cloudfront.net/Images/no-images425x425.jpg"
+              : Product.image
+          } />
         </Box>
       </Stack>
       <Footer />
