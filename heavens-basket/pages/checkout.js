@@ -647,7 +647,7 @@ const Checkout = () => {
                       </Button>
                     </Box>
                     <Text fontSize={"12px"} color={"gray"}>
-                     {` By placing the order, you have read and agreed to Nature's
+                      {` By placing the order, you have read and agreed to Nature's
                       Basket Terms of Use and Privacy Policy`}
                     </Text>
                   </TabPanel>
